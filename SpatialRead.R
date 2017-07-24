@@ -1,6 +1,6 @@
 library(sf)
 library(sp)
-
+library(tidyr)
 library(raster)
 library(RPostgreSQL)
 
@@ -44,7 +44,10 @@ BRadmin_sf <- st_read(dsn='Admin','BRA_adm2')
 Trade<-read.csv("big5trade-1_updated.csv")
 Trade_df=data.frame(Trade)
 
-CommitedTrade=Trade_df[which(Trade_df$EXPORTER=="ADM"|Trade_df$EXPORTER=="AMAGGI"|Trade_df$EXPORTER=="CARGILL"|Trade_df$EXPORTER=="BUNGE"|Trade_df$EXPORTER=="LOUIS DREYFUS"),]
+ADMTrade=Trade_df[which(Trade_df$EXPORTER=="ADM"),]
+CargillTrade=Trade_df[which(Trade_df$EXPORTER=="CARGILL"),]
+
+gather(ADMTrade,)
 
 Production<-read.csv("/Non-GIS.Data/stateproduction.csv")
 Regulations<-read.csv("/Non-GIS.Data/regulations.csv")
