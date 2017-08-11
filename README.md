@@ -33,3 +33,5 @@ Kimberly Carlson - Univ. Hawaii
 - Road and port infrastructure - Various sources, currently unpublished from Garrett (BU) and le Polain de Waroux (McGill)
 - Government policies – le Polain de Waroux et al. 2016 PNAS and le Polain de Waroux, Garrett et al. 2017 World Development
 
+## Funding
+National Socioenvironmental Synthesis Center (SESYNC)
