@@ -9,9 +9,9 @@ library(rgdal)
 
 # Goal 1: Separating a piece of the map. Specifically a rectangle with all 4 countries for early testing of a model. 
 
-# Science this file is on a repository, the working files will be on the desktop but their file paths can be changed. 
-setwd("~/Desktop") 
-initialImage <- raster("final_level1.tif") # Loading a tif file 
+# Science this file is on a repository, the working files will be on the dropbox but their file paths can be changed. 
+setwd("~/Dropbox/SESYNC GIS Database") 
+initialImage <- raster("Admin/final_level1.tif") # Loading a tif file 
 plot(initialImage) # Plotting the file
 initialImage # Seeing the image properties
 
@@ -24,16 +24,16 @@ newMap<- raster(crs = "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84
 finalMap <- crop(initialImage,newMap)
 
 # For the first step of the model, a cut is need from both a 2012 and a 2013 land use map, similar to what we did above. 
-setwd("~/Desktop") 
 # I will first figure out a standard cut that will be taken out from all the images. In this case I will manially use the select function to see what it is best through trial and error
-initialAdmin <- raster("final_level0.tif") 
+initialAdmin <- raster("Admin/final_level0.tif") 
 plot(initialAdmin)
 select(initialAdmin)
+initialAdmin
 # After seeing the many extents I selected, I have decided to go for (-65, -58, -25, -10), so I'll create the extent
 extentForCrop <- extent(-65, -58, -25, -10)
 # I will then crop this out of the 2 maps I am going to use
-initial2012Image <- raster("final_2012.tif") # Loading a tif file 
-initial2013Image <- raster("final_2013.tif") # Loading a tif file 
+initial2012Image <- raster("Land_Use_Class/final_2012.tif") # Loading a tif file 
+initial2013Image <- raster("Land_Use_Class/final_2013.tif") # Loading a tif file 
 
 new2012Image <- crop(initial2012Image, extentForCrop)
 new2013Image <- crop(initial2013Image, extentForCrop)
@@ -43,9 +43,10 @@ writeRaster(new2012Image, filename = "cropped2012.tif", fromat = "GTiff")
 writeRaster(new2013Image, filename = "cropped2013.tif", fromat = "GTiff")
 
 # Just in case to check if they were written out correctly I will plot them, as well as seeing their properties and comparing them to the cropped ones
-check2012 <- raster("cropped2012.tif")
+check2012 <- raster("dinamicaMaps/cropped2012.tif")
 plot(check2012)
-check2013 <- raster("cropped2013.tif")
+check2013 <- raster("dinamicaMaps/cropped2013.tif")
 plot(check2013)
 check2012
 new2012Image
+check2012
