@@ -38,9 +38,9 @@ initial2013Image <- raster("Land_Use_Class/final_2013.tif") # Loading a tif file
 new2012Image <- crop(initial2012Image, extentForCrop)
 new2013Image <- crop(initial2013Image, extentForCrop)
 
-# Finally I will write them out to files in the correct format
-writeRaster(new2012Image, filename = "cropped2012.tif", fromat = "GTiff")
-writeRaster(new2013Image, filename = "cropped2013.tif", fromat = "GTiff")
+# Finally I will write them out to files in the correct format. Take not that R will default to a data type that is not what dinamica accepts, so you have to indicate what type you want.
+writeRaster(new2012Image, filename = "cropped2012.tif", dataType = "INT2S", fromat = "GTiff")
+writeRaster(new2013Image, filename = "cropped2013.tif", dataType = "INT2S", fromat = "GTiff")
 
 # Just in case to check if they were written out correctly I will plot them, as well as seeing their properties and comparing them to the cropped ones
 check2012 <- raster("dinamicaMaps/cropped2012.tif")
