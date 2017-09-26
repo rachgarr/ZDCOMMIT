@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Sep-25 12:05:57" />
+    <property key="dff.version" value="4.0.2.20170722" />
+    <functor name="DetermineTransitionMatrix">
+        <property key="dff.functor.alias" value="Transition Rates" />
+        <inputport name="initialLandscape" peerid="v2" />
+        <inputport name="finalLandscape" peerid="v3" />
+        <inputport name="timeSteps">3</inputport>
+        <outputport name="singleStepMatrix" id="v1" />
+    </functor>
+    <functor name="SaveTable">
+        <property key="dff.functor.alias" value="saveTable846" />
+        <property key="dff.functor.comment" value="Single-step transition matrix." />
+        <inputport name="table" peerid="v1" />
+        <inputport name="filename">&quot;../../../Dropbox/SESYNC GIS Database/dinamicaMaps/singleStep.csv&quot;</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Initial Landscape" />
+        <property key="dff.functor.comment" value="Initial landscape map." />
+        <inputport name="filename">&quot;../../../Dropbox/SESYNC GIS Database/dinamicaMaps/cropped2012.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v2" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Final Landscape" />
+        <property key="dff.functor.comment" value="Final landscape map." />
+        <inputport name="filename">&quot;../../../Dropbox/SESYNC GIS Database/dinamicaMaps/cropped2013.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v3" />
+    </functor>
+</script>

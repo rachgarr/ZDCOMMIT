@@ -1,0 +1,147 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Sep-25 13:16:44" />
+    <property key="dff.version" value="4.0.2.20170722" />
+    <functor name="CalcDistanceMap">
+        <property key="dff.functor.alias" value="Distances" />
+        <inputport name="categoricalMap" peerid="v2" />
+        <inputport name="categories">[ 1 ]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="truncateDistance">.no</inputport>
+        <outputport name="distance" id="v1" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Initial Landscape" />
+        <property key="dff.functor.comment" value="Initial landscape map." />
+        <inputport name="filename">&quot;../../../Dataset/Examples/setup_run_and_validate_a_lucc_model/originals/23267_1997.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v2" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Final Landscape" />
+        <property key="dff.functor.comment" value="Final landscape map." />
+        <inputport name="filename">&quot;../../../Dataset/Examples/setup_run_and_validate_a_lucc_model/originals/23267_2000.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v3" />
+    </functor>
+    <containerfunctor name="DetermineWeightsOfEvidenceRanges">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Weights of Evidence Ranges" />
+        <property key="dff.functor.extendedcomment" value="Calculate the Weights of Evidence ranges." />
+        <inputport name="initialLandscape" peerid="v2" />
+        <inputport name="finalLandscape" peerid="v3" />
+        <inputport name="skeleton">[&#x0A;    2-&gt;1 [&#x0A;        &quot;distance/distance_to_1&quot; 250 500000 10 5,&#x0A;        &quot;static_var/altitude&quot; 10 500000 10 5,&#x0A;        &quot;static_var/d_all_roads&quot; 100 500000 10 5,&#x0A;        &quot;static_var/d_major_rivers&quot; 100 500000 10 5,&#x0A;        &quot;static_var/d_paved_roads&quot; 100 500000 10 5,&#x0A;        &quot;static_var/d_settlement&quot; 100 500000 10 5,&#x0A;        &quot;static_var/d_trans_rivers&quot; 100 500000 10 5,&#x0A;        &quot;static_var/proteced_areas&quot;,&#x0A;        &quot;static_var/slope&quot; 1 500000 10 5,&#x0A;        &quot;static_var/soil&quot;,&#x0A;        &quot;static_var/urban_attraction&quot; 100 500000 10 5,&#x0A;        &quot;static_var/vegetation&quot;&#x0A;    ]&#x0A;]</inputport>
+        <inputport name="fixAbnormalWeights">.yes</inputport>
+        <functor name="NameMap">
+            <property key="dff.functor.alias" value="nameMap875" />
+            <inputport name="mapName">&quot;static_var&quot;</inputport>
+        </functor>
+        <functor name="NameMap">
+            <property key="dff.functor.alias" value="nameMap876" />
+            <inputport name="map" peerid="v1" />
+            <inputport name="mapName">&quot;distance&quot;</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="Group">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="group2690" />
+        <property key="dff.functor.comment" value="Grouping of loading of all the statics" />
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2686" />
+            <property key="dff.functor.comment" value="Admin" />
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2687" />
+            <property key="dff.functor.comment" value="Ecoregions" />
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2688" />
+            <property key="dff.functor.comment" value="BrazilBiomes" />
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2689" />
+            <property key="dff.functor.comment" value="Protected Areas" />
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+        </functor>
+        <functor name="LoadMap">
+            <property key="dff.functor.comment" value="Temperature" />
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+        </functor>
+        <functor name="LoadMap">
+            <property key="dff.functor.alias" value="loadMap2693" />
+            <property key="dff.functor.comment" value="Elevation" />
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+        </functor>
+        <functor name="LoadMap">
+            <property key="dff.functor.comment" value="Precipitation" />
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="loadCategoricalMap2695" />
+        <property key="dff.functor.comment" value="Towns" />
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2694" />
+        <property key="dff.functor.comment" value="Population" />
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
+    <containerfunctor name="CreateCubeMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="createCubeMap2696" />
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap2697" />
+            <inputport name="mapName">&quot;map1&quot;</inputport>
+            <inputport name="mapNumber">0</inputport>
+        </functor>
+    </containerfunctor>
+</script>

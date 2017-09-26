@@ -1,0 +1,124 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Sep-25 16:56:18" />
+    <property key="dff.version" value="4.0.2.20170722" />
+    <functor name="LookupTable">
+        <property key="dff.functor.alias" value="lookupTable1308" />
+        <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 1000,&#x0A;    2 80,&#x0A;    3 50,&#x0A;    4 900,&#x0A;    5 20,&#x0A;    6 30,&#x0A;    7 600,&#x0A;    8 30,&#x0A;    9 900&#x0A;]</inputport>
+        <outputport name="object" id="v1" />
+    </functor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap1311" />
+        <inputport name="map" peerid="v8" />
+        <inputport name="filename">&quot;../../../Dataset/lesson4/friction.tif&quot;</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
+    <functor name="CalcCostMap">
+        <property key="dff.functor.alias" value="calcCostMap1315" />
+        <inputport name="source" peerid="v5" />
+        <inputport name="friction" peerid="v8" />
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="diagonalsCostMore">.yes</inputport>
+        <inputport name="maximumNumberOfPasses">2</inputport>
+        <inputport name="frictionIsRelative">.no</inputport>
+        <outputport name="cost" id="v2" />
+    </functor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap1317" />
+        <inputport name="map" peerid="v2" />
+        <inputport name="filename">&quot;../../../../Dropbox/SESYNC GIS Database/dinamicaMaps/roadCost.tif&quot;</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2775" />
+        <inputport name="filename">&quot;../../../../Dropbox/SESYNC GIS Database/dinamicaMaps/cropped2012.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v3" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2776" />
+        <inputport name="filename">&quot;../../../../Dropbox/SESYNC GIS Database/dinamicaMaps/finalSlope.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v4" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="loadCategoricalMap2777" />
+        <inputport name="filename">&quot;../../../../Dropbox/SESYNC GIS Database/dinamicaMaps/finalRoads.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v5" />
+    </functor>
+    <containerfunctor name="CalculateMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateMap2779" />
+        <inputport name="expression">[&#x0A;    t1[i1]&#x0A;]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v6" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap1319" />
+            <inputport name="map" peerid="v3" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+        <functor name="NumberTable">
+            <property key="dff.functor.alias" value="numberTable2780" />
+            <inputport name="table" peerid="v1" />
+            <inputport name="tableNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateMap2781" />
+        <inputport name="expression">[&#x0A;    if i1 &lt; 1 then&#x0A;        1&#x0A;    else if i1 &lt; 5 then&#x0A;        1.3&#x0A;    else if i1 &lt; 10 then&#x0A;        1.5&#x0A;    else if i1 &lt; 15 then&#x0A;        1.9&#x0A;    else if i1 &lt; 20 then&#x0A;        2.5&#x0A;    else &#x0A;        5&#x0A;]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v7" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap1322" />
+            <inputport name="map" peerid="v4" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateMap2782" />
+        <inputport name="expression">[&#x0A;    i1 * i2&#x0A;]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v8" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap1324" />
+            <inputport name="map" peerid="v6" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap1325" />
+            <inputport name="map" peerid="v7" />
+            <inputport name="mapNumber">2</inputport>
+        </functor>
+    </containerfunctor>
+</script>
