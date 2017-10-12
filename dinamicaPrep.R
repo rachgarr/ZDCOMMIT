@@ -31,6 +31,7 @@ initialTowns <- raster("Towns_Population/towns/final_POP_MAX__Towns_over50k.tif"
 initialPorts <- raster("transport data/Ports/final_Ports.tif")
 initialRoads <- raster("transport data/Roads_DigitalCharts/final_Merged_Roads_major.tif")
 initialRivers <- raster("transport data/sa_riv_30s/final_sa_riv_30.tif")
+initialSlaughterhouses<- raster("Supply_Chain/Slaughter House/final_Fridges.tif")
 
 # Then a new image is created with the extent, as well as the projection(the projection can be found in the properties of the initial images)
 mapWanted<- raster(crs = "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0", ext = extentWanted)
@@ -49,6 +50,7 @@ finalTowns <- crop(initialTowns, mapWanted)
 finalPorts <- crop(initialPorts, mapWanted)
 finalRoads <- crop(initialRoads, mapWanted)
 finalRivers <- crop(initialRivers, mapWanted)
+finalSlaughterhouses <- crop(initialSlaughterhouses, mapWanted)
 
 # Finally they get written out - using INT2S for categorical and integer continuous variables, and FLT4S for non-integer continuous variables
 writeRaster(finalAdmin2, filename = "dinamica/maps/finalAdmin2.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
@@ -64,3 +66,4 @@ writeRaster(finalTowns, filename = "dinamica/maps/finalTowns.tif", datatype = "I
 writeRaster(finalPorts, filename = "dinamica/maps/finalPorts.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalRoads, filename = "dinamica/maps/finalRoads.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalRivers, filename = "dinamica/maps/finalRivers.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalSlaughterhouses, filename = "dinamica/maps/finalSlaughterhouses.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
