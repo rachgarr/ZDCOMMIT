@@ -1,20 +1,11 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2017-Sep-25 16:56:18" />
+    <property key="dff.date" value="2017-Sep-26 11:02:25" />
     <property key="dff.version" value="4.0.2.20170722" />
     <functor name="LookupTable">
         <property key="dff.functor.alias" value="lookupTable1308" />
         <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 1000,&#x0A;    2 80,&#x0A;    3 50,&#x0A;    4 900,&#x0A;    5 20,&#x0A;    6 30,&#x0A;    7 600,&#x0A;    8 30,&#x0A;    9 900&#x0A;]</inputport>
         <outputport name="object" id="v1" />
-    </functor>
-    <functor name="SaveMap">
-        <property key="dff.functor.alias" value="saveMap1311" />
-        <inputport name="map" peerid="v8" />
-        <inputport name="filename">&quot;../../../Dataset/lesson4/friction.tif&quot;</inputport>
-        <inputport name="suffixDigits">0</inputport>
-        <inputport name="step">.none</inputport>
-        <inputport name="useCompression">.yes</inputport>
-        <inputport name="workdir">.none</inputport>
     </functor>
     <functor name="CalcCostMap">
         <property key="dff.functor.alias" value="calcCostMap1315" />
@@ -30,7 +21,7 @@
     <functor name="SaveMap">
         <property key="dff.functor.alias" value="saveMap1317" />
         <inputport name="map" peerid="v2" />
-        <inputport name="filename">&quot;../../../../Dropbox/SESYNC GIS Database/dinamicaMaps/roadCost.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../../maps/croppedModel/roadCost.tif&quot;</inputport>
         <inputport name="suffixDigits">0</inputport>
         <inputport name="step">.none</inputport>
         <inputport name="useCompression">.yes</inputport>
@@ -38,7 +29,7 @@
     </functor>
     <functor name="LoadMap">
         <property key="dff.functor.alias" value="loadMap2775" />
-        <inputport name="filename">&quot;../../../../Dropbox/SESYNC GIS Database/dinamicaMaps/cropped2012.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../../maps/croppedModel/cropped2012.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -48,7 +39,7 @@
     </functor>
     <functor name="LoadMap">
         <property key="dff.functor.alias" value="loadMap2776" />
-        <inputport name="filename">&quot;../../../../Dropbox/SESYNC GIS Database/dinamicaMaps/finalSlope.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../../maps/croppedModel/finalSlope.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -58,7 +49,7 @@
     </functor>
     <functor name="LoadCategoricalMap">
         <property key="dff.functor.alias" value="loadCategoricalMap2777" />
-        <inputport name="filename">&quot;../../../../Dropbox/SESYNC GIS Database/dinamicaMaps/finalRoads.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../../maps/croppedModel/finalRoads.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
