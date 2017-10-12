@@ -8,7 +8,7 @@ library(rasterVis)
 library(rgdal) 
 
 # Extent wanted for all from the bigger files
-extentWanted <- extent(-65, -58, -25, -10)
+extentWanted <- extent(-65, -60, -25, -20)
 
 # Changing the working directory to dropbox. This command works differently for mac and windows so use the correct one
 # Windows 
@@ -51,16 +51,16 @@ finalRoads <- crop(initialRoads, mapWanted)
 finalRivers <- crop(initialRivers, mapWanted)
 
 # Finally they get written out - using INT2S for categorical and integer continuous variables, and FLT4S for non-integer continuous variables
-writeRaster(finalAdmin2, filename = "dinamicaMaps/finalAdmin2.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalEcoregions, filename = "dinamicaMaps/finalEcoregions.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalBrazilBiomes, filename = "dinamicaMaps/finalBrazilBiomes.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalTemperature, filename = "dinamicaMaps/finalTemperature.tif", datatype = "FLT4S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalPrecipitation, filename = "dinamicaMaps/finalPrecipitation.tif", datatype = "FLT4S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalSlope, filename = "dinamicaMaps/finalSlope.tif", datatype = "FLT4S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalElevation, filename = "dinamicaMaps/finalElevation.tif", datatype = "FLT4S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalPopulation, filename = "dinamicaMaps/finalPopulation.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalProtectedAreas, filename = "dinamicaMaps/finalProtectedAreas.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalTowns, filename = "dinamicaMaps/finalTowns.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalPorts, filename = "dinamicaMaps/finalPorts.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalRoads, filename = "dinamicaMaps/finalRoads.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalRivers, filename = "dinamicaMaps/finalRivers.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalAdmin2, filename = "dinamica/maps/finalAdmin2.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalEcoregions, filename = "dinamica/maps/finalEcoregions.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalBrazilBiomes, filename = "dinamica/maps/finalBrazilBiomes.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalTemperature, filename = "dinamica/maps/finalTemperature.tif", datatype = "FLT4S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalPrecipitation, filename = "dinamica/maps/finalPrecipitation.tif", datatype = "FLT4S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalSlope, filename = "dinamica/maps/finalSlope.tif", datatype = "FLT4S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalElevation, filename = "dinamica/maps/finalElevation.tif", datatype = "FLT4S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalPopulation, filename = "dinamica/maps/finalPopulation.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalProtectedAreas, filename = "dinamica/maps/finalProtectedAreas.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalTowns, filename = "dinamica/maps/finalTowns.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalPorts, filename = "dinamica/maps/finalPorts.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalRoads, filename = "dinamica/maps/finalRoads.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalRivers, filename = "dinamica/maps/finalRivers.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
