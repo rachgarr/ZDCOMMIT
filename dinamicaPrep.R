@@ -18,6 +18,8 @@ setwd("~/Dropbox/SESYNC GIS Database/")
 # The layers needed are: admin level 2, TNC ecoregions, Brazil Biomes, temperature, precipitation, elevation, population, protected areas, distance to towns, distance to ports, distance to roads, distance to rivers
 
 # We will need to load all of these 
+initial2012Image <- raster("Land_Use_Class/Jordan/final_2012.tif") # Loading a tif file 
+initial2013Image <- raster("Land_Use_Class/Jordan/final_2013.tif") # Loading a tif file 
 initialAdmin2 <- raster("Admin/final_level2.tif")
 initialEcoregions <- raster("Biomes/final_tnc_terr_ecoregions.tif")
 initialBrazilBiomes <- raster("Biomes/final_Brazil_Biomes.tif")
@@ -37,6 +39,8 @@ initialSlaughterhouses<- raster("Supply_Chain/Slaughter House/final_Fridges.tif"
 mapWanted<- raster(crs = "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0", ext = extentWanted)
 
 # We then crop the initial maps with the map we generated
+new2012Image <- crop(initial2012Image, mapWanted)
+new2013Image <- crop(initial2013Image, mapWanted)
 finalAdmin2 <- crop(initialAdmin2, mapWanted) 
 finalEcoregions <- crop(initialEcoregions, mapWanted)
 finalBrazilBiomes <- crop(initialBrazilBiomes, mapWanted)
@@ -53,6 +57,8 @@ finalRivers <- crop(initialRivers, mapWanted)
 finalSlaughterhouses <- crop(initialSlaughterhouses, mapWanted)
 
 # Finally they get written out - using INT2S for categorical and integer continuous variables, and FLT4S for non-integer continuous variables
+writeRaster(new2012Image, filename = "dinamica/maps/croppedModel/cropped2012.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(new2013Image, filename = "dinamica/maps/croppedModel/cropped2013.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalAdmin2, filename = "dinamica/maps/croppedModel/finalAdmin2.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalEcoregions, filename = "dinamica/maps/croppedModel/finalEcoregions.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalBrazilBiomes, filename = "dinamica/maps/croppedModel/finalBrazilBiomes.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
@@ -62,7 +68,7 @@ writeRaster(finalSlope, filename = "dinamica/maps/croppedModel/finalSlope.tif", 
 writeRaster(finalElevation, filename = "dinamica/maps/croppedModel/finalElevation.tif", datatype = "FLT4S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalPopulation, filename = "dinamica/maps/croppedModel/finalPopulation.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalProtectedAreas, filename = "dinamica/maps/croppedModel/finalProtectedAreas.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
-writeRaster(finalTowns, filename = "dinamica/maps/croppedModel/finalTowns.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalTowns, filename = "dinamica/maps/croppedModel/finalTowns.tif", datatype = "INT4S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalPorts, filename = "dinamica/maps/croppedModel/finalPorts.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalRoads, filename = "dinamica/maps/croppedModel/finalRoads.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalRivers, filename = "dinamica/maps/croppedModel/finalRivers.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
