@@ -1,0 +1,61 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Oct-12 17:32:53" />
+    <property key="dff.version" value="4.0.2.20170722" />
+    <functor name="CalcDistanceToFeatureMap">
+        <property key="dff.functor.alias" value="calcDistanceToFeatureMap2599" />
+        <inputport name="source" peerid="v3" />
+        <inputport name="mask">.none</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="truncateDistance">.no</inputport>
+        <outputport name="distance" id="v1" />
+    </functor>
+    <functor name="CalcDistanceToFeatureMap">
+        <property key="dff.functor.alias" value="calcDistanceToFeatureMap2600" />
+        <inputport name="source" peerid="v4" />
+        <inputport name="mask">.none</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="truncateDistance">.no</inputport>
+        <outputport name="distance" id="v2" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="loadCategoricalMap2601" />
+        <inputport name="filename">&quot;../../../maps/croppedModel/finalTowns.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v3" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="loadCategoricalMap2602" />
+        <inputport name="filename">&quot;../../../maps/croppedModel/finalSlaughterhouses.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v4" />
+    </functor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap2603" />
+        <inputport name="map" peerid="v1" />
+        <inputport name="filename">&quot;../../../maps/croppedModel/distanceToTown.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap2604" />
+        <inputport name="map" peerid="v2" />
+        <inputport name="filename">&quot;../../../maps/croppedModel/distanceToSlaughterhouse.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
+</script>
