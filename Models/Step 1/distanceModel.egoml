@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2017-Oct-12 17:32:53" />
+    <property key="dff.date" value="2017-Oct-19 17:39:54" />
     <property key="dff.version" value="4.0.2.20170722" />
     <functor name="CalcDistanceToFeatureMap">
         <property key="dff.functor.alias" value="calcDistanceToFeatureMap2599" />
@@ -53,6 +53,34 @@
         <property key="dff.functor.alias" value="saveMap2604" />
         <inputport name="map" peerid="v2" />
         <inputport name="filename">&quot;../../../maps/croppedModel/distanceToSlaughterhouse.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="loadCategoricalMap2827" />
+        <inputport name="filename">&quot;../../../maps/croppedModel/recategorized2012Landscape.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v5" />
+    </functor>
+    <functor name="CalcDistanceMap">
+        <property key="dff.functor.alias" value="calcDistanceMap2828" />
+        <inputport name="categoricalMap" peerid="v5" />
+        <inputport name="categories">[ 1 ]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="truncateDistance">.no</inputport>
+        <outputport name="distance" id="v6" />
+    </functor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap2829" />
+        <inputport name="map" peerid="v6" />
+        <inputport name="filename">&quot;../../../maps/croppedModel/distanceToNonForest.tif&quot;</inputport>
         <inputport name="suffixDigits">2</inputport>
         <inputport name="step">.none</inputport>
         <inputport name="useCompression">.yes</inputport>

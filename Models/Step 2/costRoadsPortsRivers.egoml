@@ -1,10 +1,10 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2017-Oct-12 17:32:59" />
+    <property key="dff.date" value="2017-Oct-18 15:19:49" />
     <property key="dff.version" value="4.0.2.20170722" />
     <functor name="LookupTable">
         <property key="dff.functor.alias" value="lookupTable1308" />
-        <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 1000,&#x0A;    2 80,&#x0A;    3 50,&#x0A;    4 900,&#x0A;    5 20,&#x0A;    6 1,&#x0A;    7 2&#x0A;]</inputport>
+        <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 60,&#x0A;    2 4,&#x0A;    3 60,&#x0A;    4 4,&#x0A;    5 6,&#x0A;    6 1,&#x0A;    7 60&#x0A;]</inputport>
         <outputport name="object" id="v1" />
     </functor>
     <functor name="CalcCostMap">
