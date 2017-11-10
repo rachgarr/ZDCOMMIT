@@ -31,7 +31,7 @@ initialPopulation <- raster("Population/final-v4-population-density_2010.tif")
 initialProtectedAreas <- raster("Protected_Area/WDPA_Protected/final_WDPA_Sept2016-shapefile-polygons.tif")
 initialTowns <- raster("Towns_Population/towns/final_POP_MAX__Towns_over50k.tif")
 initialPorts <- raster("transport data/Ports/final_Ports.tif")
-initialRoads <- raster("transport data/Roads_DigitalCharts/final_Merged_Roads_major.tif")
+initialRoads <- raster("transport data/Roads_OpenStMap/OpenStreetMap_paved_unpaved/final_Merged_Roads_pave.tif")
 initialRivers <- raster("transport data/sa_riv_30s/final_sa_riv_30.tif")
 initialSlaughterhouses<- raster("Supply_Chain/Slaughter House/final_Fridges.tif")
 
