@@ -1,10 +1,10 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2017-Oct-18 15:19:49" />
+    <property key="dff.date" value="2017-Oct-24 16:52:34" />
     <property key="dff.version" value="4.0.2.20170722" />
     <functor name="LookupTable">
         <property key="dff.functor.alias" value="lookupTable1308" />
-        <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 60,&#x0A;    2 4,&#x0A;    3 60,&#x0A;    4 4,&#x0A;    5 6,&#x0A;    6 1,&#x0A;    7 60&#x0A;]</inputport>
+        <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 60,&#x0A;    2 4,&#x0A;    3 60,&#x0A;    4 4,&#x0A;    5 6,&#x0A;    6 1,&#x0A;    7 2,&#x0A;    8 60&#x0A;]</inputport>
         <outputport name="object" id="v1" />
     </functor>
     <functor name="CalcCostMap">
@@ -85,7 +85,7 @@
     <containerfunctor name="CalculateMap">
         <property key="dff.container.collapsed" value="no" />
         <property key="dff.functor.alias" value="calculateMap2779" />
-        <inputport name="expression">[&#x0A;    if not isNull(i3) then&#x0A;        t1[i3]&#x0A;    else if not isNull(i2) then&#x0A;        t1[i2]&#x0A;    else &#x0A;        t1[i1]&#x0A;]</inputport>
+        <inputport name="expression">[&#x0A;    if not isNull(i2) then&#x0A;        t1[i2]&#x0A;    else if not isNull(i3) then&#x0A;        t1[i3]&#x0A;    else &#x0A;        t1[i1]&#x0A;]</inputport>
         <inputport name="cellType">.int32</inputport>
         <inputport name="nullValue">.default</inputport>
         <inputport name="resultIsSparse">.no</inputport>
@@ -170,7 +170,7 @@
     <containerfunctor name="CalculateMap">
         <property key="dff.container.collapsed" value="no" />
         <property key="dff.functor.alias" value="calculateMap3285" />
-        <inputport name="expression">[&#x0A;    if not isNull(i1) then&#x0A;        6&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+        <inputport name="expression">[&#x0A;    if i1 = 1 then&#x0A;        6&#x0A;    else if i1 = 0 then&#x0A;        7&#x0A;    else &#x0A;        null&#x0A;]</inputport>
         <inputport name="cellType">.int32</inputport>
         <inputport name="nullValue">.default</inputport>
         <inputport name="resultIsSparse">.no</inputport>
@@ -185,7 +185,7 @@
     <containerfunctor name="CalculateMap">
         <property key="dff.container.collapsed" value="no" />
         <property key="dff.functor.alias" value="calculateMap3285" />
-        <inputport name="expression">[&#x0A;    if not isNull(i1) then&#x0A;        7&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+        <inputport name="expression">[&#x0A;    if not isNull(i1) then&#x0A;        8&#x0A;    else &#x0A;        null&#x0A;]</inputport>
         <inputport name="cellType">.int32</inputport>
         <inputport name="nullValue">.default</inputport>
         <inputport name="resultIsSparse">.no</inputport>
