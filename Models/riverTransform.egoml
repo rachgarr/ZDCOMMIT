@@ -1,0 +1,67 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Nov-15 15:22:07" />
+    <property key="dff.version" value="4.0.4.20171107" />
+    <property key="submodel.import" value='ListFilenamesInFolder { { &quot;folder&quot; : Folder, &quot;fileExtension&quot; : String } { &quot;searchSubFoldersRecursively&quot; : BooleanValue } { &quot;files&quot; : Table } }; ReplaceAllText { { &quot;inputText&quot; : String, &quot;patternText&quot; : String, &quot;replacementText&quot; : String } { &quot;useRegularExpression&quot; : BooleanValue } { &quot;result&quot; : String } }' />
+    <functor name="ListFilenamesInFolder">
+        <property key="dff.functor.alias" value="listFilenamesInFolder5733" />
+        <inputport name="folder">&quot;../../../../../Desktop/rivers&quot;</inputport>
+        <inputport name="fileExtension">&quot;tif&quot;</inputport>
+        <inputport name="searchSubFoldersRecursively">.no</inputport>
+        <outputport name="files" id="v1" />
+    </functor>
+    <functor name="GetTableKeys">
+        <property key="dff.functor.alias" value="getTableKeys5734" />
+        <inputport name="table" peerid="v1" />
+        <outputport name="keys" id="v2" />
+    </functor>
+    <containerfunctor name="ForEach">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="forEach5735" />
+        <inputport name="elements" peerid="v2" />
+        <internaloutputport name="step" id="v3" />
+        <functor name="Step">
+            <property key="dff.functor.alias" value="step5736" />
+            <inputport name="step" peerid="v3" />
+            <outputport name="step" id="v4" />
+        </functor>
+        <functor name="TransformMap">
+            <property key="dff.functor.alias" value="transformMap2602" />
+            <inputport name="inputMapFilename" peerid="v6" />
+            <inputport name="outputMapFilename" peerid="v7" />
+            <inputport name="outputFormatMapFilename">.none</inputport>
+            <inputport name="outputMapProjection">[| &quot;LATLONG&quot;, &quot;GEODETIC&quot;, &quot;WGS84&quot;, &quot;METERS&quot; |]</inputport>
+            <inputport name="outputMapCellType">.int32</inputport>
+            <inputport name="outputMapNullValue">.default</inputport>
+            <inputport name="resamplingMethod">.nearest</inputport>
+            <inputport name="additionalInputMapNullValue">.none</inputport>
+            <inputport name="inputMapProjection">.none</inputport>
+            <inputport name="outputMapLines">.none</inputport>
+            <inputport name="outputMapColumns">.none</inputport>
+            <inputport name="outputMapCellWidth">0.00229868181817678</inputport>
+            <inputport name="outputMapCellHeight">0.00229868181817949</inputport>
+            <inputport name="useCompression">.yes</inputport>
+        </functor>
+        <functor name="GetTableValue">
+            <property key="dff.functor.alias" value="getTableValue5737" />
+            <inputport name="table" peerid="v1" />
+            <inputport name="keys" peerid="v4" />
+            <inputport name="column">2</inputport>
+            <inputport name="valueIfNotFound">.none</inputport>
+            <outputport name="result" id="v5" />
+        </functor>
+        <functor name="String">
+            <property key="dff.functor.alias" value="string5738" />
+            <inputport name="constant" peerid="v5" />
+            <outputport name="object" id="v6" />
+        </functor>
+        <functor name="ReplaceAllText">
+            <property key="dff.functor.alias" value="replaceAllText8952" />
+            <inputport name="inputText" peerid="v6" />
+            <inputport name="patternText">&quot;occurrence&quot;</inputport>
+            <inputport name="replacementText">&quot;river&quot;</inputport>
+            <inputport name="useRegularExpression">.no</inputport>
+            <outputport name="result" id="v7" />
+        </functor>
+    </containerfunctor>
+</script>

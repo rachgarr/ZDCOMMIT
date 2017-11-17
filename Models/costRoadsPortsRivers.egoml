@@ -1,10 +1,10 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2017-Oct-24 16:52:34" />
-    <property key="dff.version" value="4.0.2.20170722" />
+    <property key="dff.date" value="2017-Nov-16 16:26:23" />
+    <property key="dff.version" value="4.0.4.20171107" />
     <functor name="LookupTable">
         <property key="dff.functor.alias" value="lookupTable1308" />
-        <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 60,&#x0A;    2 4,&#x0A;    3 60,&#x0A;    4 4,&#x0A;    5 6,&#x0A;    6 1,&#x0A;    7 2,&#x0A;    8 60&#x0A;]</inputport>
+        <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 300,&#x0A;    2 20,&#x0A;    3 300,&#x0A;    4 20,&#x0A;    5 30,&#x0A;    6 5,&#x0A;    7 15,&#x0A;    8 300&#x0A;]</inputport>
         <outputport name="object" id="v1" />
     </functor>
     <functor name="CalcCostMap">
@@ -21,15 +21,16 @@
     <functor name="SaveMap">
         <property key="dff.functor.alias" value="saveMap1317" />
         <inputport name="map" peerid="v2" />
-        <inputport name="filename">&quot;../../../maps/croppedModel/portsCost.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../maps/croppedModel/portsCost.tif&quot;</inputport>
         <inputport name="suffixDigits">0</inputport>
         <inputport name="step">.none</inputport>
         <inputport name="useCompression">.yes</inputport>
         <inputport name="workdir">.none</inputport>
+        <inputport name="ignoreCostlySparseCategories">.yes</inputport>
     </functor>
     <functor name="LoadMap">
         <property key="dff.functor.alias" value="loadMap2776" />
-        <inputport name="filename">&quot;../../../maps/croppedModel/finalSlope.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../maps/croppedModel/finalSlope.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -39,7 +40,7 @@
     </functor>
     <functor name="LoadCategoricalMap">
         <property key="dff.functor.alias" value="loadCategoricalMap2777" />
-        <inputport name="filename">&quot;../../../maps/croppedModel/finalPorts.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../maps/croppedModel/finalPorts.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -49,7 +50,7 @@
     </functor>
     <functor name="LoadMap">
         <property key="dff.functor.alias" value="loadMap2775" />
-        <inputport name="filename">&quot;../../../maps/croppedModel/cropped2012.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../maps/croppedModel/cropped2012.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -64,7 +65,7 @@
     </functor>
     <functor name="LoadCategoricalMap">
         <property key="dff.functor.alias" value="loadCategoricalMap2777" />
-        <inputport name="filename">&quot;../../../maps/croppedModel/finalRivers.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../maps/croppedModel/finalRivers.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -74,7 +75,7 @@
     </functor>
     <functor name="LoadCategoricalMap">
         <property key="dff.functor.alias" value="loadCategoricalMap2777" />
-        <inputport name="filename">&quot;../../../maps/croppedModel/finalRoads.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../maps/croppedModel/finalRoads.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>

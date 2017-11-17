@@ -1,0 +1,172 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Nov-13 17:07:15" />
+    <property key="dff.version" value="4.0.2.20170722" />
+    <property key="submodel.import" value='DecorateMapAttributeTable { { &quot;attributeLookupTable&quot; : LookupTable } { &quot;useAttributeCodeName&quot; : BooleanValue } { &quot;attributeTableWithNames&quot; : Table } }' />
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2547" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2013.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v1" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2548" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2012.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v2" />
+    </functor>
+    <functor name="CalcAreas">
+        <property key="dff.functor.alias" value="calcAreas2552" />
+        <inputport name="source" peerid="v4" />
+        <outputport name="areas" id="v3" />
+    </functor>
+    <functor name="SaveTable">
+        <property key="dff.functor.alias" value="saveTable2553" />
+        <inputport name="table" peerid="v3" />
+        <inputport name="filename">&quot;../../../../../Desktop/grossChange.csv&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap2554" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    if i1 != i2 then&#x0A;        i1 * 100 + i2&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v4" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2551" />
+            <inputport name="map" peerid="v1" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2550" />
+            <inputport name="map" peerid="v2" />
+            <inputport name="mapNumber">2</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="ForEach">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="forEach2556" />
+        <inputport name="elements" peerid="v15" />
+        <internaloutputport name="step" id="v5" />
+        <functor name="Step">
+            <property key="dff.functor.alias" value="step2557" />
+            <inputport name="step" peerid="v5" />
+            <outputport name="step" id="v6" />
+        </functor>
+        <containerfunctor name="CalculateValue">
+            <property key="dff.container.collapsed" value="no" />
+            <property key="dff.functor.alias" value="calculateValue2561" />
+            <property key="viewer.result" value="yes" />
+            <inputport name="expression">[&#x0A;    v1 % 100&#x0A;]</inputport>
+            <inputport name="defaultValue">.none</inputport>
+            <outputport name="result" id="v7" />
+            <functor name="NumberValue">
+                <property key="dff.functor.alias" value="numberValue2562" />
+                <inputport name="value" peerid="v6" />
+                <inputport name="valueNumber">1</inputport>
+            </functor>
+        </containerfunctor>
+        <containerfunctor name="CalculateValue">
+            <property key="dff.container.collapsed" value="no" />
+            <property key="dff.functor.alias" value="calculateValue2559" />
+            <property key="viewer.result" value="yes" />
+            <inputport name="expression">[&#x0A;    floor(v1 / 100)&#x0A;]</inputport>
+            <inputport name="defaultValue">.none</inputport>
+            <outputport name="result" id="v8" />
+            <functor name="NumberValue">
+                <property key="dff.functor.alias" value="numberValue2560" />
+                <inputport name="value" peerid="v6" />
+                <inputport name="valueNumber">1</inputport>
+            </functor>
+        </containerfunctor>
+        <functor name="GetTableValue">
+            <property key="dff.functor.alias" value="getTableValue2563" />
+            <inputport name="table" peerid="v3" />
+            <inputport name="keys" peerid="v6" />
+            <inputport name="column">2</inputport>
+            <inputport name="valueIfNotFound">.none</inputport>
+            <outputport name="result" id="v9" />
+        </functor>
+        <functor name="SetTableCellValue">
+            <property key="dff.functor.alias" value="setTableCellValue2564" />
+            <inputport name="table" peerid="v12" />
+            <inputport name="column">3</inputport>
+            <inputport name="keys" peerid="v11" />
+            <inputport name="value" peerid="v9" />
+            <outputport name="result" id="v10" />
+        </functor>
+        <functor name="AddTupleValue">
+            <property key="dff.functor.alias" value="addTupleValue2565" />
+            <inputport name="tuple" peerid="v14" />
+            <inputport name="value" peerid="v13" />
+            <outputport name="result" id="v11" />
+        </functor>
+        <functor name="MuxTable">
+            <property key="dff.functor.alias" value="muxTable2566" />
+            <inputport name="initial">[&#x0A;    &quot;From*#str&quot;, &quot;To*#str&quot;, &quot;Cells&quot;, &#x0A;]</inputport>
+            <inputport name="feedback" peerid="v10" />
+            <outputport name="table" id="v12" />
+        </functor>
+        <functor name="GetTableValue">
+            <property key="dff.functor.alias" value="getTableValue2569" />
+            <inputport name="table" peerid="v16" />
+            <inputport name="keys" peerid="v7" />
+            <inputport name="column">2</inputport>
+            <inputport name="valueIfNotFound">.none</inputport>
+            <outputport name="result" id="v13" />
+        </functor>
+        <functor name="GetTableValue">
+            <property key="dff.functor.alias" value="getTableValue2570" />
+            <inputport name="table" peerid="v16" />
+            <inputport name="keys" peerid="v8" />
+            <inputport name="column">2</inputport>
+            <inputport name="valueIfNotFound">.none</inputport>
+            <outputport name="result" id="v14" />
+        </functor>
+    </containerfunctor>
+    <functor name="GetTableKeys">
+        <property key="dff.functor.alias" value="getTableKeys2558" />
+        <inputport name="table" peerid="v3" />
+        <outputport name="keys" id="v15" />
+    </functor>
+    <functor name="SaveTable">
+        <property key="dff.functor.alias" value="saveTable2567" />
+        <inputport name="table" peerid="v10" />
+        <inputport name="filename">&quot;grossChange.csv&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
+    <functor name="Table">
+        <property key="dff.functor.alias" value="table2568" />
+        <inputport name="constant">[&#x0A;    &quot;Key*&quot;, &quot;Value&quot;, &#x0A;    1, &quot;built-up&quot;, &#x0A;    3, &quot;shrubs&quot;, &#x0A;    2, &quot;cropland&quot;, &#x0A;    4, &quot;trees&quot;, &#x0A;    5, &quot;pastureland&quot;, &#x0A;    6, &quot;bare&quot;, &#x0A;    7, &quot;plantation&quot;, &#x0A;    8, &quot;water&quot;, &#x0A;    9, &quot;plantation trees&quot;, &#x0A;]</inputport>
+        <outputport name="object" id="v16" />
+    </functor>
+    <functor name="ExtractMapAttributes">
+        <property key="dff.functor.alias" value="extractMapAttributes2571" />
+        <inputport name="map" peerid="v1" />
+        <inputport name="extractDynamicAttributes">.yes</inputport>
+        <inputport name="extractStatisticalAttributes">.yes</inputport>
+        <outputport name="attributes" id="v17" />
+    </functor>
+    <functor name="DecorateMapAttributeTable">
+        <property key="dff.functor.alias" value="decorateMapAttributeTable5621" />
+        <property key="viewer.attributetablewithnames" value="yes" />
+        <inputport name="attributeLookupTable" peerid="v17" />
+        <inputport name="useAttributeCodeName">.no</inputport>
+    </functor>
+</script>

@@ -1,0 +1,445 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Nov-15 16:54:23" />
+    <property key="dff.version" value="4.0.4.20171107" />
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2726" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_60W_30S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v1" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2727" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_60W_40S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v2" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2728" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_70W_0N.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v3" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2729" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_70W_10N.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v4" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2730" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_70W_10S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v5" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2731" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_70W_20S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v6" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2732" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_70W_30S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v7" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2733" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_70W_40S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v8" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2734" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_70W_50S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v9" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2735" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_80W_0N.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v10" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2736" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_80W_10N.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v11" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2737" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_80W_10S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v12" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2738" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_80W_20S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v13" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2739" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_80W_30S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v14" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2740" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_80W_40S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v15" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2741" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_80W_50S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v16" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2742" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_40W_0N.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v17" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2743" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_40W_10S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v18" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2744" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_40W_20S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v19" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2745" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_50W_0N.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v20" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2746" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_50W_10N.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v21" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2747" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_50W_10S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v22" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2748" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_50W_20S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v23" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2749" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_50W_30S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v24" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2750" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_60W_0N.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v25" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2751" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_60W_10N.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v26" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2752" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_60W_10S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v27" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap2753" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/river_60W_20S.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v28" />
+    </functor>
+    <containerfunctor name="CalculateMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateMap2754" />
+        <inputport name="expression">[&#x0A;    if not isNull(i1) then&#x0A;        i1&#x0A;    else if not isNull(i2) then&#x0A;        i2&#x0A;    else if not isNull(i3) then&#x0A;        i3&#x0A;    else if not isNull(i4) then&#x0A;        i4&#x0A;    else if not isNull(i5) then&#x0A;        i5&#x0A;    else if not isNull(i6) then&#x0A;        i6&#x0A;    else if not isNull(i7) then&#x0A;        i7&#x0A;    else if not isNull(i8) then&#x0A;        i8&#x0A;    else if not isNull(i9) then&#x0A;        i9&#x0A;    else if not isNull(i10) then&#x0A;        i10&#x0A;    else if not isNull(i11) then&#x0A;        i11&#x0A;    else if not isNull(i12) then&#x0A;        i12&#x0A;    else if not isNull(i13) then&#x0A;        i13&#x0A;    else if not isNull(i14) then&#x0A;        i14&#x0A;    else if not isNull(i15) then&#x0A;        i15&#x0A;    else if not isNull(i16) then&#x0A;        i16&#x0A;    else if not isNull(i17) then&#x0A;        i17&#x0A;    else if not isNull(i18) then&#x0A;        i18&#x0A;    else if not isNull(i19) then&#x0A;        i19&#x0A;    else if not isNull(i20) then&#x0A;        i20&#x0A;    else if not isNull(i21) then&#x0A;        i21&#x0A;    else if not isNull(i22) then&#x0A;        i22&#x0A;    else if not isNull(i23) then&#x0A;        i23&#x0A;    else if not isNull(i24) then&#x0A;        i24&#x0A;    else if not isNull(i25) then&#x0A;        i25&#x0A;    else if not isNull(i26) then&#x0A;        i26&#x0A;    else if not isNull(i27) then&#x0A;        i27&#x0A;    else if not isNull(i28) then&#x0A;        i28&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+        <inputport name="cellType">.int16</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v29" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v1" />
+            <inputport name="mapNumber">26</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v11" />
+            <inputport name="mapNumber">18</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v2" />
+            <inputport name="mapNumber">25</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v24" />
+            <inputport name="mapNumber">8</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v4" />
+            <inputport name="mapNumber">24</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v12" />
+            <inputport name="mapNumber">17</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v5" />
+            <inputport name="mapNumber">23</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v10" />
+            <inputport name="mapNumber">3</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v6" />
+            <inputport name="mapNumber">22</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v13" />
+            <inputport name="mapNumber">27</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v7" />
+            <inputport name="mapNumber">21</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v17" />
+            <inputport name="mapNumber">2</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v8" />
+            <inputport name="mapNumber">20</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v14" />
+            <inputport name="mapNumber">16</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v9" />
+            <inputport name="mapNumber">19</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v26" />
+            <inputport name="mapNumber">7</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v15" />
+            <inputport name="mapNumber">15</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v16" />
+            <inputport name="mapNumber">14</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v27" />
+            <inputport name="mapNumber">6</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v18" />
+            <inputport name="mapNumber">13</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v20" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v19" />
+            <inputport name="mapNumber">12</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v28" />
+            <inputport name="mapNumber">5</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v21" />
+            <inputport name="mapNumber">11</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v25" />
+            <inputport name="mapNumber">28</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2755" />
+            <inputport name="map" peerid="v22" />
+            <inputport name="mapNumber">10</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v3" />
+            <inputport name="mapNumber">4</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap2756" />
+            <inputport name="map" peerid="v23" />
+            <inputport name="mapNumber">9</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap2807" />
+        <inputport name="map" peerid="v29" />
+        <inputport name="filename">&quot;../../../../../Desktop/rivers/mergedRivers.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+        <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+    </functor>
+</script>
