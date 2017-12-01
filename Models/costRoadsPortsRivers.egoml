@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2017-Nov-16 16:26:23" />
+    <property key="dff.date" value="2017-Nov-28 16:31:34" />
     <property key="dff.version" value="4.0.4.20171107" />
     <functor name="LookupTable">
         <property key="dff.functor.alias" value="lookupTable1308" />
@@ -21,7 +21,7 @@
     <functor name="SaveMap">
         <property key="dff.functor.alias" value="saveMap1317" />
         <inputport name="map" peerid="v2" />
-        <inputport name="filename">&quot;../../maps/croppedModel/portsCost.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../data/croppedModel/inputMaps/portsCost.tif&quot;</inputport>
         <inputport name="suffixDigits">0</inputport>
         <inputport name="step">.none</inputport>
         <inputport name="useCompression">.yes</inputport>
@@ -30,7 +30,7 @@
     </functor>
     <functor name="LoadMap">
         <property key="dff.functor.alias" value="loadMap2776" />
-        <inputport name="filename">&quot;../../maps/croppedModel/finalSlope.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../data/croppedModel/forCostMap/finalSlope.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -40,7 +40,7 @@
     </functor>
     <functor name="LoadCategoricalMap">
         <property key="dff.functor.alias" value="loadCategoricalMap2777" />
-        <inputport name="filename">&quot;../../maps/croppedModel/finalPorts.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../data/croppedModel/forCostMap/finalPorts.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -50,7 +50,7 @@
     </functor>
     <functor name="LoadMap">
         <property key="dff.functor.alias" value="loadMap2775" />
-        <inputport name="filename">&quot;../../maps/croppedModel/cropped2012.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../data/croppedModel/inputMaps/cropped2012.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -65,7 +65,7 @@
     </functor>
     <functor name="LoadCategoricalMap">
         <property key="dff.functor.alias" value="loadCategoricalMap2777" />
-        <inputport name="filename">&quot;../../maps/croppedModel/finalRivers.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../data/croppedModel/forCostMap/finalRivers.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -75,7 +75,7 @@
     </functor>
     <functor name="LoadCategoricalMap">
         <property key="dff.functor.alias" value="loadCategoricalMap2777" />
-        <inputport name="filename">&quot;../../maps/croppedModel/finalRoads.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../data/croppedModel/forCostMap/finalRoads.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>

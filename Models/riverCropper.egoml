@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2017-Nov-15 16:54:10" />
+    <property key="dff.date" value="2017-Nov-28 16:35:30" />
     <property key="dff.version" value="4.0.4.20171107" />
     <property key="submodel.import" value='CropMapUsingMask { { &quot;inputMap&quot; : Map, &quot;outputMask&quot; : Map } { } { &quot;outputMap&quot; : Map } }' />
     <functor name="CropMapUsingMask">
@@ -11,7 +11,7 @@
     </functor>
     <functor name="LoadMap">
         <property key="dff.functor.alias" value="loadMap6085" />
-        <inputport name="filename">&quot;cropped2012.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../data/croppedModel/inputMaps/cropped2012.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -21,7 +21,7 @@
     </functor>
     <functor name="LoadMap">
         <property key="dff.functor.alias" value="loadMap6086" />
-        <inputport name="filename">&quot;../../../../../Desktop/rivers/mergedRivers.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../../transport data/GlobalSurfaceWater/mergedRivers.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -32,7 +32,7 @@
     <functor name="SaveMap">
         <property key="dff.functor.alias" value="saveMap6087" />
         <inputport name="map" peerid="v4" />
-        <inputport name="filename">&quot;croppedRivers.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../data/croppedModel/forCostMap/finalRivers.tif&quot;</inputport>
         <inputport name="suffixDigits">2</inputport>
         <inputport name="step">.none</inputport>
         <inputport name="useCompression">.yes</inputport>

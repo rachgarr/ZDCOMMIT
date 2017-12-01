@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Nov-17 17:00:26" />
+    <property key="dff.version" value="4.0.4.20171107" />
+    <property key="submodel.import" value='LmCalcMeanPatchSizesAndStandardDeviations { { &quot;patches&quot; : CategoricalMap } { } { &quot;meanPatchSizesAndStandardDeviations&quot; : Table, &quot;patchSizes&quot; : Table } }' />
+    <functor name="LmCalcMeanPatchSizesAndStandardDeviations">
+        <property key="dff.functor.alias" value="lmCalcMeanPatchSizesAndStandardDeviations3725" />
+        <property key="viewer.meanpatchsizesandstandarddeviations" value="yes" />
+        <property key="viewer.patchsizes" value="yes" />
+        <inputport name="patches" peerid="v4" />
+        <outputport name="meanPatchSizesAndStandardDeviations" id="v1" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="loadCategoricalMap3726" />
+        <inputport name="filename">&quot;recategorized2012Landscape.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v2" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="loadCategoricalMap3727" />
+        <inputport name="filename">&quot;recategorized2013Landscape.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v3" />
+    </functor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap3728" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    if i1 = 5 and i2 = 3 then&#x0A;        1&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v4" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap3729" />
+            <inputport name="map" peerid="v2" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap3730" />
+            <inputport name="map" peerid="v3" />
+            <inputport name="mapNumber">2</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="SaveTable">
+        <property key="dff.functor.alias" value="saveTable3731" />
+        <inputport name="table" peerid="v1" />
+        <inputport name="filename">&quot;../meanPatchSizes.csv&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
+</script>

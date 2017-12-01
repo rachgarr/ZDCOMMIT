@@ -1,0 +1,145 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Nov-17 17:00:36" />
+    <property key="dff.version" value="4.0.4.20171107" />
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap4228" />
+        <inputport name="filename">&quot;cornArea2012.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v1" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap4229" />
+        <inputport name="filename">&quot;cattleHeads2012.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v2" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap4230" />
+        <inputport name="filename">&quot;soyArea2012.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v3" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap4231" />
+        <inputport name="filename">&quot;soyYield2012.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v4" />
+    </functor>
+    <containerfunctor name="CalculateMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateMap4232" />
+        <inputport name="expression">[&#x0A;    if isNull(i1) then&#x0A;        0&#x0A;    else &#x0A;        i1&#x0A;]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v5" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap4233" />
+            <inputport name="map" peerid="v2" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateMap4232" />
+        <inputport name="expression">[&#x0A;    if isNull(i1) then&#x0A;        0&#x0A;    else &#x0A;        i1&#x0A;]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v6" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap4233" />
+            <inputport name="map" peerid="v1" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateMap4232" />
+        <inputport name="expression">[&#x0A;    if isNull(i1) then&#x0A;        0&#x0A;    else &#x0A;        i1&#x0A;]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v7" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap4233" />
+            <inputport name="map" peerid="v4" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateMap4232" />
+        <inputport name="expression">[&#x0A;    if isNull(i1) then&#x0A;        0&#x0A;    else &#x0A;        i1&#x0A;]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v8" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap4233" />
+            <inputport name="map" peerid="v3" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap4242" />
+        <inputport name="map" peerid="v5" />
+        <inputport name="filename">&quot;cattleHeads2012.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+        <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+    </functor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap4242" />
+        <inputport name="map" peerid="v7" />
+        <inputport name="filename">&quot;soyYield2012.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+        <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+    </functor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap4242" />
+        <inputport name="map" peerid="v8" />
+        <inputport name="filename">&quot;soyArea2012.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+        <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+    </functor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap4242" />
+        <inputport name="map" peerid="v6" />
+        <inputport name="filename">&quot;cornArea2012.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+        <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+    </functor>
+</script>

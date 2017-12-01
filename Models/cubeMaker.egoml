@@ -1,0 +1,213 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Nov-29 20:36:30" />
+    <property key="dff.version" value="4.0.4.20171107" />
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap5701" />
+        <inputport name="map" peerid="v1" />
+        <inputport name="filename">&quot;../../data/submodels/inputMaps/allStaticMaps.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+        <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+    </functor>
+    <containerfunctor name="CreateCubeMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="createCubeMap5165" />
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <outputport name="map" id="v1" />
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap5166" />
+            <inputport name="map" peerid="v4" />
+            <inputport name="mapName">&quot;protectedAreas&quot;</inputport>
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap5691" />
+            <inputport name="map" peerid="v2" />
+            <inputport name="mapName">&quot;ecoregions&quot;</inputport>
+            <inputport name="mapNumber">0</inputport>
+        </functor>
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap5692" />
+            <inputport name="map" peerid="v9" />
+            <inputport name="mapName">&quot;distanceToTown&quot;</inputport>
+            <inputport name="mapNumber">5</inputport>
+        </functor>
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap5693" />
+            <inputport name="map" peerid="v11" />
+            <inputport name="mapName">&quot;distanceToSlaughterhouse&quot;</inputport>
+            <inputport name="mapNumber">4</inputport>
+        </functor>
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap5694" />
+            <inputport name="map" peerid="v6" />
+            <inputport name="mapName">&quot;elevation&quot;</inputport>
+            <inputport name="mapNumber">3</inputport>
+        </functor>
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap5695" />
+            <inputport name="map" peerid="v12" />
+            <inputport name="mapName">&quot;distanceToProcessingFacilities&quot;</inputport>
+            <inputport name="mapNumber">6</inputport>
+        </functor>
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap5696" />
+            <inputport name="map" peerid="v10" />
+            <inputport name="mapName">&quot;portCost&quot;</inputport>
+            <inputport name="mapNumber">7</inputport>
+        </functor>
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap5697" />
+            <inputport name="map" peerid="v7" />
+            <inputport name="mapName">&quot;precipitation&quot;</inputport>
+            <inputport name="mapNumber">8</inputport>
+        </functor>
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap5698" />
+            <inputport name="map" peerid="v5" />
+            <inputport name="mapName">&quot;temperature&quot;</inputport>
+            <inputport name="mapNumber">10</inputport>
+        </functor>
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap5699" />
+            <inputport name="map" peerid="v3" />
+            <inputport name="mapName">&quot;brazilBiomes&quot;</inputport>
+            <inputport name="mapNumber">9</inputport>
+        </functor>
+        <functor name="NumberAndNameMap">
+            <property key="dff.functor.alias" value="numberAndNameMap5700" />
+            <inputport name="map" peerid="v8" />
+            <inputport name="mapName">&quot;population&quot;</inputport>
+            <inputport name="mapNumber">2</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="Group">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Static Maps" />
+        <property key="dff.functor.comment" value="Grouping of loading of all the statics" />
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2687" />
+            <property key="dff.functor.comment" value="Ecoregions" />
+            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/finalEcoregions.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v2" />
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2688" />
+            <property key="dff.functor.comment" value="BrazilBiomes" />
+            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/finalBrazilBiomes.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v3" />
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2689" />
+            <property key="dff.functor.comment" value="Protected Areas" />
+            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/finalProtectedAreas.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v4" />
+        </functor>
+        <functor name="LoadMap">
+            <property key="dff.functor.alias" value="loadMap2675" />
+            <property key="dff.functor.comment" value="Temperature" />
+            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/finalTemperature.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v5" />
+        </functor>
+        <functor name="LoadMap">
+            <property key="dff.functor.alias" value="loadMap2693" />
+            <property key="dff.functor.comment" value="Elevation" />
+            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/finalElevation.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v6" />
+        </functor>
+        <functor name="LoadMap">
+            <property key="dff.functor.alias" value="loadMap2677" />
+            <property key="dff.functor.comment" value="Precipitation" />
+            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/finalPrecipitation.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v7" />
+        </functor>
+        <functor name="LoadMap">
+            <property key="dff.functor.alias" value="loadMap2694" />
+            <property key="dff.functor.comment" value="Population" />
+            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/finalPopulation.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v8" />
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2695" />
+            <property key="dff.functor.comment" value="Towns" />
+            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/distanceToTown.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v9" />
+        </functor>
+        <functor name="LoadMap">
+            <property key="dff.functor.alias" value="loadMap2731" />
+            <property key="dff.functor.comment" value="Ports Cost Map" />
+            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/portsCost.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v10" />
+        </functor>
+        <functor name="LoadMap">
+            <property key="dff.functor.alias" value="loadMap2732" />
+            <property key="dff.functor.comment" value="Road Cost Map" />
+            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/distanceToSlaughterhouse.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v11" />
+        </functor>
+        <functor name="LoadMap">
+            <property key="dff.functor.alias" value="loadMap2834" />
+            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/distanceToProcessingFacilities.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v12" />
+        </functor>
+    </containerfunctor>
+</script>

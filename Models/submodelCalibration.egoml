@@ -1,0 +1,469 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Nov-30 17:40:41" />
+    <property key="dff.version" value="4.0.4.20171107" />
+    <property key="submodel.import" value='AllocateTransitions { { &quot;lanscape&quot; : CategoricalMap, &quot;probabilities&quot; : Map, &quot;transitionMatrix&quot; : TransitionMatrix, &quot;percentOfTransitionsByExpansion&quot; : PercentMatrix, &quot;patchExpansionParameters&quot; : TransitionFunctionParameterMatrix, &quot;patchGenerationParameters&quot; : TransitionFunctionParameterMatrix } { &quot;printTransitionInfo&quot; : BooleanValue } { &quot;resultingLanscape&quot; : CategoricalMap } }; CalcSimilarityOfDifferences { { &quot;initialMap&quot; : CategoricalMap, &quot;observedMap&quot; : CategoricalMap, &quot;simulatedMap&quot; : CategoricalMap } { &quot;useExponentialDecay&quot; : BooleanValue, &quot;windowSize&quot; : PositiveIntegerValue, &quot;printSimilarities&quot; : BooleanValue, &quot;exponentialDecayDivisor&quot; : RealValue } { &quot;similarityMap&quot; : Map, &quot;similarity&quot; : RealValue } }' />
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Regions" />
+        <property key="dff.functor.comment" value="Municipalities" />
+        <inputport name="filename">&quot;../../data/submodels/calibration/inputMaps/finalAdmin2.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v1" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Initial Landscape" />
+        <property key="dff.functor.comment" value="Initial landscape map." />
+        <inputport name="filename">&quot;../../data/submodels/calibration/inputMaps/recategorized2013Landscape.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v2" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Final Landscape" />
+        <property key="dff.functor.comment" value="Final landscape map." />
+        <inputport name="filename">&quot;../../data/submodels/calibration/inputMaps/recategorized2012Landscape.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v3" />
+    </functor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="Static Variables" />
+        <property key="dff.functor.comment" value="Static variable map." />
+        <inputport name="filename">&quot;../../data/submodels/calibration/inputMaps/allStaticMaps.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v4" />
+    </functor>
+    <containerfunctor name="RegionManager">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="regionManager5060" />
+        <inputport name="regions" peerid="v1" />
+        <inputport name="borderCells">0</inputport>
+        <internaloutputport name="regionManager" id="v5" />
+        <containerfunctor name="Repeat">
+            <property key="dff.container.collapsed" value="no" />
+            <property key="dff.functor.alias" value="repeat279" />
+            <property key="dff.functor.comment" value="Simulation model." />
+            <inputport name="iterations">1</inputport>
+            <internaloutputport name="step" id="v6" />
+            <functor name="MuxCategoricalMap">
+                <property key="dff.functor.alias" value="Landscape" />
+                <inputport name="initial" peerid="v2" />
+                <inputport name="feedback" peerid="v12" />
+                <outputport name="map" id="v7" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="saveMap282" />
+                <inputport name="map" peerid="v12" />
+                <inputport name="filename">&quot;../../data/submodels/calibration/generatedByModel/simulatedLandscape1.tif&quot;</inputport>
+                <inputport name="suffixDigits">1</inputport>
+                <inputport name="step" peerid="v6" />
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <functor name="CalcDistanceMap">
+                <property key="dff.functor.alias" value="Distances" />
+                <inputport name="categoricalMap" peerid="v7" />
+                <inputport name="categories">[ 2 ]</inputport>
+                <inputport name="cellType">.int32</inputport>
+                <inputport name="nullValue">.default</inputport>
+                <inputport name="truncateDistance">.no</inputport>
+                <outputport name="distance" id="v8" />
+            </functor>
+            <functor name="CalcDistanceMap">
+                <property key="dff.functor.alias" value="Distances" />
+                <inputport name="categoricalMap" peerid="v7" />
+                <inputport name="categories">[ 5 ]</inputport>
+                <inputport name="cellType">.int32</inputport>
+                <inputport name="nullValue">.default</inputport>
+                <inputport name="truncateDistance">.no</inputport>
+                <outputport name="distance" id="v9" />
+            </functor>
+            <functor name="CalcDistanceMap">
+                <property key="dff.functor.alias" value="Distances" />
+                <inputport name="categoricalMap" peerid="v7" />
+                <inputport name="categories">[ 3 ]</inputport>
+                <inputport name="cellType">.int32</inputport>
+                <inputport name="nullValue">.default</inputport>
+                <inputport name="truncateDistance">.no</inputport>
+                <outputport name="distance" id="v10" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="saveMap3515" />
+                <inputport name="map" peerid="v13" />
+                <inputport name="filename">&quot;../../data/submodels/calibration/generatedByModel/probabilities01.tif&quot;</inputport>
+                <inputport name="suffixDigits">2</inputport>
+                <inputport name="step" peerid="v6" />
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <functor name="CalcDistanceMap">
+                <property key="dff.functor.alias" value="Distances" />
+                <inputport name="categoricalMap" peerid="v7" />
+                <inputport name="categories">[ 1 ]</inputport>
+                <inputport name="cellType">.int32</inputport>
+                <inputport name="nullValue">.default</inputport>
+                <inputport name="truncateDistance">.no</inputport>
+                <outputport name="distance" id="v11" />
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="group300" />
+                <functor name="MergeRegionalCategoricalMaps">
+                    <property key="dff.functor.alias" value="Updated Landscape" />
+                    <property key="dff.functor.comment" value="Merge all maps assigned to the regions using the given identifier." />
+                    <inputport name="globalMapName">&quot;landscape&quot;</inputport>
+                    <inputport name="mergeNonRegionCells">.no</inputport>
+                    <inputport name="regionManager" peerid="v5" />
+                    <outputport name="globalMap" id="v12" />
+                </functor>
+                <functor name="MergeRegionalMaps">
+                    <property key="dff.functor.alias" value="mergeRegionalMaps3513" />
+                    <inputport name="globalMapName">&quot;probabilities&quot;</inputport>
+                    <inputport name="mergeNonRegionCells">.no</inputport>
+                    <inputport name="regionManager" peerid="v5" />
+                    <outputport name="globalMap" id="v13" />
+                </functor>
+                <functor name="BooleanValue">
+                    <property key="dff.functor.alias" value="booleanValue5131" />
+                    <property key="dff.functor.comment" value="This operator is used here to force a dependence between two groups." />
+                    <inputport name="constant" peerid="v17" />
+                </functor>
+            </containerfunctor>
+            <containerfunctor name="ForEachCategory">
+                <property key="dff.container.collapsed" value="no" />
+                <property key="dff.functor.alias" value="forEachCategory283" />
+                <inputport name="categorization" peerid="v1" />
+                <internaloutputport name="step" id="v14" />
+                <functor name="RegionalCategoricalMap">
+                    <property key="dff.functor.alias" value="regionalCategoricalMap289" />
+                    <property key="dff.functor.comment" value="Assign a map to the region using the given identifier." />
+                    <inputport name="globalMapName">&quot;landscape&quot;</inputport>
+                    <inputport name="regionalMap" peerid="v15" />
+                    <inputport name="regionId" peerid="v14" />
+                    <inputport name="regionManager" peerid="v5" />
+                </functor>
+                <functor name="AllocateTransitions">
+                    <property key="dff.functor.alias" value="Updated Landscape (Region)" />
+                    <inputport name="lanscape" peerid="v16" />
+                    <inputport name="probabilities" peerid="v25" />
+                    <inputport name="transitionMatrix" peerid="v30" />
+                    <inputport name="percentOfTransitionsByExpansion">[&#x0A;    1-&gt;3 0.636363636363636,&#x0A;    1-&gt;5 0.892915980230643,&#x0A;    2-&gt;3 0.88371375694016,&#x0A;    2-&gt;5 0.834283863771297,&#x0A;    3-&gt;2 0.753403391449725,&#x0A;    3-&gt;5 0.806330794272891,&#x0A;    4-&gt;3 0.963350785340314,&#x0A;    5-&gt;1 0.833887043189369,&#x0A;    5-&gt;2 0.654023921250397,&#x0A;    5-&gt;3 0.813720571899523&#x0A;]</inputport>
+                    <inputport name="patchExpansionParameters">[&#x0A;    1-&gt;3 6.54028686691508 0 1,&#x0A;    1-&gt;5 11.7768620660066 15.958327859975 1,&#x0A;    2-&gt;3 9.76951088306137 7.84385070538325 1,&#x0A;    2-&gt;5 21.2981869798164 41.3918983984409 1,&#x0A;    3-&gt;2 11.4269370931507 19.1877771182167 1,&#x0A;    3-&gt;5 13.9672299016662 23.4391590024744 1,&#x0A;    4-&gt;3 16.2623349123294 16.9066729460753 1,&#x0A;    5-&gt;1 9.17101677986416 6.02103754965399 1,&#x0A;    5-&gt;2 16.7362365615689 25.0351883411475 1,&#x0A;    5-&gt;3 17.5158845386545 32.6070030120761 1&#x0A;]</inputport>
+                    <inputport name="patchGenerationParameters">[&#x0A;    1-&gt;3 13.0805737338302 6.54028686691508 1,&#x0A;    1-&gt;5 14.6592636672235 13.0416317786042 1,&#x0A;    2-&gt;3 10.2452416156246 9.92095294872785 1,&#x0A;    2-&gt;5 20.4281391424737 37.4969028050609 1,&#x0A;    3-&gt;2 18.5772935078124 67.9623746567466 1,&#x0A;    3-&gt;5 24.9303936404492 83.2676853567714 1,&#x0A;    4-&gt;3 7.63033467806759 2.43742100446187 1,&#x0A;    5-&gt;1 11.4074770934565 9.73081496351098 1,&#x0A;    5-&gt;2 22.670220225157 46.5654736227092 1,&#x0A;    5-&gt;3 22.8415729107545 50.0603637353308 1&#x0A;]</inputport>
+                    <inputport name="printTransitionInfo">.no</inputport>
+                    <outputport name="resultingLanscape" id="v15" />
+                </functor>
+                <functor name="RegionalizeCategoricalMap">
+                    <property key="dff.functor.alias" value="Landscape (Region)" />
+                    <inputport name="globalMap" peerid="v7" />
+                    <inputport name="regionId" peerid="v14" />
+                    <inputport name="keepNonRegionCells">.no</inputport>
+                    <inputport name="regionManager" peerid="v5" />
+                    <outputport name="regionalMap" id="v16" />
+                </functor>
+                <functor name="BooleanValue">
+                    <property key="dff.functor.alias" value="booleanValue5130" />
+                    <property key="dff.functor.comment" value="This operator is used here to force a dependence between two groups." />
+                    <inputport name="constant">.no</inputport>
+                    <outputport name="object" id="v17" />
+                </functor>
+                <functor name="RegionalizeMap">
+                    <property key="dff.functor.alias" value="Static Variables (Region)" />
+                    <inputport name="globalMap" peerid="v4" />
+                    <inputport name="regionId" peerid="v14" />
+                    <inputport name="keepNonRegionCells">.no</inputport>
+                    <inputport name="regionManager" peerid="v5" />
+                    <outputport name="regionalMap" id="v18" />
+                </functor>
+                <functor name="RegionalizeMap">
+                    <property key="dff.functor.alias" value="Distances (Region)" />
+                    <inputport name="globalMap" peerid="v8" />
+                    <inputport name="regionId" peerid="v14" />
+                    <inputport name="keepNonRegionCells">.no</inputport>
+                    <inputport name="regionManager" peerid="v5" />
+                    <outputport name="regionalMap" id="v19" />
+                </functor>
+                <functor name="RegionalizeCategoricalMap">
+                    <property key="dff.functor.alias" value="Initial Landscape (Region)" />
+                    <inputport name="globalMap" peerid="v2" />
+                    <inputport name="regionId" peerid="v14" />
+                    <inputport name="keepNonRegionCells">.no</inputport>
+                    <inputport name="regionManager" peerid="v5" />
+                    <outputport name="regionalMap" id="v20" />
+                </functor>
+                <functor name="RegionalizeCategoricalMap">
+                    <property key="dff.functor.alias" value="Final Landscape (Region)" />
+                    <inputport name="globalMap" peerid="v3" />
+                    <inputport name="regionId" peerid="v14" />
+                    <inputport name="keepNonRegionCells">.no</inputport>
+                    <inputport name="regionManager" peerid="v5" />
+                    <outputport name="regionalMap" id="v21" />
+                </functor>
+                <functor name="RegionalizeMap">
+                    <property key="dff.functor.alias" value="Distances (Region)" />
+                    <inputport name="globalMap" peerid="v10" />
+                    <inputport name="regionId" peerid="v14" />
+                    <inputport name="keepNonRegionCells">.no</inputport>
+                    <inputport name="regionManager" peerid="v5" />
+                    <outputport name="regionalMap" id="v22" />
+                </functor>
+                <functor name="RegionalizeMap">
+                    <property key="dff.functor.alias" value="Distances (Region)" />
+                    <inputport name="globalMap" peerid="v9" />
+                    <inputport name="regionId" peerid="v14" />
+                    <inputport name="keepNonRegionCells">.no</inputport>
+                    <inputport name="regionManager" peerid="v5" />
+                    <outputport name="regionalMap" id="v23" />
+                </functor>
+                <functor name="RegionalMap">
+                    <property key="dff.functor.alias" value="regionalMap3514" />
+                    <inputport name="globalMapName">&quot;probabilities&quot;</inputport>
+                    <inputport name="regionalMap" peerid="v25" />
+                    <inputport name="regionId" peerid="v14" />
+                    <inputport name="regionManager" peerid="v5" />
+                </functor>
+                <functor name="RegionalizeMap">
+                    <property key="dff.functor.alias" value="Distances (Region)" />
+                    <inputport name="globalMap" peerid="v11" />
+                    <inputport name="regionId" peerid="v14" />
+                    <inputport name="keepNonRegionCells">.no</inputport>
+                    <inputport name="regionManager" peerid="v5" />
+                    <outputport name="regionalMap" id="v24" />
+                </functor>
+                <functor name="SaveWeights">
+                    <property key="dff.functor.alias" value="saveWeights4221" />
+                    <inputport name="weights" peerid="v26" />
+                    <inputport name="filename">&quot;../../data/submodels/calibration/generatedByModel/weights.dcf&quot;</inputport>
+                    <inputport name="suffixDigits">4</inputport>
+                    <inputport name="step" peerid="v14" />
+                    <inputport name="workdir">.none</inputport>
+                </functor>
+                <containerfunctor name="CalcWOfEProbabilityMap">
+                    <property key="dff.container.collapsed" value="no" />
+                    <property key="dff.functor.alias" value="Probabilities (Region)" />
+                    <property key="dff.functor.extendedcomment" value="Calculate probability map." />
+                    <inputport name="landscape" peerid="v16" />
+                    <inputport name="weights" peerid="v26" />
+                    <inputport name="transitions">[ 1-&gt;3, 1-&gt;5, 2-&gt;3, 2-&gt;5, 3-&gt;2, 3-&gt;5, 4-&gt;3, 5-&gt;1, 5-&gt;2, 5-&gt;3 ]</inputport>
+                    <inputport name="cellType">.uint8</inputport>
+                    <inputport name="nullValue">.default</inputport>
+                    <outputport name="probabilities" id="v25" />
+                    <functor name="NameMap">
+                        <property key="dff.functor.alias" value="nameMap298" />
+                        <inputport name="map" peerid="v18" />
+                        <inputport name="mapName">&quot;static_var&quot;</inputport>
+                    </functor>
+                    <functor name="NameMap">
+                        <property key="dff.functor.alias" value="nameMap584" />
+                        <inputport name="map" peerid="v19" />
+                        <inputport name="mapName">&quot;distance_to_2&quot;</inputport>
+                    </functor>
+                    <functor name="NameMap">
+                        <property key="dff.functor.alias" value="nameMap584" />
+                        <inputport name="map" peerid="v22" />
+                        <inputport name="mapName">&quot;distance_to_3&quot;</inputport>
+                    </functor>
+                    <functor name="NameMap">
+                        <property key="dff.functor.alias" value="nameMap584" />
+                        <inputport name="map" peerid="v23" />
+                        <inputport name="mapName">&quot;distance_to_5&quot;</inputport>
+                    </functor>
+                    <functor name="NameMap">
+                        <property key="dff.functor.alias" value="nameMap3784" />
+                        <inputport name="map" peerid="v24" />
+                        <inputport name="mapName">&quot;distance_to_1&quot;</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="DetermineWeightsOfEvidenceCoefficients">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="Weight of Evidence Coefficients" />
+                    <property key="dff.functor.comment" value="Calculate Weights of Evidence coefficients." />
+                    <inputport name="initialLandscape" peerid="v20" />
+                    <inputport name="finalLandscape" peerid="v21" />
+                    <inputport name="ranges" peerid="v27" />
+                    <inputport name="fixAbnormalWeights">.yes</inputport>
+                    <outputport name="weights" id="v26" />
+                    <functor name="NameMap">
+                        <property key="dff.functor.alias" value="nameMap586" />
+                        <inputport name="map" peerid="v18" />
+                        <inputport name="mapName">&quot;static_var&quot;</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="DetermineWeightsOfEvidenceRanges">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="Weight of Evidence Ranges" />
+                    <property key="dff.functor.comment" value="Calculate Weights of Evidence ranges." />
+                    <inputport name="initialLandscape" peerid="v20" />
+                    <inputport name="finalLandscape" peerid="v21" />
+                    <inputport name="skeleton">[&#x0A;    1-&gt;3 [&#x0A;        &quot;static_var/brazilBiomes&quot;,&#x0A;        &quot;static_var/distanceToProcessingFacilities&quot; 5000 500000 100 5,&#x0A;        &quot;static_var/distanceToSlaughterhouse&quot; 5000 500000 20 5,&#x0A;        &quot;static_var/distanceToTown&quot; 5000 500000 100 5,&#x0A;        &quot;static_var/ecoregions&quot;,&#x0A;        &quot;static_var/elevation&quot; 0.5 500000 25 5,&#x0A;        &quot;static_var/population&quot; 2 500000 10 5,&#x0A;        &quot;static_var/portCost&quot; 500 500000 100 5,&#x0A;        &quot;static_var/precipitation&quot; 0.25 500000 10 5,&#x0A;        &quot;static_var/protectedAreas&quot;,&#x0A;        &quot;static_var/temperature&quot; 0.01 500000 10 5&#x0A;    ],&#x0A;    1-&gt;5 [&#x0A;        &quot;static_var/brazilBiomes&quot;,&#x0A;        &quot;static_var/distanceToProcessingFacilities&quot; 1500 500000 25 5,&#x0A;        &quot;static_var/distanceToSlaughterhouse&quot; 5000 500000 20 5,&#x0A;        &quot;static_var/distanceToTown&quot; 1000 500000 1000 5,&#x0A;        &quot;static_var/ecoregions&quot;,&#x0A;        &quot;static_var/elevation&quot; 0.5 500000 25 5,&#x0A;        &quot;static_var/population&quot; 0.5 500000 10000 5,&#x0A;        &quot;static_var/portCost&quot; 500 500000 100 5,&#x0A;        &quot;static_var/precipitation&quot; 0.25 500000 10 5,&#x0A;        &quot;static_var/protectedAreas&quot;,&#x0A;        &quot;static_var/temperature&quot; 0.01 500000 10 5&#x0A;    ],&#x0A;    2-&gt;3 [&#x0A;        &quot;static_var/brazilBiomes&quot;,&#x0A;        &quot;static_var/distanceToProcessingFacilities&quot; 5000 500000 100 5,&#x0A;        &quot;static_var/distanceToSlaughterhouse&quot; 5000 500000 20 5,&#x0A;        &quot;static_var/distanceToTown&quot; 5000 500000 100 5,&#x0A;        &quot;static_var/ecoregions&quot;,&#x0A;        &quot;static_var/elevation&quot; 0.5 500000 25 5,&#x0A;        &quot;static_var/population&quot; 2 500000 10 5,&#x0A;        &quot;static_var/portCost&quot; 500 500000 100 5,&#x0A;        &quot;static_var/precipitation&quot; 0.25 500000 10 5,&#x0A;        &quot;static_var/protectedAreas&quot;,&#x0A;        &quot;static_var/temperature&quot; 0.01 500000 10 5&#x0A;    ],&#x0A;    2-&gt;5 [&#x0A;        &quot;static_var/brazilBiomes&quot;,&#x0A;        &quot;static_var/distanceToProcessingFacilities&quot; 1500 500000 25 5,&#x0A;        &quot;static_var/distanceToSlaughterhouse&quot; 5000 500000 20 5,&#x0A;        &quot;static_var/distanceToTown&quot; 1000 500000 1000 5,&#x0A;        &quot;static_var/ecoregions&quot;,&#x0A;        &quot;static_var/elevation&quot; 0.5 500000 25 5,&#x0A;        &quot;static_var/population&quot; 0.5 500000 10000 5,&#x0A;        &quot;static_var/portCost&quot; 500 500000 100 5,&#x0A;        &quot;static_var/precipitation&quot; 0.25 500000 10 5,&#x0A;        &quot;static_var/protectedAreas&quot;,&#x0A;        &quot;static_var/temperature&quot; 0.01 500000 10 5&#x0A;    ],&#x0A;    3-&gt;2 [&#x0A;        &quot;static_var/brazilBiomes&quot;,&#x0A;        &quot;static_var/distanceToProcessingFacilities&quot; 1500 500000 25 5,&#x0A;        &quot;static_var/distanceToSlaughterhouse&quot; 5000 500000 20 5,&#x0A;        &quot;static_var/distanceToTown&quot; 2000 500000 5 5,&#x0A;        &quot;static_var/ecoregions&quot;,&#x0A;        &quot;static_var/elevation&quot; 0.5 500000 25 5,&#x0A;        &quot;static_var/population&quot; 10 500000 5 5,&#x0A;        &quot;static_var/portCost&quot; 500 500000 100 5,&#x0A;        &quot;static_var/precipitation&quot; 0.25 500000 10 5,&#x0A;        &quot;static_var/protectedAreas&quot;,&#x0A;        &quot;static_var/temperature&quot; 0.01 500000 10 5&#x0A;    ],&#x0A;    3-&gt;5 [&#x0A;        &quot;static_var/brazilBiomes&quot;,&#x0A;        &quot;static_var/distanceToProcessingFacilities&quot; 5000 500000 100 5,&#x0A;        &quot;static_var/distanceToSlaughterhouse&quot; 5000 500000 20 5,&#x0A;        &quot;static_var/distanceToTown&quot; 5000 500000 100 5,&#x0A;        &quot;static_var/ecoregions&quot;,&#x0A;        &quot;static_var/elevation&quot; 0.5 500000 25 5,&#x0A;        &quot;static_var/population&quot; 2 500000 10 5,&#x0A;        &quot;static_var/portCost&quot; 500 500000 100 5,&#x0A;        &quot;static_var/precipitation&quot; 0.25 500000 10 5,&#x0A;        &quot;static_var/protectedAreas&quot;,&#x0A;        &quot;static_var/temperature&quot; 0.01 500000 10 5&#x0A;    ],&#x0A;    4-&gt;3 [&#x0A;        &quot;static_var/brazilBiomes&quot;,&#x0A;        &quot;static_var/distanceToProcessingFacilities&quot; 5000 500000 100 5,&#x0A;        &quot;static_var/distanceToSlaughterhouse&quot; 5000 500000 20 5,&#x0A;        &quot;static_var/distanceToTown&quot; 5000 500000 100 5,&#x0A;        &quot;static_var/ecoregions&quot;,&#x0A;        &quot;static_var/elevation&quot; 0.5 500000 25 5,&#x0A;        &quot;static_var/population&quot; 2 500000 10 5,&#x0A;        &quot;static_var/portCost&quot; 500 500000 100 5,&#x0A;        &quot;static_var/precipitation&quot; 0.25 500000 10 5,&#x0A;        &quot;static_var/protectedAreas&quot;,&#x0A;        &quot;static_var/temperature&quot; 0.01 500000 10 5&#x0A;    ],&#x0A;    5-&gt;1 [&#x0A;        &quot;static_var/brazilBiomes&quot;,&#x0A;        &quot;static_var/distanceToProcessingFacilities&quot; 1500 500000 25 5,&#x0A;        &quot;static_var/distanceToSlaughterhouse&quot; 5000 500000 20 5,&#x0A;        &quot;static_var/distanceToTown&quot; 1000 500000 1000 5,&#x0A;        &quot;static_var/ecoregions&quot;,&#x0A;        &quot;static_var/elevation&quot; 0.5 500000 25 5,&#x0A;        &quot;static_var/population&quot; 0.5 500000 10000 5,&#x0A;        &quot;static_var/portCost&quot; 500 500000 100 5,&#x0A;        &quot;static_var/precipitation&quot; 0.25 500000 10 5,&#x0A;        &quot;static_var/protectedAreas&quot;,&#x0A;        &quot;static_var/temperature&quot; 0.01 500000 10 5&#x0A;    ],&#x0A;    5-&gt;2 [&#x0A;        &quot;static_var/brazilBiomes&quot;,&#x0A;        &quot;static_var/distanceToProcessingFacilities&quot; 1500 500000 25 5,&#x0A;        &quot;static_var/distanceToSlaughterhouse&quot; 5000 500000 20 5,&#x0A;        &quot;static_var/distanceToTown&quot; 1000 500000 1000 5,&#x0A;        &quot;static_var/ecoregions&quot;,&#x0A;        &quot;static_var/elevation&quot; 0.5 500000 25 5,&#x0A;        &quot;static_var/population&quot; 0.5 500000 10000 5,&#x0A;        &quot;static_var/portCost&quot; 500 500000 100 5,&#x0A;        &quot;static_var/precipitation&quot; 0.25 500000 10 5,&#x0A;        &quot;static_var/protectedAreas&quot;,&#x0A;        &quot;static_var/temperature&quot; 0.01 500000 10 5&#x0A;    ],&#x0A;    5-&gt;3 [&#x0A;        &quot;static_var/brazilBiomes&quot;,&#x0A;        &quot;static_var/distanceToProcessingFacilities&quot; 5000 500000 100 5,&#x0A;        &quot;static_var/distanceToSlaughterhouse&quot; 5000 500000 20 5,&#x0A;        &quot;static_var/distanceToTown&quot; 5000 500000 100 5,&#x0A;        &quot;static_var/ecoregions&quot;,&#x0A;        &quot;static_var/elevation&quot; 0.5 500000 25 5,&#x0A;        &quot;static_var/population&quot; 2 500000 10 5,&#x0A;        &quot;static_var/portCost&quot; 500 500000 100 5,&#x0A;        &quot;static_var/precipitation&quot; 0.25 500000 10 5,&#x0A;        &quot;static_var/protectedAreas&quot;,&#x0A;        &quot;static_var/temperature&quot; 0.01 500000 10 5&#x0A;    ]&#x0A;]</inputport>
+                    <inputport name="fixAbnormalWeights">.no</inputport>
+                    <outputport name="ranges" id="v27" />
+                    <functor name="NameMap">
+                        <property key="dff.functor.alias" value="nameMap583" />
+                        <inputport name="map" peerid="v18" />
+                        <inputport name="mapName">&quot;static_var&quot;</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="Group">
+                    <property key="dff.container.collapsed" value="no" />
+                    <property key="dff.functor.alias" value="Transition Matrix" />
+                    <functor name="LookupTable">
+                        <property key="dff.functor.alias" value="lookupTable3503" />
+                        <inputport name="constant" peerid="v29" />
+                        <outputport name="object" id="v28" />
+                    </functor>
+                    <functor name="DetermineTransitionMatrix">
+                        <property key="dff.functor.alias" value="Transition Rates" />
+                        <property key="dff.functor.comment" value="Calculate the transition rates." />
+                        <property key="viewer.singlestepmatrix" value="yes" />
+                        <inputport name="initialLandscape" peerid="v20" />
+                        <inputport name="finalLandscape" peerid="v21" />
+                        <inputport name="timeSteps">1</inputport>
+                        <outputport name="singleStepMatrix" id="v29" />
+                    </functor>
+                    <containerfunctor name="CalculateLookupTable">
+                        <property key="dff.container.collapsed" value="yes" />
+                        <property key="dff.functor.alias" value="calculateLookupTable3501" />
+                        <property key="viewer.result" value="yes" />
+                        <inputport name="expression">[&#x0A;    if line = 3.005 or line = 3.002 or line = 5.002 or line = 2.005 or line = 5.003 then&#x0A;        t1[line]&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+                        <inputport name="keyName">.none</inputport>
+                        <inputport name="valueName">.none</inputport>
+                        <outputport name="result" id="v30" />
+                        <functor name="NumberTable">
+                            <property key="dff.functor.alias" value="numberTable3502" />
+                            <inputport name="table" peerid="v28" />
+                            <inputport name="tableNumber">1</inputport>
+                        </functor>
+                    </containerfunctor>
+                </containerfunctor>
+            </containerfunctor>
+        </containerfunctor>
+    </containerfunctor>
+    <containerfunctor name="Group">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Step 6: Validating simulation using an exponential decay function" />
+        <functor name="CalcSimilarityOfDifferences">
+            <property key="dff.functor.alias" value="Similarities (Submodel)" />
+            <inputport name="initialMap" peerid="v2" />
+            <inputport name="observedMap" peerid="v34" />
+            <inputport name="simulatedMap" peerid="v35" />
+            <inputport name="useExponentialDecay">.yes</inputport>
+            <inputport name="windowSize">11</inputport>
+            <inputport name="printSimilarities">.yes</inputport>
+            <inputport name="exponentialDecayDivisor">2</inputport>
+            <outputport name="similarityMap" id="v31" />
+            <outputport name="similarity" id="v32" />
+        </functor>
+        <functor name="SaveMap">
+            <property key="dff.functor.alias" value="saveMap935" />
+            <inputport name="map" peerid="v31" />
+            <inputport name="filename">&quot;../../data/submodels/calibration/generatedByModel/similarity.tif&quot;</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="useCompression">.yes</inputport>
+            <inputport name="workdir">.none</inputport>
+            <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+        </functor>
+        <functor name="SaveTextFile">
+            <property key="dff.functor.alias" value="saveTextFile3243" />
+            <inputport name="text" peerid="v32" />
+            <inputport name="filename">&quot;../../data/submodels/calibration/generatedByModel/similarity.txt&quot;</inputport>
+            <inputport name="suffixDigits">2</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+        </functor>
+        <functor name="LookupTable">
+            <property key="dff.functor.alias" value="lookupTable4070" />
+            <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 35,&#x0A;    2 32,&#x0A;    3 52,&#x0A;    4 53,&#x0A;    5 25,&#x0A;    6 23,&#x0A;    7 15,&#x0A;    8 51,&#x0A;    9 43,&#x0A;    10 13&#x0A;]</inputport>
+            <outputport name="object" id="v33" />
+        </functor>
+        <functor name="SaveMap">
+            <property key="dff.functor.alias" value="saveMap4128" />
+            <inputport name="map" peerid="v34" />
+            <inputport name="filename">&quot;../../data/submodels/calibration/generatedByModel/observedChange.tif&quot;</inputport>
+            <inputport name="suffixDigits">2</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="useCompression">.yes</inputport>
+            <inputport name="workdir">.none</inputport>
+            <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+        </functor>
+        <functor name="SaveMap">
+            <property key="dff.functor.alias" value="saveMap4128" />
+            <inputport name="map" peerid="v35" />
+            <inputport name="filename">&quot;../../data/submodels/calibration/generatedByModel/simulatedChange.tif&quot;</inputport>
+            <inputport name="suffixDigits">2</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="useCompression">.yes</inputport>
+            <inputport name="workdir">.none</inputport>
+            <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+        </functor>
+        <containerfunctor name="CalculateCategoricalMap">
+            <property key="dff.container.collapsed" value="yes" />
+            <property key="dff.functor.alias" value="calculateCategoricalMap3250" />
+            <property key="viewer.result" value="yes" />
+            <inputport name="expression">[&#x0A;    if i1 = floor(t1[1] / 10) and i2 = floor(t1[1] / 10) or i1 = floor(t1[1] / 10) and i2 = t1[1] % 10 then&#x0A;        i2&#x0A;    else if i1 = floor(t1[2] / 10) and i2 = floor(t1[2] / 10) or i1 = floor(t1[2] / 10) and i2 = t1[2] % 10 then&#x0A;        i2&#x0A;    else if i1 = floor(t1[3] / 10) and i2 = floor(t1[3] / 10) or i1 = floor(t1[3] / 10) and i2 = t1[3] % 10 then&#x0A;        i2&#x0A;    else if i1 = floor(t1[4] / 10) and i2 = floor(t1[4] / 10) or i1 = floor(t1[4] / 10) and i2 = t1[4] % 10 then&#x0A;        i2&#x0A;    else if i1 = floor(t1[5] / 10) and i2 = floor(t1[5] / 10) or i1 = floor(t1[5] / 10) and i2 = t1[5] % 10 then&#x0A;        i2&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+            <inputport name="cellType">.int32</inputport>
+            <inputport name="nullValue">.default</inputport>
+            <inputport name="resultIsSparse">.no</inputport>
+            <inputport name="resultFormat">.none</inputport>
+            <outputport name="result" id="v34" />
+            <functor name="NumberMap">
+                <property key="dff.functor.alias" value="numberMap3248" />
+                <inputport name="map" peerid="v3" />
+                <inputport name="mapNumber">2</inputport>
+            </functor>
+            <functor name="NumberMap">
+                <property key="dff.functor.alias" value="numberMap3247" />
+                <inputport name="map" peerid="v2" />
+                <inputport name="mapNumber">1</inputport>
+            </functor>
+            <functor name="NumberTable">
+                <property key="dff.functor.alias" value="numberTable4028" />
+                <inputport name="table" peerid="v33" />
+                <inputport name="tableNumber">1</inputport>
+            </functor>
+        </containerfunctor>
+        <containerfunctor name="CalculateCategoricalMap">
+            <property key="dff.container.collapsed" value="yes" />
+            <property key="dff.functor.alias" value="calculateCategoricalMap3252" />
+            <property key="viewer.result" value="yes" />
+            <inputport name="expression">[&#x0A;    if i1 = floor(t1[1] / 10) and i2 = floor(t1[1] / 10) or i1 = floor(t1[1] / 10) and i2 = t1[1] % 10 then&#x0A;        i2&#x0A;    else if i1 = floor(t1[2] / 10) and i2 = floor(t1[2] / 10) or i1 = floor(t1[2] / 10) and i2 = t1[2] % 10 then&#x0A;        i2&#x0A;    else if i1 = floor(t1[3] / 10) and i2 = floor(t1[3] / 10) or i1 = floor(t1[3] / 10) and i2 = t1[3] % 10 then&#x0A;        i2&#x0A;    else if i1 = floor(t1[4] / 10) and i2 = floor(t1[4] / 10) or i1 = floor(t1[4] / 10) and i2 = t1[4] % 10 then&#x0A;        i2&#x0A;    else if i1 = floor(t1[5] / 10) and i2 = floor(t1[5] / 10) or i1 = floor(t1[5] / 10) and i2 = t1[5] % 10 then&#x0A;        i2&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+            <inputport name="cellType">.int32</inputport>
+            <inputport name="nullValue">.default</inputport>
+            <inputport name="resultIsSparse">.no</inputport>
+            <inputport name="resultFormat">.none</inputport>
+            <outputport name="result" id="v35" />
+            <functor name="NumberMap">
+                <property key="dff.functor.alias" value="numberMap3245" />
+                <inputport name="map" peerid="v12" />
+                <inputport name="mapNumber">2</inputport>
+            </functor>
+            <functor name="NumberMap">
+                <property key="dff.functor.alias" value="numberMap3249" />
+                <inputport name="map" peerid="v2" />
+                <inputport name="mapNumber">1</inputport>
+            </functor>
+            <functor name="NumberTable">
+                <property key="dff.functor.alias" value="numberTable4027" />
+                <inputport name="table" peerid="v33" />
+                <inputport name="tableNumber">1</inputport>
+            </functor>
+        </containerfunctor>
+    </containerfunctor>
+</script>

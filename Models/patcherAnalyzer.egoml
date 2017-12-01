@@ -1,0 +1,127 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2017-Nov-28 16:37:07" />
+    <property key="dff.version" value="4.0.4.20171107" />
+    <property key="submodel.import" value='LmCalcMeanPatchSizesAndStandardDeviations { { &quot;patches&quot; : CategoricalMap } { } { &quot;meanPatchSizesAndStandardDeviations&quot; : Table, &quot;patchSizes&quot; : Table } }' />
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="loadCategoricalMap3726" />
+        <inputport name="filename">&quot;../../maps/croppedModel/recategorized2012Landscape.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v1" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="loadCategoricalMap3727" />
+        <inputport name="filename">&quot;../../maps/croppedModel/recategorized2013Landscape.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v2" />
+    </functor>
+    <functor name="CalcAreas">
+        <property key="dff.functor.alias" value="calcAreas4069" />
+        <property key="viewer.areas" value="yes" />
+        <inputport name="source" peerid="v4" />
+    </functor>
+    <functor name="CalcAreas">
+        <property key="dff.functor.alias" value="calcAreas4069" />
+        <property key="viewer.areas" value="yes" />
+        <inputport name="source" peerid="v5" />
+    </functor>
+    <functor name="LmCalcMeanPatchSizesAndStandardDeviations">
+        <property key="dff.functor.alias" value="lmCalcMeanPatchSizesAndStandardDeviations4094" />
+        <property key="viewer.meanpatchsizesandstandarddeviations" value="yes" />
+        <property key="viewer.patchsizes" value="yes" />
+        <inputport name="patches" peerid="v4" />
+    </functor>
+    <functor name="LmCalcMeanPatchSizesAndStandardDeviations">
+        <property key="dff.functor.alias" value="lmCalcMeanPatchSizesAndStandardDeviations4094" />
+        <property key="viewer.meanpatchsizesandstandarddeviations" value="yes" />
+        <property key="viewer.patchsizes" value="yes" />
+        <inputport name="patches" peerid="v5" />
+    </functor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Old Forests" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    if i1 != 3 then&#x0A;        0&#x0A;    else &#x0A;        i1&#x0A;]</inputport>
+        <inputport name="cellType">.int8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v3" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap3729" />
+            <inputport name="map" peerid="v1" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Expanded Change" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    if i2 = 3 and nbMax(i1, 3, 3) = 3 then&#x0A;        3&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+        <inputport name="cellType">.int8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v4" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap3729" />
+            <inputport name="map" peerid="v3" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap3935" />
+            <inputport name="map" peerid="v6" />
+            <inputport name="mapNumber">2</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Patched Change" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    if i2 = 3 and isNull(i1) then&#x0A;        3&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+        <inputport name="cellType">.int8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v5" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap3729" />
+            <inputport name="map" peerid="v4" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap3934" />
+            <inputport name="map" peerid="v6" />
+            <inputport name="mapNumber">2</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="New Forests" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    if i1 = 5 and i2 = 3 then&#x0A;        3&#x0A;    else &#x0A;        0&#x0A;]</inputport>
+        <inputport name="cellType">.int8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v6" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap3729" />
+            <inputport name="map" peerid="v1" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap3933" />
+            <inputport name="map" peerid="v2" />
+            <inputport name="mapNumber">2</inputport>
+        </functor>
+    </containerfunctor>
+</script>

@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2017-Nov-16 16:26:26" />
+    <property key="dff.date" value="2017-Nov-16 16:43:06" />
     <property key="dff.version" value="4.0.4.20171107" />
     <functor name="CalcDistanceToFeatureMap">
         <property key="dff.functor.alias" value="calcDistanceToFeatureMap2599" />
@@ -83,6 +83,35 @@
         <property key="dff.functor.alias" value="saveMap2829" />
         <inputport name="map" peerid="v6" />
         <inputport name="filename">&quot;../../maps/croppedModel/distanceToNonForest.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+        <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+    </functor>
+    <functor name="CalcDistanceToFeatureMap">
+        <property key="dff.functor.alias" value="calcDistanceToFeatureMap2600" />
+        <inputport name="source" peerid="v8" />
+        <inputport name="mask">.none</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="truncateDistance">.no</inputport>
+        <outputport name="distance" id="v7" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="loadCategoricalMap2602" />
+        <inputport name="filename">&quot;../../maps/croppedModel/finalProcessingFacilities.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v8" />
+    </functor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap2604" />
+        <inputport name="map" peerid="v7" />
+        <inputport name="filename">&quot;../../maps/croppedModel/distanceToProcessingFacilities.tif&quot;</inputport>
         <inputport name="suffixDigits">2</inputport>
         <inputport name="step">.none</inputport>
         <inputport name="useCompression">.yes</inputport>
