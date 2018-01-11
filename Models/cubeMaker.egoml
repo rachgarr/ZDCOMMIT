@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2017-Nov-29 20:36:30" />
+    <property key="dff.date" value="2017-Dec-06 08:56:00" />
     <property key="dff.version" value="4.0.4.20171107" />
     <functor name="SaveMap">
         <property key="dff.functor.alias" value="saveMap5701" />
@@ -32,13 +32,13 @@
         </functor>
         <functor name="NumberAndNameMap">
             <property key="dff.functor.alias" value="numberAndNameMap5692" />
-            <inputport name="map" peerid="v9" />
+            <inputport name="map" peerid="v13" />
             <inputport name="mapName">&quot;distanceToTown&quot;</inputport>
             <inputport name="mapNumber">5</inputport>
         </functor>
         <functor name="NumberAndNameMap">
             <property key="dff.functor.alias" value="numberAndNameMap5693" />
-            <inputport name="map" peerid="v11" />
+            <inputport name="map" peerid="v14" />
             <inputport name="mapName">&quot;distanceToSlaughterhouse&quot;</inputport>
             <inputport name="mapNumber">4</inputport>
         </functor>
@@ -50,13 +50,13 @@
         </functor>
         <functor name="NumberAndNameMap">
             <property key="dff.functor.alias" value="numberAndNameMap5695" />
-            <inputport name="map" peerid="v12" />
+            <inputport name="map" peerid="v15" />
             <inputport name="mapName">&quot;distanceToProcessingFacilities&quot;</inputport>
             <inputport name="mapNumber">6</inputport>
         </functor>
         <functor name="NumberAndNameMap">
             <property key="dff.functor.alias" value="numberAndNameMap5696" />
-            <inputport name="map" peerid="v10" />
+            <inputport name="map" peerid="v9" />
             <inputport name="mapName">&quot;portCost&quot;</inputport>
             <inputport name="mapNumber">7</inputport>
         </functor>
@@ -166,17 +166,6 @@
             <inputport name="workdir">.none</inputport>
             <outputport name="map" id="v8" />
         </functor>
-        <functor name="LoadCategoricalMap">
-            <property key="dff.functor.alias" value="loadCategoricalMap2695" />
-            <property key="dff.functor.comment" value="Towns" />
-            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/distanceToTown.tif&quot;</inputport>
-            <inputport name="nullValue">.none</inputport>
-            <inputport name="loadAsSparse">.no</inputport>
-            <inputport name="suffixDigits">0</inputport>
-            <inputport name="step">.none</inputport>
-            <inputport name="workdir">.none</inputport>
-            <outputport name="map" id="v9" />
-        </functor>
         <functor name="LoadMap">
             <property key="dff.functor.alias" value="loadMap2731" />
             <property key="dff.functor.comment" value="Ports Cost Map" />
@@ -186,12 +175,21 @@
             <inputport name="suffixDigits">0</inputport>
             <inputport name="step">.none</inputport>
             <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v9" />
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2601" />
+            <inputport name="filename">&quot;../../maps/croppedModel/finalTowns.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
             <outputport name="map" id="v10" />
         </functor>
-        <functor name="LoadMap">
-            <property key="dff.functor.alias" value="loadMap2732" />
-            <property key="dff.functor.comment" value="Road Cost Map" />
-            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/distanceToSlaughterhouse.tif&quot;</inputport>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2602" />
+            <inputport name="filename">&quot;../../maps/croppedModel/finalSlaughterhouses.tif&quot;</inputport>
             <inputport name="nullValue">.none</inputport>
             <inputport name="loadAsSparse">.no</inputport>
             <inputport name="suffixDigits">0</inputport>
@@ -199,9 +197,9 @@
             <inputport name="workdir">.none</inputport>
             <outputport name="map" id="v11" />
         </functor>
-        <functor name="LoadMap">
-            <property key="dff.functor.alias" value="loadMap2834" />
-            <inputport name="filename">&quot;../../data/croppedModel/inputMaps/distanceToProcessingFacilities.tif&quot;</inputport>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2602" />
+            <inputport name="filename">&quot;../../maps/croppedModel/finalProcessingFacilities.tif&quot;</inputport>
             <inputport name="nullValue">.none</inputport>
             <inputport name="loadAsSparse">.no</inputport>
             <inputport name="suffixDigits">0</inputport>
@@ -210,4 +208,31 @@
             <outputport name="map" id="v12" />
         </functor>
     </containerfunctor>
+    <functor name="CalcDistanceToFeatureMap">
+        <property key="dff.functor.alias" value="calcDistanceToFeatureMap2599" />
+        <inputport name="source" peerid="v10" />
+        <inputport name="mask">.none</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="truncateDistance">.no</inputport>
+        <outputport name="distance" id="v13" />
+    </functor>
+    <functor name="CalcDistanceToFeatureMap">
+        <property key="dff.functor.alias" value="calcDistanceToFeatureMap2600" />
+        <inputport name="source" peerid="v11" />
+        <inputport name="mask">.none</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="truncateDistance">.no</inputport>
+        <outputport name="distance" id="v14" />
+    </functor>
+    <functor name="CalcDistanceToFeatureMap">
+        <property key="dff.functor.alias" value="calcDistanceToFeatureMap2600" />
+        <inputport name="source" peerid="v12" />
+        <inputport name="mask">.none</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="truncateDistance">.no</inputport>
+        <outputport name="distance" id="v15" />
+    </functor>
 </script>

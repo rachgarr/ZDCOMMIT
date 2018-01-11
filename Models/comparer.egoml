@@ -1,0 +1,1878 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2018-Jan-09 16:21:51" />
+    <property key="dff.version" value="4.0.4.20171107" />
+    <containerfunctor name="RegionManager">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="regionManager5060" />
+        <inputport name="regions" peerid="v104" />
+        <inputport name="borderCells">0</inputport>
+        <internaloutputport name="regionManager" id="v1" />
+        <containerfunctor name="ForEachCategory">
+            <property key="dff.container.collapsed" value="no" />
+            <property key="dff.functor.alias" value="forEachCategory4731" />
+            <inputport name="categorization" peerid="v104" />
+            <internaloutputport name="step" id="v2" />
+            <functor name="Step">
+                <property key="dff.functor.alias" value="step4732" />
+                <property key="viewer.step" value="yes" />
+                <inputport name="step" peerid="v2" />
+            </functor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6971" />
+                <inputport name="globalMap" peerid="v104" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+            </functor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v116" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v3" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2005" />
+                <inputport name="map" peerid="v3" />
+                <inputport name="filename" peerid="v9" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2005 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v4" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v5" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v6" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v7" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v8" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v7" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v6" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v4" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v5" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v9" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v8" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2005</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2001 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v10" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v11" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v12" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v13" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v14" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v13" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v12" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v10" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v11" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v15" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v14" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2001</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v114" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v16" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2001" />
+                <inputport name="map" peerid="v16" />
+                <inputport name="filename" peerid="v15" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2002 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v17" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v18" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v19" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v20" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v21" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v20" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v19" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v17" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v18" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v22" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v21" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2002</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v110" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v23" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2002" />
+                <inputport name="map" peerid="v23" />
+                <inputport name="filename" peerid="v22" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2003 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v24" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v25" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v26" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v27" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v28" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v27" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v26" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v24" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v25" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v29" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v28" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2003</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v112" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v30" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2003" />
+                <inputport name="map" peerid="v30" />
+                <inputport name="filename" peerid="v29" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2004 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v31" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v32" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v33" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v34" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v35" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v34" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v33" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v31" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v32" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v36" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v35" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2004</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v118" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v37" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2004" />
+                <inputport name="map" peerid="v37" />
+                <inputport name="filename" peerid="v36" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v126" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v38" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2006" />
+                <inputport name="map" peerid="v38" />
+                <inputport name="filename" peerid="v44" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2006 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v39" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v40" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v41" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v42" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v43" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v42" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v41" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v39" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v40" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v44" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v43" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2006</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v130" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v45" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2007" />
+                <inputport name="map" peerid="v45" />
+                <inputport name="filename" peerid="v51" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2007 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v46" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v47" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v48" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v49" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v50" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v49" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v48" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v46" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v47" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v51" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v50" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2007</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2008 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v52" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v53" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v54" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v55" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v56" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v55" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v54" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v52" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v53" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v57" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v56" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2008</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v134" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v58" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2008" />
+                <inputport name="map" peerid="v58" />
+                <inputport name="filename" peerid="v57" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2010 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v59" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v60" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v61" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v62" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v63" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v62" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v61" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v59" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v60" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v64" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v63" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2010</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2010" />
+                <inputport name="map" peerid="v65" />
+                <inputport name="filename" peerid="v64" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v138" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v65" />
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2009 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v66" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v67" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v68" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v69" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v70" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v69" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v68" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v66" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v67" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v71" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v70" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2009</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2009" />
+                <inputport name="map" peerid="v72" />
+                <inputport name="filename" peerid="v71" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v142" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v72" />
+            </functor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v146" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v73" />
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2014 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v74" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v75" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v76" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v77" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v78" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v77" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v76" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v74" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v75" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v79" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v78" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2014</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2014" />
+                <inputport name="map" peerid="v73" />
+                <inputport name="filename" peerid="v79" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v152" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v80" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2012" />
+                <inputport name="map" peerid="v80" />
+                <inputport name="filename" peerid="v86" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2012 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v81" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v82" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v83" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v84" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v85" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v84" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v83" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v81" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v82" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v86" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v85" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2012</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2013 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v87" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v88" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v89" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v90" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v91" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v90" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v89" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v87" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v88" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v92" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v91" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2013</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v155" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v93" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2013" />
+                <inputport name="map" peerid="v93" />
+                <inputport name="filename" peerid="v92" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <functor name="RegionalizeCategoricalMap">
+                <property key="dff.functor.alias" value="regionalizeCategoricalMap6982" />
+                <inputport name="globalMap" peerid="v149" />
+                <inputport name="regionId" peerid="v2" />
+                <inputport name="keepNonRegionCells">.no</inputport>
+                <inputport name="regionManager" peerid="v1" />
+                <outputport name="regionalMap" id="v94" />
+            </functor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="Save 2011" />
+                <inputport name="map" peerid="v94" />
+                <inputport name="filename" peerid="v100" />
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="yes" />
+                <property key="dff.functor.alias" value="2011 Name" />
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/rhondonia&quot;</inputport>
+                    <outputport name="object" id="v95" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7012" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/everythingElse&quot;</inputport>
+                    <outputport name="object" id="v96" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/para&quot;</inputport>
+                    <outputport name="object" id="v97" />
+                </functor>
+                <functor name="MapFilename">
+                    <property key="dff.functor.alias" value="mapFilename7006" />
+                    <inputport name="constant">&quot;../../newMapAnalysis/Old/matoGrosso&quot;</inputport>
+                    <outputport name="object" id="v98" />
+                </functor>
+                <containerfunctor name="SelectMapFilename">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="selectMapFilename7004" />
+                    <inputport name="step" peerid="v2" />
+                    <outputport name="mapFilename" id="v99" />
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7005" />
+                        <inputport name="mapFilename" peerid="v98" />
+                        <inputport name="filenameNumber">44</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7010" />
+                        <inputport name="mapFilename" peerid="v97" />
+                        <inputport name="filenameNumber">46</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7011" />
+                        <inputport name="mapFilename" peerid="v95" />
+                        <inputport name="filenameNumber">54</inputport>
+                    </functor>
+                    <functor name="NumberMapFilename">
+                        <property key="dff.functor.alias" value="numberMapFilename7013" />
+                        <inputport name="mapFilename" peerid="v96" />
+                        <inputport name="filenameNumber">1</inputport>
+                    </functor>
+                </containerfunctor>
+                <containerfunctor name="CreateString">
+                    <property key="dff.container.collapsed" value="yes" />
+                    <property key="dff.functor.alias" value="createString7015" />
+                    <inputport name="format">&quot;&lt;s1&gt;&lt;v1&gt;&lt;s2&gt;&quot;</inputport>
+                    <outputport name="result" id="v100" />
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7016" />
+                        <inputport name="value" peerid="v99" />
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberValue">
+                        <property key="dff.functor.alias" value="numberValue7017" />
+                        <inputport name="value">2011</inputport>
+                        <inputport name="valueNumber">1</inputport>
+                    </functor>
+                    <functor name="NumberString">
+                        <property key="dff.functor.alias" value="numberString7227" />
+                        <inputport name="value">&quot;.tif&quot;</inputport>
+                        <inputport name="valueNumber">2</inputport>
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+        </containerfunctor>
+    </containerfunctor>
+    <containerfunctor name="Group">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="Getting Regions Wanted" />
+        <functor name="LookupTable">
+            <property key="dff.functor.alias" value="States Wanted" />
+            <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 44,&#x0A;    2 54,&#x0A;    3 46&#x0A;]</inputport>
+            <outputport name="object" id="v101" />
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="Country Maps" />
+            <inputport name="filename">&quot;../../../Admin/final_level0.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v102" />
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="State Maps" />
+            <property key="dff.functor.comment" value="Municipalities" />
+            <inputport name="filename">&quot;../../../Admin/final_level1.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v103" />
+        </functor>
+        <containerfunctor name="CalculateCategoricalMap">
+            <property key="dff.container.collapsed" value="yes" />
+            <property key="dff.functor.alias" value="calculateCategoricalMap4733" />
+            <property key="viewer.result" value="yes" />
+            <inputport name="expression">[&#x0A;    if i2 != 2 then&#x0A;        null&#x0A;    else if i1 = t1[1] or i1 = t1[2] or i1 = t1[3] then&#x0A;        i1&#x0A;    else &#x0A;        1&#x0A;]</inputport>
+            <inputport name="cellType">.int32</inputport>
+            <inputport name="nullValue">.default</inputport>
+            <inputport name="resultIsSparse">.no</inputport>
+            <inputport name="resultFormat">.none</inputport>
+            <outputport name="result" id="v104" />
+            <functor name="NumberMap">
+                <property key="dff.functor.alias" value="numberMap4734" />
+                <inputport name="map" peerid="v103" />
+                <inputport name="mapNumber">1</inputport>
+            </functor>
+            <functor name="NumberMap">
+                <property key="dff.functor.alias" value="numberMap4736" />
+                <inputport name="map" peerid="v102" />
+                <inputport name="mapNumber">2</inputport>
+            </functor>
+            <functor name="NumberTable">
+                <property key="dff.functor.alias" value="numberTable6969" />
+                <inputport name="table" peerid="v101" />
+                <inputport name="tableNumber">1</inputport>
+            </functor>
+        </containerfunctor>
+    </containerfunctor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2005 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2005.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v105" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2002 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2002.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v106" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2001 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2001.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v107" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2004 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2004.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v108" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2003 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2003.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v109" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v124" />
+        <inputport name="inputCategories" peerid="v111" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v110" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    0, &quot;none&quot;, (0, 0, 0),&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v111" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v121" />
+        <inputport name="inputCategories" peerid="v113" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v112" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    0, &quot;none&quot;, (0, 0, 0),&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v113" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v123" />
+        <inputport name="inputCategories" peerid="v115" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v114" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    0, &quot;none&quot;, (0, 0, 0),&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v115" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v120" />
+        <inputport name="inputCategories" peerid="v117" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v116" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    0, &quot;none&quot;, (0, 0, 0),&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v117" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v122" />
+        <inputport name="inputCategories" peerid="v119" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v118" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    0, &quot;none&quot;, (0, 0, 0),&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v119" />
+    </functor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v120" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v105" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v121" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v109" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v122" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v108" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v123" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v107" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v124" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v106" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 200 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2006.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v125" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v128" />
+        <inputport name="inputCategories" peerid="v127" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v126" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    0, &quot;none&quot;, (0, 0, 0),&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v127" />
+    </functor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v128" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v125" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2007 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2007.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v129" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v132" />
+        <inputport name="inputCategories" peerid="v131" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v130" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v131" />
+    </functor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v132" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v129" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2008 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2008.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v133" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v136" />
+        <inputport name="inputCategories" peerid="v135" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v134" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v135" />
+    </functor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v136" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v133" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2010 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2010.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v137" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v140" />
+        <inputport name="inputCategories" peerid="v139" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v138" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v139" />
+    </functor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v140" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v137" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2009 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2009.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v141" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v144" />
+        <inputport name="inputCategories" peerid="v143" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v142" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v143" />
+    </functor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v144" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v141" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2014 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2014.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v145" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v157" />
+        <inputport name="inputCategories" peerid="v147" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v146" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v147" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2011 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2011.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v148" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v158" />
+        <inputport name="inputCategories" peerid="v150" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v149" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v150" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2012 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2012.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v151" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v159" />
+        <inputport name="inputCategories" peerid="v153" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v152" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v153" />
+    </functor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="Load 2013 Landscape" />
+        <inputport name="filename">&quot;../../../Land_Use_Class/Jordan/final_2013.tif&quot;</inputport>
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v154" />
+    </functor>
+    <functor name="AssignMapCategories">
+        <property key="dff.functor.alias" value="assignMapCategories13174" />
+        <property key="viewer.outputmap" value="yes" />
+        <inputport name="inputMap" peerid="v160" />
+        <inputport name="inputCategories" peerid="v156" />
+        <inputport name="combineCategories">.no</inputport>
+        <outputport name="outputMap" id="v155" />
+    </functor>
+    <functor name="Categories">
+        <property key="dff.functor.alias" value="categories13575" />
+        <inputport name="constant">[&#x0A;    1, &quot;builtUp&quot;, (91, 91, 91),&#x0A;    2, &quot;cropland&quot;, (255, 0, 0),&#x0A;    3, &quot;shrubs&quot;, (177, 133, 66),&#x0A;    4, &quot;trees&quot;, (12, 96, 12),&#x0A;    5, &quot;pasturland&quot;, (149, 238, 149),&#x0A;    6, &quot;bare&quot;, (255, 255, 255),&#x0A;    7, &quot;plantation&quot;, (203, 149, 238),&#x0A;    8, &quot;water&quot;, (0, 255, 255),&#x0A;    9, &quot;plantationTree&quot;, (97, 35, 139)&#x0A;]</inputport>
+        <outputport name="object" id="v156" />
+    </functor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v157" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v145" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v158" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v148" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v159" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v151" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="yes" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap13600" />
+        <property key="viewer.result" value="yes" />
+        <inputport name="expression">[&#x0A;    i1&#x0A;]</inputport>
+        <inputport name="cellType">.uint8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v160" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap13601" />
+            <inputport name="map" peerid="v154" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+</script>
