@@ -19,9 +19,11 @@ setwd("~/Dropbox/SESYNC GIS Database/")
 
 # We will need to load all of these 
 initial2012Image <- raster("Land_Use_Class/Jordan/final_2012.tif") # Loading a tif file 
-initial2013Image <- raster("Land_Use_Class/Jordan/final_2013.tif") # Loading a tif file 
+initial2013Image <- raster("Land_Use_Class/Jordan/final_2013.tif")
+initial2014Image <- raster("Land_Use_Class/Jordan/final_2014.tif") 
 initialAdmin2 <- raster("Admin/final_level2.tif")
 initialAdmin1 <- raster("Admin/final_level1.tif")
+initialAdmin0 <- raster("Admin/final_level0.tif")
 initialEcoregions <- raster("Biomes/final_tnc_terr_ecoregions.tif")
 initialBrazilBiomes <- raster("Biomes/final_Brazil_Biomes.tif")
 initialTemperature <- raster("BiophysicalData/Temp_Precipitation/final_air.mon.ltm.v401.tif")
@@ -43,8 +45,10 @@ mapWanted<- raster(crs = "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towg
 # We then crop the initial maps with the map we generated
 new2012Image <- crop(initial2012Image, mapWanted)
 new2013Image <- crop(initial2013Image, mapWanted)
+new2014Image <- crop(initial2014Image, mapWanted)
 finalAdmin2 <- crop(initialAdmin2, mapWanted) 
 finalAdmin1 <- crop(initialAdmin1, mapWanted) 
+finalAdmin0 <- crop(initialAdmin0, mapWanted)
 finalEcoregions <- crop(initialEcoregions, mapWanted)
 finalBrazilBiomes <- crop(initialBrazilBiomes, mapWanted)
 finalTemperature <- crop(initialTemperature, mapWanted)
@@ -63,8 +67,10 @@ finalProcessingFacilities <- crop(initialProcessingFacilities, mapWanted)
 # Finally they get written out - using INT2S for categorical and integer continuous variables, and FLT4S for non-integer continuous variables
 writeRaster(new2012Image, filename = "dinamica/data/croppedModel/inputMaps/cropped2012.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(new2013Image, filename = "dinamica/data/croppedModel/inputMaps/cropped2013.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(new2014Image, filename = "dinamica/data/croppedModel/inputMaps/cropped2014.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalAdmin2, filename = "dinamica/data/croppedModel/inputMaps/finalAdmin2.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalAdmin1, filename = "dinamica/data/croppedModel/inputMaps/finalAdmin1.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
+writeRaster(finalAdmin0, filename = "dinamica/data/croppedModel/inputMaps/finalAdmin0.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalEcoregions, filename = "dinamica/data/croppedModel/inputMaps/finalEcoregions.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalBrazilBiomes, filename = "dinamica/data/croppedModel/inputMaps/finalBrazilBiomes.tif", datatype = "INT2S", format = "GTiff",overwrite=TRUE)
 writeRaster(finalTemperature, filename = "dinamica/data/croppedModel/inputMaps/finalTemperature.tif", datatype = "FLT4S", format = "GTiff",overwrite=TRUE)
