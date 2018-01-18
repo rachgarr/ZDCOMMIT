@@ -1,5 +1,56 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2018-Jan-10 11:29:11" />
+    <property key="dff.date" value="2018-Jan-11 14:03:43" />
     <property key="dff.version" value="4.0.4.20171107" />
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap4566" />
+        <inputport name="map" peerid="v3" />
+        <inputport name="filename">&quot;../../newMapAnalysis/regionsWanted.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+        <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+    </functor>
+    <containerfunctor name="Group">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Getting Regions Wanted" />
+        <functor name="LookupTable">
+            <property key="dff.functor.alias" value="States Wanted" />
+            <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 44,&#x0A;    2 54,&#x0A;    3 46,&#x0A;    4 1,&#x0A;    5 3,&#x0A;    6 6,&#x0A;    7 8,&#x0A;    8 20,&#x0A;    9 21,&#x0A;    10 60,&#x0A;    11 61,&#x0A;    12 64,&#x0A;    13 65 .. 15 69,&#x0A;    16 70 .. 26 80&#x0A;]</inputport>
+            <outputport name="object" id="v1" />
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="State Maps" />
+            <property key="dff.functor.comment" value="Municipalities" />
+            <inputport name="filename">&quot;../../../Admin/final_level1.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir">.none</inputport>
+            <outputport name="map" id="v2" />
+        </functor>
+        <containerfunctor name="CalculateCategoricalMap">
+            <property key="dff.container.collapsed" value="no" />
+            <property key="dff.functor.alias" value="calculateCategoricalMap4733" />
+            <property key="viewer.result" value="yes" />
+            <inputport name="expression">[&#x0A;    if i1 = t1[1] or i1 = t1[2] or i1 = t1[3] then&#x0A;        i1&#x0A;    else if i1 = t1[4] or i1 = t1[5] or i1 = t1[6] or i1 = t1[7] or i1 = t1[8] or i1 = t1[9] or i1 = t1[10] or i1 = t1[11] or i1 = t1[12] or i1 = t1[13] or i1 = t1[14] or i1 = t1[15] or i1 = t1[16] or i1 = t1[17] or i1 = t1[18] or i1 = t1[19] or i1 = t1[20] or i1 = t1[21] or i1 = t1[22] or i1 = t1[23] or i1 = t1[24] or i1 = t1[25] or i1 = t1[26] then&#x0A;        20&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+            <inputport name="cellType">.int32</inputport>
+            <inputport name="nullValue">.default</inputport>
+            <inputport name="resultIsSparse">.no</inputport>
+            <inputport name="resultFormat">.none</inputport>
+            <outputport name="result" id="v3" />
+            <functor name="NumberMap">
+                <property key="dff.functor.alias" value="numberMap4734" />
+                <inputport name="map" peerid="v2" />
+                <inputport name="mapNumber">1</inputport>
+            </functor>
+            <functor name="NumberTable">
+                <property key="dff.functor.alias" value="numberTable6969" />
+                <inputport name="table" peerid="v1" />
+                <inputport name="tableNumber">1</inputport>
+            </functor>
+        </containerfunctor>
+    </containerfunctor>
 </script>

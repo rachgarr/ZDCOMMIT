@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2017-Nov-17 17:00:26" />
+    <property key="dff.date" value="2018-Jan-16 12:11:28" />
     <property key="dff.version" value="4.0.4.20171107" />
     <property key="submodel.import" value='LmCalcMeanPatchSizesAndStandardDeviations { { &quot;patches&quot; : CategoricalMap } { } { &quot;meanPatchSizesAndStandardDeviations&quot; : Table, &quot;patchSizes&quot; : Table } }' />
     <functor name="LmCalcMeanPatchSizesAndStandardDeviations">
@@ -30,6 +30,14 @@
         <inputport name="workdir">.none</inputport>
         <outputport name="map" id="v3" />
     </functor>
+    <functor name="SaveTable">
+        <property key="dff.functor.alias" value="saveTable3731" />
+        <inputport name="table" peerid="v1" />
+        <inputport name="filename">&quot;../meanPatchSizes.csv&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+    </functor>
     <containerfunctor name="CalculateCategoricalMap">
         <property key="dff.container.collapsed" value="no" />
         <property key="dff.functor.alias" value="calculateCategoricalMap3728" />
@@ -51,12 +59,4 @@
             <inputport name="mapNumber">2</inputport>
         </functor>
     </containerfunctor>
-    <functor name="SaveTable">
-        <property key="dff.functor.alias" value="saveTable3731" />
-        <inputport name="table" peerid="v1" />
-        <inputport name="filename">&quot;../meanPatchSizes.csv&quot;</inputport>
-        <inputport name="suffixDigits">2</inputport>
-        <inputport name="step">.none</inputport>
-        <inputport name="workdir">.none</inputport>
-    </functor>
 </script>
