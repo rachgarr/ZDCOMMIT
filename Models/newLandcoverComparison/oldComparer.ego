@@ -1,0 +1,4919 @@
+@date = 2018-Jan-25 12:58:47
+@version = 4.0.5.20171130
+Script {{
+    folder9317 := Folder "../../../newMapAnalysis/Old";
+
+    string7883 := String "rondonia";
+
+    string78830 := String "chaco";
+
+    string78831 := String "matoGrosso";
+
+    string78832 := String "para";
+
+    @collapsed = yes
+    @alias = Names
+    Group {{
+        createString7015110 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2010 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString701511 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2012 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString7015111 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2007 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString7015113 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2003 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString7015114 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2014 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString7015115 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2009 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString7015112 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2005 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString7015116 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2004 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151110 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2011 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151111 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2002 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151112 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2013 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString7015117 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2001 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString7015118 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2006 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString7015119 := CreateString "<s1><v1><s2>" {{
+            NumberString string78832 1;
+
+            NumberValue 2008 1;
+
+            NumberString ".tif" 2;
+        }};
+    }};
+
+    @collapsed = yes
+    @alias = Names
+    Group {{
+        createString70151121 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2001 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151126 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2013 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151117 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2003 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151119 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2009 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151123 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2008 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151124 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2011 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151113 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2012 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151125 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2002 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151118 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2014 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151122 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2006 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151120 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2004 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151114 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2010 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151115 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2007 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151116 := CreateString "<s1><v1><s2>" {{
+            NumberString string78831 1;
+
+            NumberValue 2005 1;
+
+            NumberString ".tif" 2;
+        }};
+    }};
+
+    @collapsed = yes
+    @alias = Names
+    Group {{
+        createString70151127 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2012 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151128 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2010 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151129 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2007 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151130 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2005 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151132 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2014 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151133 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2009 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151134 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2004 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151136 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2006 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151137 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2008 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151140 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2013 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151131 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2003 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151138 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2011 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151135 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2001 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151139 := CreateString "<s1><v1><s2>" {{
+            NumberString string7883 1;
+
+            NumberValue 2002 1;
+
+            NumberString ".tif" 2;
+        }};
+    }};
+
+    @collapsed = yes
+    @alias = Names
+    Group {{
+        createString70151146 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2014 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151141 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2012 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151142 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2010 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151143 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2007 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151144 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2005 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151145 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2003 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151147 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2009 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151149 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2001 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151151 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2008 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151148 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2004 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151153 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2002 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151154 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2013 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151152 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2011 1;
+
+            NumberString ".tif" 2;
+        }};
+
+        createString70151150 := CreateString "<s1><v1><s2>" {{
+            NumberString string78830 1;
+
+            NumberValue 2006 1;
+
+            NumberString ".tif" 2;
+        }};
+    }};
+
+    @collapsed = yes
+    Workdir folder9317 {{
+        workdir = workdir;
+
+        @collapsed = yes
+        Group {{
+            @alias = 2003
+            _2003 := LoadCategoricalMap {
+                filename = createString7015113,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2013
+            _2013 := LoadCategoricalMap {
+                filename = createString70151112,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2010
+            _2010 := LoadCategoricalMap {
+                filename = createString7015110,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2001
+            _2001 := LoadCategoricalMap {
+                filename = createString7015117,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2002
+            _2002 := LoadCategoricalMap {
+                filename = createString70151111,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2009
+            _2009 := LoadCategoricalMap {
+                filename = createString7015115,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2007
+            _2007 := LoadCategoricalMap {
+                filename = createString7015111,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2011
+            _2011 := LoadCategoricalMap {
+                filename = createString70151110,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2005
+            _2005 := LoadCategoricalMap {
+                filename = createString7015112,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2008
+            _2008 := LoadCategoricalMap {
+                filename = createString7015119,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2004
+            _ := LoadCategoricalMap {
+                filename = createString7015116,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2012
+            _2012 := LoadCategoricalMap {
+                filename = createString701511,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2014
+            _2014 := LoadCategoricalMap {
+                filename = createString7015114,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+
+            @alias = 2006
+            _2006 := LoadCategoricalMap {
+                filename = createString7015118,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir
+            };
+        }};
+    }};
+
+    @collapsed = yes
+    Workdir folder9317 {{
+        workdir0 = workdir;
+
+        @collapsed = yes
+        Group {{
+            @alias = 2007
+            _20070 := LoadCategoricalMap {
+                filename = createString70151129,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2002
+            _20020 := LoadCategoricalMap {
+                filename = createString70151139,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2013
+            _20130 := LoadCategoricalMap {
+                filename = createString70151140,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2005
+            _20050 := LoadCategoricalMap {
+                filename = createString70151130,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2014
+            _20140 := LoadCategoricalMap {
+                filename = createString70151132,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2003
+            _20030 := LoadCategoricalMap {
+                filename = createString70151131,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2011
+            _20110 := LoadCategoricalMap {
+                filename = createString70151138,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2009
+            _20090 := LoadCategoricalMap {
+                filename = createString70151133,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2006
+            _20060 := LoadCategoricalMap {
+                filename = createString70151136,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2001
+            _20010 := LoadCategoricalMap {
+                filename = createString70151135,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2008
+            _20080 := LoadCategoricalMap {
+                filename = createString70151137,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2010
+            _20100 := LoadCategoricalMap {
+                filename = createString70151128,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2004
+            _ := LoadCategoricalMap {
+                filename = createString70151134,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+
+            @alias = 2012
+            _20120 := LoadCategoricalMap {
+                filename = createString70151127,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir0
+            };
+        }};
+    }};
+
+    @collapsed = yes
+    Workdir folder9317 {{
+        workdir1 = workdir;
+
+        @collapsed = yes
+        Group {{
+            @alias = 2006
+            _20061 := LoadCategoricalMap {
+                filename = createString70151122,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2012
+            _20121 := LoadCategoricalMap {
+                filename = createString70151113,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2009
+            _20091 := LoadCategoricalMap {
+                filename = createString70151119,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2014
+            _20141 := LoadCategoricalMap {
+                filename = createString70151118,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2003
+            _20031 := LoadCategoricalMap {
+                filename = createString70151117,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2010
+            _20101 := LoadCategoricalMap {
+                filename = createString70151114,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2001
+            _20011 := LoadCategoricalMap {
+                filename = createString70151121,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2002
+            _20021 := LoadCategoricalMap {
+                filename = createString70151125,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2013
+            _20131 := LoadCategoricalMap {
+                filename = createString70151126,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2007
+            _20071 := LoadCategoricalMap {
+                filename = createString70151115,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2008
+            _20081 := LoadCategoricalMap {
+                filename = createString70151123,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2005
+            _20051 := LoadCategoricalMap {
+                filename = createString70151116,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2004
+            _ := LoadCategoricalMap {
+                filename = createString70151120,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+
+            @alias = 2011
+            _20111 := LoadCategoricalMap {
+                filename = createString70151124,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir1
+            };
+        }};
+    }};
+
+    @collapsed = yes
+    Workdir folder9317 {{
+        workdir2 = workdir;
+
+        @collapsed = yes
+        Group {{
+            @alias = 2004
+            _ := LoadCategoricalMap {
+                filename = createString70151148,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2003
+            _20032 := LoadCategoricalMap {
+                filename = createString70151145,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2002
+            _20022 := LoadCategoricalMap {
+                filename = createString70151153,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2008
+            _20082 := LoadCategoricalMap {
+                filename = createString70151151,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2006
+            _20062 := LoadCategoricalMap {
+                filename = createString70151150,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2010
+            _20102 := LoadCategoricalMap {
+                filename = createString70151142,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2009
+            _20092 := LoadCategoricalMap {
+                filename = createString70151147,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2001
+            _20012 := LoadCategoricalMap {
+                filename = createString70151149,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2013
+            _20132 := LoadCategoricalMap {
+                filename = createString70151154,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2014
+            _20142 := LoadCategoricalMap {
+                filename = createString70151146,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2011
+            _20112 := LoadCategoricalMap {
+                filename = createString70151152,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2012
+            _20122 := LoadCategoricalMap {
+                filename = createString70151141,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2007
+            _20072 := LoadCategoricalMap {
+                filename = createString70151143,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+
+            @alias = 2005
+            _20052 := LoadCategoricalMap {
+                filename = createString70151144,
+                nullValue = .none,
+                loadAsSparse = .no,
+                suffixDigits = 0,
+                step = .none,
+                workdir = workdir2
+            };
+        }};
+    }};
+
+    @viewer.object = yes
+    table5721 := Table [
+        "Year*", "Cropland", "Forest", "Pastureland", "State", 
+        2001, 0, 0, 0, "", 
+        2002, 0, 0, 0, "", 
+        2003, 0, 0, 0, "", 
+        2004, 0, 0, 0, "", 
+        2005, 0, 0, 0, "", 
+        2006, 0, 0, 0, "", 
+        2007, 0, 0, 0, "", 
+        2008, 0, 0, 0, "", 
+        2009, 0, 0, 0, "", 
+        2010, 0, 0, 0, "", 
+        2011, 0, 0, 0, "", 
+        2012, 0, 0, 0, "", 
+        2013, 0, 0, 0, "", 
+        2014, 0, 0, 0, "", 
+    ];
+
+    @viewer.object = yes
+    table57212 := Table [
+        "Year*", "Cropland", "Forest", "Pastureland", "State", 
+        2001, 0, 0, 0, "", 
+        2002, 0, 0, 0, "", 
+        2003, 0, 0, 0, "", 
+        2004, 0, 0, 0, "", 
+        2005, 0, 0, 0, "", 
+        2006, 0, 0, 0, "", 
+        2007, 0, 0, 0, "", 
+        2008, 0, 0, 0, "", 
+        2009, 0, 0, 0, "", 
+        2010, 0, 0, 0, "", 
+        2011, 0, 0, 0, "", 
+        2012, 0, 0, 0, "", 
+        2013, 0, 0, 0, "", 
+        2014, 0, 0, 0, "", 
+    ];
+
+    @viewer.object = yes
+    table57210 := Table [
+        "Year*", "Cropland", "Forest", "Pastureland", "State", 
+        2001, 0, 0, 0, "", 
+        2002, 0, 0, 0, "", 
+        2003, 0, 0, 0, "", 
+        2004, 0, 0, 0, "", 
+        2005, 0, 0, 0, "", 
+        2006, 0, 0, 0, "", 
+        2007, 0, 0, 0, "", 
+        2008, 0, 0, 0, "", 
+        2009, 0, 0, 0, "", 
+        2010, 0, 0, 0, "", 
+        2011, 0, 0, 0, "", 
+        2012, 0, 0, 0, "", 
+        2013, 0, 0, 0, "", 
+        2014, 0, 0, 0, "", 
+    ];
+
+    @viewer.object = yes
+    table57211 := Table [
+        "Year*", "Cropland", "Forest", "Pastureland", "State", 
+        2001, 0, 0, 0, "", 
+        2002, 0, 0, 0, "", 
+        2003, 0, 0, 0, "", 
+        2004, 0, 0, 0, "", 
+        2005, 0, 0, 0, "", 
+        2006, 0, 0, 0, "", 
+        2007, 0, 0, 0, "", 
+        2008, 0, 0, 0, "", 
+        2009, 0, 0, 0, "", 
+        2010, 0, 0, 0, "", 
+        2011, 0, 0, 0, "", 
+        2012, 0, 0, 0, "", 
+        2013, 0, 0, 0, "", 
+        2014, 0, 0, 0, "", 
+    ];
+
+    @collapsed = yes
+    @alias = 2005 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas56490 := CalcAreas _2005;
+
+        realValue59020 := RealValue 2005;
+
+        @viewer.result = yes
+        getCroplandValue := GetTableValue {
+            table = calcAreas56490,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @viewer.result = yes
+        setCroplandValue := SetTableCellValue {
+            table = table57210,
+            column = 2,
+            keys = realValue59020,
+            value = getCroplandValue
+        };
+
+        @viewer.result = yes
+        getForestValue := GetTableValue {
+            table = calcAreas56490,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @viewer.result = yes
+        setForestValue := SetTableCellValue {
+            table = setCroplandValue,
+            column = 3,
+            keys = realValue59020,
+            value = getForestValue
+        };
+
+        @viewer.result = yes
+        getPasturelandValue := GetTableValue {
+            table = calcAreas56490,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @viewer.result = yes
+        setPasturelandValue := SetTableCellValue {
+            table = setForestValue,
+            column = 4,
+            keys = realValue59020,
+            value = getPasturelandValue
+        };
+
+        @viewer.result = yes
+        setStateValue := SetTableCellValue {
+            table = setPasturelandValue,
+            column = 5,
+            keys = realValue59020,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2005 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas56491 := CalcAreas _20050;
+
+        realValue59021 := RealValue 2005;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue0 := GetTableValue {
+            table = calcAreas56491,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue0 := SetTableCellValue {
+            table = table57211,
+            column = 2,
+            keys = realValue59021,
+            value = getCroplandValue0
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue0 := GetTableValue {
+            table = calcAreas56491,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue0 := GetTableValue {
+            table = calcAreas56491,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue0 := SetTableCellValue {
+            table = setCroplandValue0,
+            column = 3,
+            keys = realValue59021,
+            value = getForestValue0
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue0 := SetTableCellValue {
+            table = setForestValue0,
+            column = 4,
+            keys = realValue59021,
+            value = getPasturelandValue0
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue0 := SetTableCellValue {
+            table = setPasturelandValue0,
+            column = 5,
+            keys = realValue59021,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2005 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas56492 := CalcAreas _20051;
+
+        realValue59022 := RealValue 2005;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue1 := GetTableValue {
+            table = calcAreas56492,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue1 := GetTableValue {
+            table = calcAreas56492,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue1 := SetTableCellValue {
+            table = table5721,
+            column = 2,
+            keys = realValue59022,
+            value = getCroplandValue1
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue1 := GetTableValue {
+            table = calcAreas56492,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue1 := SetTableCellValue {
+            table = setCroplandValue1,
+            column = 3,
+            keys = realValue59022,
+            value = getForestValue1
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue1 := SetTableCellValue {
+            table = setForestValue1,
+            column = 4,
+            keys = realValue59022,
+            value = getPasturelandValue1
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue1 := SetTableCellValue {
+            table = setPasturelandValue1,
+            column = 5,
+            keys = realValue59022,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2005 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas5649 := CalcAreas _20052;
+
+        realValue5902 := RealValue 2005;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue2 := GetTableValue {
+            table = calcAreas5649,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue2 := SetTableCellValue {
+            table = table57212,
+            column = 2,
+            keys = realValue5902,
+            value = getCroplandValue2
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue2 := GetTableValue {
+            table = calcAreas5649,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue2 := SetTableCellValue {
+            table = setCroplandValue2,
+            column = 3,
+            keys = realValue5902,
+            value = getForestValue2
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue2 := GetTableValue {
+            table = calcAreas5649,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue2 := SetTableCellValue {
+            table = setForestValue2,
+            column = 4,
+            keys = realValue5902,
+            value = getPasturelandValue2
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue2 := SetTableCellValue {
+            table = setPasturelandValue2,
+            column = 5,
+            keys = realValue5902,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2011 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564900 := CalcAreas _20112;
+
+        realValue590200 := RealValue 2011;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue3 := GetTableValue {
+            table = calcAreas564900,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue3 := SetTableCellValue {
+            table = setStateValue2,
+            column = 2,
+            keys = realValue590200,
+            value = getCroplandValue3
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue3 := GetTableValue {
+            table = calcAreas564900,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue3 := SetTableCellValue {
+            table = setCroplandValue3,
+            column = 3,
+            keys = realValue590200,
+            value = getForestValue3
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue3 := GetTableValue {
+            table = calcAreas564900,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue3 := SetTableCellValue {
+            table = setForestValue3,
+            column = 4,
+            keys = realValue590200,
+            value = getPasturelandValue3
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue3 := SetTableCellValue {
+            table = setPasturelandValue3,
+            column = 5,
+            keys = realValue590200,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2011 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564901 := CalcAreas _20110;
+
+        realValue590201 := RealValue 2011;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue4 := GetTableValue {
+            table = calcAreas564901,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue4 := GetTableValue {
+            table = calcAreas564901,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue4 := SetTableCellValue {
+            table = setStateValue0,
+            column = 2,
+            keys = realValue590201,
+            value = getCroplandValue4
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue4 := SetTableCellValue {
+            table = setCroplandValue4,
+            column = 3,
+            keys = realValue590201,
+            value = getForestValue4
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue4 := GetTableValue {
+            table = calcAreas564901,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue4 := SetTableCellValue {
+            table = setForestValue4,
+            column = 4,
+            keys = realValue590201,
+            value = getPasturelandValue4
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue4 := SetTableCellValue {
+            table = setPasturelandValue4,
+            column = 5,
+            keys = realValue590201,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2011 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas56493 := CalcAreas _20111;
+
+        realValue59023 := RealValue 2011;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue5 := GetTableValue {
+            table = calcAreas56493,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue5 := GetTableValue {
+            table = calcAreas56493,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue5 := SetTableCellValue {
+            table = setStateValue1,
+            column = 2,
+            keys = realValue59023,
+            value = getCroplandValue5
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue5 := GetTableValue {
+            table = calcAreas56493,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue5 := SetTableCellValue {
+            table = setCroplandValue5,
+            column = 3,
+            keys = realValue59023,
+            value = getForestValue5
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue5 := SetTableCellValue {
+            table = setForestValue5,
+            column = 4,
+            keys = realValue59023,
+            value = getPasturelandValue5
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue5 := SetTableCellValue {
+            table = setPasturelandValue5,
+            column = 5,
+            keys = realValue59023,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2011 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564902 := CalcAreas _2011;
+
+        realValue590202 := RealValue 2011;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue6 := GetTableValue {
+            table = calcAreas564902,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue6 := SetTableCellValue {
+            table = setStateValue,
+            column = 2,
+            keys = realValue590202,
+            value = getCroplandValue6
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue6 := GetTableValue {
+            table = calcAreas564902,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue6 := GetTableValue {
+            table = calcAreas564902,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue6 := SetTableCellValue {
+            table = setCroplandValue6,
+            column = 3,
+            keys = realValue590202,
+            value = getForestValue6
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue6 := SetTableCellValue {
+            table = setForestValue6,
+            column = 4,
+            keys = realValue590202,
+            value = getPasturelandValue6
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue6 := SetTableCellValue {
+            table = setPasturelandValue6,
+            column = 5,
+            keys = realValue590202,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2006 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564912 := CalcAreas _20062;
+
+        realValue590212 := RealValue 2006;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue7 := GetTableValue {
+            table = calcAreas564912,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue7 := GetTableValue {
+            table = calcAreas564912,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue7 := SetTableCellValue {
+            table = setStateValue3,
+            column = 2,
+            keys = realValue590212,
+            value = getCroplandValue7
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue7 := GetTableValue {
+            table = calcAreas564912,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue7 := SetTableCellValue {
+            table = setCroplandValue7,
+            column = 3,
+            keys = realValue590212,
+            value = getForestValue7
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue7 := SetTableCellValue {
+            table = setForestValue7,
+            column = 4,
+            keys = realValue590212,
+            value = getPasturelandValue7
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue7 := SetTableCellValue {
+            table = setPasturelandValue7,
+            column = 5,
+            keys = realValue590212,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2006 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564911 := CalcAreas _20060;
+
+        realValue590211 := RealValue 2006;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue8 := GetTableValue {
+            table = calcAreas564911,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue8 := SetTableCellValue {
+            table = setStateValue4,
+            column = 2,
+            keys = realValue590211,
+            value = getCroplandValue8
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue8 := GetTableValue {
+            table = calcAreas564911,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue8 := GetTableValue {
+            table = calcAreas564911,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue8 := SetTableCellValue {
+            table = setCroplandValue8,
+            column = 3,
+            keys = realValue590211,
+            value = getForestValue8
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue8 := SetTableCellValue {
+            table = setForestValue8,
+            column = 4,
+            keys = realValue590211,
+            value = getPasturelandValue8
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue8 := SetTableCellValue {
+            table = setPasturelandValue8,
+            column = 5,
+            keys = realValue590211,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2006 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas56494 := CalcAreas _20061;
+
+        realValue59024 := RealValue 2006;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue9 := GetTableValue {
+            table = calcAreas56494,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue9 := SetTableCellValue {
+            table = setStateValue5,
+            column = 2,
+            keys = realValue59024,
+            value = getCroplandValue9
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue9 := GetTableValue {
+            table = calcAreas56494,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue9 := GetTableValue {
+            table = calcAreas56494,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue9 := SetTableCellValue {
+            table = setCroplandValue9,
+            column = 3,
+            keys = realValue59024,
+            value = getForestValue9
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue9 := SetTableCellValue {
+            table = setForestValue9,
+            column = 4,
+            keys = realValue59024,
+            value = getPasturelandValue9
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue9 := SetTableCellValue {
+            table = setPasturelandValue9,
+            column = 5,
+            keys = realValue59024,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2006 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564910 := CalcAreas _2006;
+
+        realValue590210 := RealValue 2006;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue10 := GetTableValue {
+            table = calcAreas564910,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue10 := SetTableCellValue {
+            table = setStateValue6,
+            column = 2,
+            keys = realValue590210,
+            value = getCroplandValue10
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue10 := GetTableValue {
+            table = calcAreas564910,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue10 := GetTableValue {
+            table = calcAreas564910,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue10 := SetTableCellValue {
+            table = setCroplandValue10,
+            column = 3,
+            keys = realValue590210,
+            value = getForestValue10
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue10 := SetTableCellValue {
+            table = setForestValue10,
+            column = 4,
+            keys = realValue590210,
+            value = getPasturelandValue10
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue10 := SetTableCellValue {
+            table = setPasturelandValue10,
+            column = 5,
+            keys = realValue590210,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2012 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564922 := CalcAreas _20120;
+
+        realValue590222 := RealValue 2012;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue11 := GetTableValue {
+            table = calcAreas564922,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue11 := SetTableCellValue {
+            table = setStateValue8,
+            column = 2,
+            keys = realValue590222,
+            value = getCroplandValue11
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue11 := GetTableValue {
+            table = calcAreas564922,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue11 := GetTableValue {
+            table = calcAreas564922,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue11 := SetTableCellValue {
+            table = setCroplandValue11,
+            column = 3,
+            keys = realValue590222,
+            value = getForestValue11
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue11 := SetTableCellValue {
+            table = setForestValue11,
+            column = 4,
+            keys = realValue590222,
+            value = getPasturelandValue11
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue11 := SetTableCellValue {
+            table = setPasturelandValue11,
+            column = 5,
+            keys = realValue590222,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2012 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564920 := CalcAreas _20122;
+
+        realValue590220 := RealValue 2012;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue12 := GetTableValue {
+            table = calcAreas564920,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue12 := GetTableValue {
+            table = calcAreas564920,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue12 := SetTableCellValue {
+            table = setStateValue7,
+            column = 2,
+            keys = realValue590220,
+            value = getCroplandValue12
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue12 := GetTableValue {
+            table = calcAreas564920,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue12 := SetTableCellValue {
+            table = setCroplandValue12,
+            column = 3,
+            keys = realValue590220,
+            value = getForestValue12
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue12 := SetTableCellValue {
+            table = setForestValue12,
+            column = 4,
+            keys = realValue590220,
+            value = getPasturelandValue12
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue12 := SetTableCellValue {
+            table = setPasturelandValue12,
+            column = 5,
+            keys = realValue590220,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2012 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564921 := CalcAreas _2012;
+
+        realValue590221 := RealValue 2012;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue13 := GetTableValue {
+            table = calcAreas564921,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue13 := GetTableValue {
+            table = calcAreas564921,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue13 := SetTableCellValue {
+            table = setStateValue10,
+            column = 2,
+            keys = realValue590221,
+            value = getCroplandValue13
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue13 := GetTableValue {
+            table = calcAreas564921,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue13 := SetTableCellValue {
+            table = setCroplandValue13,
+            column = 3,
+            keys = realValue590221,
+            value = getForestValue13
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue13 := SetTableCellValue {
+            table = setForestValue13,
+            column = 4,
+            keys = realValue590221,
+            value = getPasturelandValue13
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue13 := SetTableCellValue {
+            table = setPasturelandValue13,
+            column = 5,
+            keys = realValue590221,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2012 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas56495 := CalcAreas _20121;
+
+        realValue59025 := RealValue 2012;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue14 := GetTableValue {
+            table = calcAreas56495,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue14 := SetTableCellValue {
+            table = setStateValue9,
+            column = 2,
+            keys = realValue59025,
+            value = getCroplandValue14
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue14 := GetTableValue {
+            table = calcAreas56495,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue14 := GetTableValue {
+            table = calcAreas56495,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue14 := SetTableCellValue {
+            table = setCroplandValue14,
+            column = 3,
+            keys = realValue59025,
+            value = getForestValue14
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue14 := SetTableCellValue {
+            table = setForestValue14,
+            column = 4,
+            keys = realValue59025,
+            value = getPasturelandValue14
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue14 := SetTableCellValue {
+            table = setPasturelandValue14,
+            column = 5,
+            keys = realValue59025,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2013 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564932 := CalcAreas _2013;
+
+        realValue590232 := RealValue 2013;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue15 := GetTableValue {
+            table = calcAreas564932,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue15 := GetTableValue {
+            table = calcAreas564932,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue15 := SetTableCellValue {
+            table = setStateValue13,
+            column = 2,
+            keys = realValue590232,
+            value = getCroplandValue15
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue15 := SetTableCellValue {
+            table = setCroplandValue15,
+            column = 3,
+            keys = realValue590232,
+            value = getForestValue15
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue15 := GetTableValue {
+            table = calcAreas564932,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue15 := SetTableCellValue {
+            table = setForestValue15,
+            column = 4,
+            keys = realValue590232,
+            value = getPasturelandValue15
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue15 := SetTableCellValue {
+            table = setPasturelandValue15,
+            column = 5,
+            keys = realValue590232,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2013 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564930 := CalcAreas _20130;
+
+        realValue590230 := RealValue 2013;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue16 := GetTableValue {
+            table = calcAreas564930,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue16 := SetTableCellValue {
+            table = setStateValue11,
+            column = 2,
+            keys = realValue590230,
+            value = getCroplandValue16
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue16 := GetTableValue {
+            table = calcAreas564930,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue16 := GetTableValue {
+            table = calcAreas564930,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue16 := SetTableCellValue {
+            table = setCroplandValue16,
+            column = 3,
+            keys = realValue590230,
+            value = getForestValue16
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue16 := SetTableCellValue {
+            table = setForestValue16,
+            column = 4,
+            keys = realValue590230,
+            value = getPasturelandValue16
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue16 := SetTableCellValue {
+            table = setPasturelandValue16,
+            column = 5,
+            keys = realValue590230,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2013 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas56496 := CalcAreas _20131;
+
+        realValue59026 := RealValue 2013;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue17 := GetTableValue {
+            table = calcAreas56496,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue17 := GetTableValue {
+            table = calcAreas56496,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue17 := SetTableCellValue {
+            table = setStateValue14,
+            column = 2,
+            keys = realValue59026,
+            value = getCroplandValue17
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue17 := SetTableCellValue {
+            table = setCroplandValue17,
+            column = 3,
+            keys = realValue59026,
+            value = getForestValue17
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue17 := GetTableValue {
+            table = calcAreas56496,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue17 := SetTableCellValue {
+            table = setForestValue17,
+            column = 4,
+            keys = realValue59026,
+            value = getPasturelandValue17
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue17 := SetTableCellValue {
+            table = setPasturelandValue17,
+            column = 5,
+            keys = realValue59026,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2013 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564931 := CalcAreas _20132;
+
+        realValue590231 := RealValue 2013;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue18 := GetTableValue {
+            table = calcAreas564931,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue18 := SetTableCellValue {
+            table = setStateValue12,
+            column = 2,
+            keys = realValue590231,
+            value = getCroplandValue18
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue18 := GetTableValue {
+            table = calcAreas564931,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue18 := GetTableValue {
+            table = calcAreas564931,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue18 := SetTableCellValue {
+            table = setCroplandValue18,
+            column = 3,
+            keys = realValue590231,
+            value = getForestValue18
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue18 := SetTableCellValue {
+            table = setForestValue18,
+            column = 4,
+            keys = realValue590231,
+            value = getPasturelandValue18
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue18 := SetTableCellValue {
+            table = setPasturelandValue18,
+            column = 5,
+            keys = realValue590231,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2009 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564942 := CalcAreas _20090;
+
+        realValue590242 := RealValue 2009;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue19 := GetTableValue {
+            table = calcAreas564942,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue19 := GetTableValue {
+            table = calcAreas564942,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue19 := SetTableCellValue {
+            table = setStateValue16,
+            column = 2,
+            keys = realValue590242,
+            value = getCroplandValue19
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue19 := SetTableCellValue {
+            table = setCroplandValue19,
+            column = 3,
+            keys = realValue590242,
+            value = getForestValue19
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue19 := GetTableValue {
+            table = calcAreas564942,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue19 := SetTableCellValue {
+            table = setForestValue19,
+            column = 4,
+            keys = realValue590242,
+            value = getPasturelandValue19
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue19 := SetTableCellValue {
+            table = setPasturelandValue19,
+            column = 5,
+            keys = realValue590242,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2009 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas56497 := CalcAreas _20091;
+
+        realValue59027 := RealValue 2009;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue20 := GetTableValue {
+            table = calcAreas56497,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue20 := SetTableCellValue {
+            table = setStateValue17,
+            column = 2,
+            keys = realValue59027,
+            value = getCroplandValue20
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue20 := GetTableValue {
+            table = calcAreas56497,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue20 := GetTableValue {
+            table = calcAreas56497,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue20 := SetTableCellValue {
+            table = setCroplandValue20,
+            column = 3,
+            keys = realValue59027,
+            value = getForestValue20
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue20 := SetTableCellValue {
+            table = setForestValue20,
+            column = 4,
+            keys = realValue59027,
+            value = getPasturelandValue20
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue20 := SetTableCellValue {
+            table = setPasturelandValue20,
+            column = 5,
+            keys = realValue59027,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2009 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564940 := CalcAreas _2009;
+
+        realValue590240 := RealValue 2009;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue21 := GetTableValue {
+            table = calcAreas564940,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue21 := SetTableCellValue {
+            table = setStateValue15,
+            column = 2,
+            keys = realValue590240,
+            value = getCroplandValue21
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue21 := GetTableValue {
+            table = calcAreas564940,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue21 := SetTableCellValue {
+            table = setCroplandValue21,
+            column = 3,
+            keys = realValue590240,
+            value = getForestValue21
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue21 := GetTableValue {
+            table = calcAreas564940,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue21 := SetTableCellValue {
+            table = setForestValue21,
+            column = 4,
+            keys = realValue590240,
+            value = getPasturelandValue21
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue21 := SetTableCellValue {
+            table = setPasturelandValue21,
+            column = 5,
+            keys = realValue590240,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2009 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564941 := CalcAreas _20092;
+
+        realValue590241 := RealValue 2009;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue22 := GetTableValue {
+            table = calcAreas564941,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue22 := SetTableCellValue {
+            table = setStateValue18,
+            column = 2,
+            keys = realValue590241,
+            value = getCroplandValue22
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue22 := GetTableValue {
+            table = calcAreas564941,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue22 := SetTableCellValue {
+            table = setCroplandValue22,
+            column = 3,
+            keys = realValue590241,
+            value = getForestValue22
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue22 := GetTableValue {
+            table = calcAreas564941,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue22 := SetTableCellValue {
+            table = setForestValue22,
+            column = 4,
+            keys = realValue590241,
+            value = getPasturelandValue22
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue22 := SetTableCellValue {
+            table = setPasturelandValue22,
+            column = 5,
+            keys = realValue590241,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2003 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564952 := CalcAreas _2003;
+
+        realValue590252 := RealValue 2003;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue23 := GetTableValue {
+            table = calcAreas564952,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue23 := SetTableCellValue {
+            table = setStateValue21,
+            column = 2,
+            keys = realValue590252,
+            value = getCroplandValue23
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue23 := GetTableValue {
+            table = calcAreas564952,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue23 := GetTableValue {
+            table = calcAreas564952,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue23 := SetTableCellValue {
+            table = setCroplandValue23,
+            column = 3,
+            keys = realValue590252,
+            value = getForestValue23
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue23 := SetTableCellValue {
+            table = setForestValue23,
+            column = 4,
+            keys = realValue590252,
+            value = getPasturelandValue23
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue23 := SetTableCellValue {
+            table = setPasturelandValue23,
+            column = 5,
+            keys = realValue590252,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2003 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas56498 := CalcAreas _20031;
+
+        realValue59028 := RealValue 2003;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue24 := GetTableValue {
+            table = calcAreas56498,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue24 := GetTableValue {
+            table = calcAreas56498,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue24 := SetTableCellValue {
+            table = setStateValue20,
+            column = 2,
+            keys = realValue59028,
+            value = getCroplandValue24
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue24 := GetTableValue {
+            table = calcAreas56498,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue24 := SetTableCellValue {
+            table = setCroplandValue24,
+            column = 3,
+            keys = realValue59028,
+            value = getForestValue24
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue24 := SetTableCellValue {
+            table = setForestValue24,
+            column = 4,
+            keys = realValue59028,
+            value = getPasturelandValue24
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue24 := SetTableCellValue {
+            table = setPasturelandValue24,
+            column = 5,
+            keys = realValue59028,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2003 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564950 := CalcAreas _20032;
+
+        realValue590250 := RealValue 2003;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue25 := GetTableValue {
+            table = calcAreas564950,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue25 := GetTableValue {
+            table = calcAreas564950,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue25 := SetTableCellValue {
+            table = setStateValue22,
+            column = 2,
+            keys = realValue590250,
+            value = getCroplandValue25
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue25 := SetTableCellValue {
+            table = setCroplandValue25,
+            column = 3,
+            keys = realValue590250,
+            value = getForestValue25
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue25 := GetTableValue {
+            table = calcAreas564950,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue25 := SetTableCellValue {
+            table = setForestValue25,
+            column = 4,
+            keys = realValue590250,
+            value = getPasturelandValue25
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue25 := SetTableCellValue {
+            table = setPasturelandValue25,
+            column = 5,
+            keys = realValue590250,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2003 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564951 := CalcAreas _20030;
+
+        realValue590251 := RealValue 2003;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue26 := GetTableValue {
+            table = calcAreas564951,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue26 := GetTableValue {
+            table = calcAreas564951,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue26 := SetTableCellValue {
+            table = setStateValue19,
+            column = 2,
+            keys = realValue590251,
+            value = getCroplandValue26
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue26 := GetTableValue {
+            table = calcAreas564951,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue26 := SetTableCellValue {
+            table = setCroplandValue26,
+            column = 3,
+            keys = realValue590251,
+            value = getForestValue26
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue26 := SetTableCellValue {
+            table = setForestValue26,
+            column = 4,
+            keys = realValue590251,
+            value = getPasturelandValue26
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue26 := SetTableCellValue {
+            table = setPasturelandValue26,
+            column = 5,
+            keys = realValue590251,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2002 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas56499 := CalcAreas _20021;
+
+        realValue59029 := RealValue 2002;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue27 := GetTableValue {
+            table = calcAreas56499,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue27 := SetTableCellValue {
+            table = setStateValue24,
+            column = 2,
+            keys = realValue59029,
+            value = getCroplandValue27
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue27 := GetTableValue {
+            table = calcAreas56499,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue27 := SetTableCellValue {
+            table = setCroplandValue27,
+            column = 3,
+            keys = realValue59029,
+            value = getForestValue27
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue27 := GetTableValue {
+            table = calcAreas56499,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue27 := SetTableCellValue {
+            table = setForestValue27,
+            column = 4,
+            keys = realValue59029,
+            value = getPasturelandValue27
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue27 := SetTableCellValue {
+            table = setPasturelandValue27,
+            column = 5,
+            keys = realValue59029,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2002 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564962 := CalcAreas _2002;
+
+        realValue590262 := RealValue 2002;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue28 := GetTableValue {
+            table = calcAreas564962,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue28 := GetTableValue {
+            table = calcAreas564962,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue28 := SetTableCellValue {
+            table = setStateValue23,
+            column = 2,
+            keys = realValue590262,
+            value = getCroplandValue28
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue28 := SetTableCellValue {
+            table = setCroplandValue28,
+            column = 3,
+            keys = realValue590262,
+            value = getForestValue28
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue28 := GetTableValue {
+            table = calcAreas564962,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue28 := SetTableCellValue {
+            table = setForestValue28,
+            column = 4,
+            keys = realValue590262,
+            value = getPasturelandValue28
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue28 := SetTableCellValue {
+            table = setPasturelandValue28,
+            column = 5,
+            keys = realValue590262,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2002 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564961 := CalcAreas _20020;
+
+        realValue590261 := RealValue 2002;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue29 := GetTableValue {
+            table = calcAreas564961,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue29 := GetTableValue {
+            table = calcAreas564961,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue29 := SetTableCellValue {
+            table = setStateValue26,
+            column = 2,
+            keys = realValue590261,
+            value = getCroplandValue29
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue29 := GetTableValue {
+            table = calcAreas564961,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue29 := SetTableCellValue {
+            table = setCroplandValue29,
+            column = 3,
+            keys = realValue590261,
+            value = getForestValue29
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue29 := SetTableCellValue {
+            table = setForestValue29,
+            column = 4,
+            keys = realValue590261,
+            value = getPasturelandValue29
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue29 := SetTableCellValue {
+            table = setPasturelandValue29,
+            column = 5,
+            keys = realValue590261,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2002 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564960 := CalcAreas _20022;
+
+        realValue590260 := RealValue 2002;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue30 := GetTableValue {
+            table = calcAreas564960,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue30 := SetTableCellValue {
+            table = setStateValue25,
+            column = 2,
+            keys = realValue590260,
+            value = getCroplandValue30
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue30 := GetTableValue {
+            table = calcAreas564960,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue30 := SetTableCellValue {
+            table = setCroplandValue30,
+            column = 3,
+            keys = realValue590260,
+            value = getForestValue30
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue30 := GetTableValue {
+            table = calcAreas564960,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue30 := SetTableCellValue {
+            table = setForestValue30,
+            column = 4,
+            keys = realValue590260,
+            value = getPasturelandValue30
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue30 := SetTableCellValue {
+            table = setPasturelandValue30,
+            column = 5,
+            keys = realValue590260,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2001 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564913 := CalcAreas _20011;
+
+        realValue590213 := RealValue 2001;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue31 := GetTableValue {
+            table = calcAreas564913,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue31 := GetTableValue {
+            table = calcAreas564913,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue31 := SetTableCellValue {
+            table = setStateValue27,
+            column = 2,
+            keys = realValue590213,
+            value = getCroplandValue31
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue31 := SetTableCellValue {
+            table = setCroplandValue31,
+            column = 3,
+            keys = realValue590213,
+            value = getForestValue31
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue31 := GetTableValue {
+            table = calcAreas564913,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue31 := SetTableCellValue {
+            table = setForestValue31,
+            column = 4,
+            keys = realValue590213,
+            value = getPasturelandValue31
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue31 := SetTableCellValue {
+            table = setPasturelandValue31,
+            column = 5,
+            keys = realValue590213,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2001 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564970 := CalcAreas _20010;
+
+        realValue590270 := RealValue 2001;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue32 := GetTableValue {
+            table = calcAreas564970,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue32 := GetTableValue {
+            table = calcAreas564970,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue32 := SetTableCellValue {
+            table = setStateValue29,
+            column = 2,
+            keys = realValue590270,
+            value = getCroplandValue32
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue32 := SetTableCellValue {
+            table = setCroplandValue32,
+            column = 3,
+            keys = realValue590270,
+            value = getForestValue32
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue32 := GetTableValue {
+            table = calcAreas564970,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue32 := SetTableCellValue {
+            table = setForestValue32,
+            column = 4,
+            keys = realValue590270,
+            value = getPasturelandValue32
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue32 := SetTableCellValue {
+            table = setPasturelandValue32,
+            column = 5,
+            keys = realValue590270,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2001 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564971 := CalcAreas _20012;
+
+        realValue590271 := RealValue 2001;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue33 := GetTableValue {
+            table = calcAreas564971,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue33 := GetTableValue {
+            table = calcAreas564971,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue33 := SetTableCellValue {
+            table = setStateValue30,
+            column = 2,
+            keys = realValue590271,
+            value = getCroplandValue33
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue33 := GetTableValue {
+            table = calcAreas564971,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue33 := SetTableCellValue {
+            table = setCroplandValue33,
+            column = 3,
+            keys = realValue590271,
+            value = getForestValue33
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue33 := SetTableCellValue {
+            table = setForestValue33,
+            column = 4,
+            keys = realValue590271,
+            value = getPasturelandValue33
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue33 := SetTableCellValue {
+            table = setPasturelandValue33,
+            column = 5,
+            keys = realValue590271,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2001 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564972 := CalcAreas _2001;
+
+        realValue590272 := RealValue 2001;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue34 := GetTableValue {
+            table = calcAreas564972,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue34 := GetTableValue {
+            table = calcAreas564972,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue34 := SetTableCellValue {
+            table = setStateValue28,
+            column = 2,
+            keys = realValue590272,
+            value = getCroplandValue34
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue34 := SetTableCellValue {
+            table = setCroplandValue34,
+            column = 3,
+            keys = realValue590272,
+            value = getForestValue34
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue34 := GetTableValue {
+            table = calcAreas564972,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue34 := SetTableCellValue {
+            table = setForestValue34,
+            column = 4,
+            keys = realValue590272,
+            value = getPasturelandValue34
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue34 := SetTableCellValue {
+            table = setPasturelandValue34,
+            column = 5,
+            keys = realValue590272,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2014 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564980 := CalcAreas _20142;
+
+        realValue590280 := RealValue 2014;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue35 := GetTableValue {
+            table = calcAreas564980,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue35 := SetTableCellValue {
+            table = setStateValue33,
+            column = 2,
+            keys = realValue590280,
+            value = getCroplandValue35
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue35 := GetTableValue {
+            table = calcAreas564980,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue35 := SetTableCellValue {
+            table = setCroplandValue35,
+            column = 3,
+            keys = realValue590280,
+            value = getForestValue35
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue35 := GetTableValue {
+            table = calcAreas564980,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue35 := SetTableCellValue {
+            table = setForestValue35,
+            column = 4,
+            keys = realValue590280,
+            value = getPasturelandValue35
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue35 := SetTableCellValue {
+            table = setPasturelandValue35,
+            column = 5,
+            keys = realValue590280,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2014 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564981 := CalcAreas _20140;
+
+        realValue590281 := RealValue 2014;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue36 := GetTableValue {
+            table = calcAreas564981,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue36 := SetTableCellValue {
+            table = setStateValue32,
+            column = 2,
+            keys = realValue590281,
+            value = getCroplandValue36
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue36 := GetTableValue {
+            table = calcAreas564981,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue36 := SetTableCellValue {
+            table = setCroplandValue36,
+            column = 3,
+            keys = realValue590281,
+            value = getForestValue36
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue36 := GetTableValue {
+            table = calcAreas564981,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue36 := SetTableCellValue {
+            table = setForestValue36,
+            column = 4,
+            keys = realValue590281,
+            value = getPasturelandValue36
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue36 := SetTableCellValue {
+            table = setPasturelandValue36,
+            column = 5,
+            keys = realValue590281,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2014 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564982 := CalcAreas _2014;
+
+        realValue590282 := RealValue 2014;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue37 := GetTableValue {
+            table = calcAreas564982,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue37 := GetTableValue {
+            table = calcAreas564982,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue37 := SetTableCellValue {
+            table = setStateValue34,
+            column = 2,
+            keys = realValue590282,
+            value = getCroplandValue37
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue37 := GetTableValue {
+            table = calcAreas564982,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue37 := SetTableCellValue {
+            table = setCroplandValue37,
+            column = 3,
+            keys = realValue590282,
+            value = getForestValue37
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue37 := SetTableCellValue {
+            table = setForestValue37,
+            column = 4,
+            keys = realValue590282,
+            value = getPasturelandValue37
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue37 := SetTableCellValue {
+            table = setPasturelandValue37,
+            column = 5,
+            keys = realValue590282,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2014 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564914 := CalcAreas _20141;
+
+        realValue590214 := RealValue 2014;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue38 := GetTableValue {
+            table = calcAreas564914,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue38 := SetTableCellValue {
+            table = setStateValue31,
+            column = 2,
+            keys = realValue590214,
+            value = getCroplandValue38
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue38 := GetTableValue {
+            table = calcAreas564914,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue38 := SetTableCellValue {
+            table = setCroplandValue38,
+            column = 3,
+            keys = realValue590214,
+            value = getForestValue38
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue38 := GetTableValue {
+            table = calcAreas564914,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue38 := SetTableCellValue {
+            table = setForestValue38,
+            column = 4,
+            keys = realValue590214,
+            value = getPasturelandValue38
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue38 := SetTableCellValue {
+            table = setPasturelandValue38,
+            column = 5,
+            keys = realValue590214,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2010 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564915 := CalcAreas _20101;
+
+        realValue590215 := RealValue 2010;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue39 := GetTableValue {
+            table = calcAreas564915,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue39 := SetTableCellValue {
+            table = setStateValue38,
+            column = 2,
+            keys = realValue590215,
+            value = getCroplandValue39
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue39 := GetTableValue {
+            table = calcAreas564915,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue39 := GetTableValue {
+            table = calcAreas564915,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue39 := SetTableCellValue {
+            table = setCroplandValue39,
+            column = 3,
+            keys = realValue590215,
+            value = getForestValue39
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue39 := SetTableCellValue {
+            table = setForestValue39,
+            column = 4,
+            keys = realValue590215,
+            value = getPasturelandValue39
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue39 := SetTableCellValue {
+            table = setPasturelandValue39,
+            column = 5,
+            keys = realValue590215,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2010 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564991 := CalcAreas _20102;
+
+        realValue590291 := RealValue 2010;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue40 := GetTableValue {
+            table = calcAreas564991,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue40 := GetTableValue {
+            table = calcAreas564991,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue40 := SetTableCellValue {
+            table = setStateValue35,
+            column = 2,
+            keys = realValue590291,
+            value = getCroplandValue40
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue40 := SetTableCellValue {
+            table = setCroplandValue40,
+            column = 3,
+            keys = realValue590291,
+            value = getForestValue40
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue40 := GetTableValue {
+            table = calcAreas564991,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue40 := SetTableCellValue {
+            table = setForestValue40,
+            column = 4,
+            keys = realValue590291,
+            value = getPasturelandValue40
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue40 := SetTableCellValue {
+            table = setPasturelandValue40,
+            column = 5,
+            keys = realValue590291,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2010 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564992 := CalcAreas _2010;
+
+        realValue590292 := RealValue 2010;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue501 := GetTableValue {
+            table = calcAreas564992,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue503 := GetTableValue {
+            table = calcAreas564992,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue502 := SetTableCellValue {
+            table = setStateValue37,
+            column = 2,
+            keys = realValue590292,
+            value = getCroplandValue501
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue505 := SetTableCellValue {
+            table = setCroplandValue502,
+            column = 3,
+            keys = realValue590292,
+            value = getForestValue503
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue504 := GetTableValue {
+            table = calcAreas564992,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue506 := SetTableCellValue {
+            table = setForestValue505,
+            column = 4,
+            keys = realValue590292,
+            value = getPasturelandValue504
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue507 := SetTableCellValue {
+            table = setPasturelandValue506,
+            column = 5,
+            keys = realValue590292,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2010 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564990 := CalcAreas _20100;
+
+        realValue590290 := RealValue 2010;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue510 := GetTableValue {
+            table = calcAreas564990,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue511 := SetTableCellValue {
+            table = setStateValue36,
+            column = 2,
+            keys = realValue590290,
+            value = getCroplandValue510
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue512 := GetTableValue {
+            table = calcAreas564990,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue513 := GetTableValue {
+            table = calcAreas564990,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue514 := SetTableCellValue {
+            table = setCroplandValue511,
+            column = 3,
+            keys = realValue590290,
+            value = getForestValue512
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue515 := SetTableCellValue {
+            table = setForestValue514,
+            column = 4,
+            keys = realValue590290,
+            value = getPasturelandValue513
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue516 := SetTableCellValue {
+            table = setPasturelandValue515,
+            column = 5,
+            keys = realValue590290,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2007 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas5649101 := CalcAreas _20070;
+
+        realValue5902101 := RealValue 2007;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue519 := GetTableValue {
+            table = calcAreas5649101,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue520 := GetTableValue {
+            table = calcAreas5649101,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue521 := SetTableCellValue {
+            table = setStateValue516,
+            column = 2,
+            keys = realValue5902101,
+            value = getCroplandValue519
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue522 := SetTableCellValue {
+            table = setCroplandValue521,
+            column = 3,
+            keys = realValue5902101,
+            value = getForestValue520
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue523 := GetTableValue {
+            table = calcAreas5649101,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue524 := SetTableCellValue {
+            table = setForestValue522,
+            column = 4,
+            keys = realValue5902101,
+            value = getPasturelandValue523
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue525 := SetTableCellValue {
+            table = setPasturelandValue524,
+            column = 5,
+            keys = realValue5902101,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2007 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas5649102 := CalcAreas _2007;
+
+        realValue5902102 := RealValue 2007;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue528 := GetTableValue {
+            table = calcAreas5649102,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue529 := SetTableCellValue {
+            table = setStateValue507,
+            column = 2,
+            keys = realValue5902102,
+            value = getCroplandValue528
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue530 := GetTableValue {
+            table = calcAreas5649102,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue532 := SetTableCellValue {
+            table = setCroplandValue529,
+            column = 3,
+            keys = realValue5902102,
+            value = getForestValue530
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue531 := GetTableValue {
+            table = calcAreas5649102,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue533 := SetTableCellValue {
+            table = setForestValue532,
+            column = 4,
+            keys = realValue5902102,
+            value = getPasturelandValue531
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue534 := SetTableCellValue {
+            table = setPasturelandValue533,
+            column = 5,
+            keys = realValue5902102,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2007 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564916 := CalcAreas _20071;
+
+        realValue590216 := RealValue 2007;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue537 := GetTableValue {
+            table = calcAreas564916,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue539 := SetTableCellValue {
+            table = setStateValue39,
+            column = 2,
+            keys = realValue590216,
+            value = getCroplandValue537
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue538 := GetTableValue {
+            table = calcAreas564916,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue540 := GetTableValue {
+            table = calcAreas564916,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue541 := SetTableCellValue {
+            table = setCroplandValue539,
+            column = 3,
+            keys = realValue590216,
+            value = getForestValue538
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue542 := SetTableCellValue {
+            table = setForestValue541,
+            column = 4,
+            keys = realValue590216,
+            value = getPasturelandValue540
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue543 := SetTableCellValue {
+            table = setPasturelandValue542,
+            column = 5,
+            keys = realValue590216,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2007 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas5649100 := CalcAreas _20072;
+
+        realValue5902100 := RealValue 2007;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue546 := GetTableValue {
+            table = calcAreas5649100,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue547 := GetTableValue {
+            table = calcAreas5649100,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue548 := SetTableCellValue {
+            table = setStateValue40,
+            column = 2,
+            keys = realValue5902100,
+            value = getCroplandValue546
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue549 := GetTableValue {
+            table = calcAreas5649100,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue550 := SetTableCellValue {
+            table = setCroplandValue548,
+            column = 3,
+            keys = realValue5902100,
+            value = getForestValue547
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue551 := SetTableCellValue {
+            table = setForestValue550,
+            column = 4,
+            keys = realValue5902100,
+            value = getPasturelandValue549
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue552 := SetTableCellValue {
+            table = setPasturelandValue551,
+            column = 5,
+            keys = realValue5902100,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2008 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564912536 := CalcAreas _20080;
+
+        realValue590212537 := RealValue 2008;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue553 := GetTableValue {
+            table = calcAreas564912536,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue557 := SetTableCellValue {
+            table = setStateValue525,
+            column = 2,
+            keys = realValue590212537,
+            value = getCroplandValue553
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue554 := GetTableValue {
+            table = calcAreas564912536,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue555 := GetTableValue {
+            table = calcAreas564912536,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue558 := SetTableCellValue {
+            table = setCroplandValue557,
+            column = 3,
+            keys = realValue590212537,
+            value = getForestValue554
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue559 := SetTableCellValue {
+            table = setForestValue558,
+            column = 4,
+            keys = realValue590212537,
+            value = getPasturelandValue555
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue560 := SetTableCellValue {
+            table = setPasturelandValue559,
+            column = 5,
+            keys = realValue590212537,
+            value = string7883
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2008 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564912554 := CalcAreas _2008;
+
+        realValue590212555 := RealValue 2008;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue564 := GetTableValue {
+            table = calcAreas564912554,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue566 := GetTableValue {
+            table = calcAreas564912554,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue565 := SetTableCellValue {
+            table = setStateValue534,
+            column = 2,
+            keys = realValue590212555,
+            value = getCroplandValue564
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue568 := SetTableCellValue {
+            table = setCroplandValue565,
+            column = 3,
+            keys = realValue590212555,
+            value = getForestValue566
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue567 := GetTableValue {
+            table = calcAreas564912554,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue569 := SetTableCellValue {
+            table = setForestValue568,
+            column = 4,
+            keys = realValue590212555,
+            value = getPasturelandValue567
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue570 := SetTableCellValue {
+            table = setPasturelandValue569,
+            column = 5,
+            keys = realValue590212555,
+            value = string78832
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2008 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas564912545 := CalcAreas _20082;
+
+        realValue590212546 := RealValue 2008;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue573 := GetTableValue {
+            table = calcAreas564912545,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue574 := SetTableCellValue {
+            table = setStateValue552,
+            column = 2,
+            keys = realValue590212546,
+            value = getCroplandValue573
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue575 := GetTableValue {
+            table = calcAreas564912545,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue577 := GetTableValue {
+            table = calcAreas564912545,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue576 := SetTableCellValue {
+            table = setCroplandValue574,
+            column = 3,
+            keys = realValue590212546,
+            value = getForestValue575
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue578 := SetTableCellValue {
+            table = setForestValue576,
+            column = 4,
+            keys = realValue590212546,
+            value = getPasturelandValue577
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue579 := SetTableCellValue {
+            table = setPasturelandValue578,
+            column = 5,
+            keys = realValue590212546,
+            value = string78830
+        };
+    }};
+
+    @collapsed = yes
+    @alias = 2008 Values
+    Group {{
+        @viewer.areas = yes
+        calcAreas5649563 := CalcAreas _20081;
+
+        realValue5902567 := RealValue 2008;
+
+        @alias = Get Cropland Value
+        @viewer.result = yes
+        getCroplandValue582 := GetTableValue {
+            table = calcAreas5649563,
+            keys = [ 2 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Cropland Value
+        @viewer.result = yes
+        setCroplandValue583 := SetTableCellValue {
+            table = setStateValue543,
+            column = 2,
+            keys = realValue5902567,
+            value = getCroplandValue582
+        };
+
+        @alias = Get Forest Value
+        @viewer.result = yes
+        getForestValue584 := GetTableValue {
+            table = calcAreas5649563,
+            keys = [ 4 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Forest Value
+        @viewer.result = yes
+        setForestValue585 := SetTableCellValue {
+            table = setCroplandValue583,
+            column = 3,
+            keys = realValue5902567,
+            value = getForestValue584
+        };
+
+        @alias = Get Pastureland Value
+        @viewer.result = yes
+        getPasturelandValue586 := GetTableValue {
+            table = calcAreas5649563,
+            keys = [ 5 ],
+            column = 3,
+            valueIfNotFound = .none
+        };
+
+        @alias = Set Pastureland Value
+        @viewer.result = yes
+        setPasturelandValue587 := SetTableCellValue {
+            table = setForestValue585,
+            column = 4,
+            keys = realValue5902567,
+            value = getPasturelandValue586
+        };
+
+        @alias = Set State Value
+        @viewer.result = yes
+        setStateValue588 := SetTableCellValue {
+            table = setPasturelandValue587,
+            column = 5,
+            keys = realValue5902567,
+            value = string78831
+        };
+    }};
+
+    @collapsed = yes
+    Workdir folder9317 {{
+        workdir589 = workdir;
+
+        SaveTable {
+            table = setStateValue560,
+            filename = "rhondoniaTable.csv",
+            suffixDigits = 2,
+            step = .none,
+            workdir = workdir589
+        };
+
+        SaveTable {
+            table = setStateValue570,
+            filename = "paraTable.csv",
+            suffixDigits = 2,
+            step = .none,
+            workdir = workdir589
+        };
+
+        SaveTable {
+            table = setStateValue588,
+            filename = "matoGrossoTable.csv",
+            suffixDigits = 2,
+            step = .none,
+            workdir = workdir589
+        };
+
+        SaveTable {
+            table = setStateValue579,
+            filename = "chacoTable.csv",
+            suffixDigits = 2,
+            step = .none,
+            workdir = workdir589
+        };
+    }};
+}};

@@ -1,0 +1,778 @@
+@date = 2018-Jan-25 12:13:39
+@version = 4.0.5.20171130
+Script {{
+    @collapsed = no
+    Group {{
+        string62250 := String "chaco";
+
+        string62252 := String "rondonia";
+
+        string62251 := String "matoGrosso";
+
+        string6225 := String "para";
+    }};
+
+    @collapsed = no
+    Workdir "../../../newMapAnalysis/New" {{
+        workdir = workdir;
+
+        load2005Landscape := LoadCategoricalMap {
+            filename = "southAmerica2005.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2010Landscape := LoadCategoricalMap {
+            filename = "southAmerica2010.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2002Landscape := LoadCategoricalMap {
+            filename = "southAmerica2002.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2014Landscape := LoadCategoricalMap {
+            filename = "southAmerica2014.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2011Landscape := LoadCategoricalMap {
+            filename = "southAmerica2011.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2013Landscape := LoadCategoricalMap {
+            filename = "southAmerica2013.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2001Landscape := LoadCategoricalMap {
+            filename = "southAmerica2001.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2012Landscape := LoadCategoricalMap {
+            filename = "southAmerica2012.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2007Landscape := LoadCategoricalMap {
+            filename = "southAmerica2007.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2008Landscape := LoadCategoricalMap {
+            filename = "southAmerica2008.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2009Landscape := LoadCategoricalMap {
+            filename = "southAmerica2009.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load200Landscape := LoadCategoricalMap {
+            filename = "southAmerica2006.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2003Landscape := LoadCategoricalMap {
+            filename = "southAmerica2003.tif",
+            nullValue = .default,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+    }};
+
+    folder6201 := Folder "../../../newMapAnalysis/New";
+
+    loadCategoricalMap4567 := LoadCategoricalMap {
+        filename = "../../../newMapAnalysis/regionsWanted.tif",
+        nullValue = .none,
+        loadAsSparse = .no,
+        suffixDigits = 0,
+        step = .none,
+        workdir = .none
+    };
+
+    @collapsed = no
+    RegionManager loadCategoricalMap4567 0 {{
+        regionManager = regionManager;
+
+        @collapsed = no
+        ForEachCategory loadCategoricalMap4567 {{
+            step = step;
+
+            @collapsed = no
+            @alias = 2009 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename70048 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString70158 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename70048 1;
+
+                    NumberValue 2009 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2013 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename700411 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString701511 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename700411 1;
+
+                    NumberValue 2013 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2012 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename700410 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString701510 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename700410 1;
+
+                    NumberValue 2012 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2006 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename70044 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString70154 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename70044 1;
+
+                    NumberValue 2006 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2005 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename7004 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString7015 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename7004 1;
+
+                    NumberValue 2005 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2008 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename70046 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString70156 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename70046 1;
+
+                    NumberValue 2008 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2003 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename70042 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString70152 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename70042 1;
+
+                    NumberValue 2003 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2002 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename70041 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString70151 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename70041 1;
+
+                    NumberValue 2002 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2010 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename70047 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString70157 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename70047 1;
+
+                    NumberValue 2010 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2014 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename70049 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString70159 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename70049 1;
+
+                    NumberValue 2014 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2011 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename700412 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString701512 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename700412 1;
+
+                    NumberValue 2011 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2001 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename70040 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString70150 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename70040 1;
+
+                    NumberValue 2001 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            @collapsed = no
+            @alias = 2007 Name
+            Group {{
+                @collapsed = no
+                selectMapFilename70045 := SelectMapFilename step {{
+                    NumberMapFilename string62250 20;
+
+                    NumberMapFilename string62251 44;
+
+                    NumberMapFilename string6225 46;
+
+                    NumberMapFilename string62252 54;
+                }};
+
+                @collapsed = no
+                createString70155 := CreateString "<s1><v1><s2>" {{
+                    NumberString selectMapFilename70045 1;
+
+                    NumberValue 2007 1;
+
+                    NumberString ".tif" 2;
+                }};
+            }};
+
+            regionalizeCategoricalMap69825 := RegionalizeCategoricalMap {
+                globalMap = load2007Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap69824 := RegionalizeCategoricalMap {
+                globalMap = load200Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap69822 := RegionalizeCategoricalMap {
+                globalMap = load2003Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap698210 := RegionalizeCategoricalMap {
+                globalMap = load2012Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap69821 := RegionalizeCategoricalMap {
+                globalMap = load2002Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap69820 := RegionalizeCategoricalMap {
+                globalMap = load2001Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap698212 := RegionalizeCategoricalMap {
+                globalMap = load2011Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap69826 := RegionalizeCategoricalMap {
+                globalMap = load2008Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap698211 := RegionalizeCategoricalMap {
+                globalMap = load2013Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap69829 := RegionalizeCategoricalMap {
+                globalMap = load2014Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap6982 := RegionalizeCategoricalMap {
+                globalMap = load2005Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap69827 := RegionalizeCategoricalMap {
+                globalMap = load2010Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            regionalizeCategoricalMap69828 := RegionalizeCategoricalMap {
+                globalMap = load2009Landscape,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir0 = workdir;
+
+                @alias = Save 2012
+                SaveMap {
+                    map = regionalizeCategoricalMap698210,
+                    filename = createString701510,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir0,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir1 = workdir;
+
+                @alias = Save 2007
+                SaveMap {
+                    map = regionalizeCategoricalMap69825,
+                    filename = createString70155,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir1,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir3 = workdir;
+
+                @alias = Save 2005
+                SaveMap {
+                    map = regionalizeCategoricalMap6982,
+                    filename = createString7015,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir3,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir2 = workdir;
+
+                @alias = Save 2014
+                SaveMap {
+                    map = regionalizeCategoricalMap69829,
+                    filename = createString70159,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir2,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir8 = workdir;
+
+                @alias = Save 2010
+                SaveMap {
+                    map = regionalizeCategoricalMap69827,
+                    filename = createString70157,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir8,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir6 = workdir;
+
+                @alias = Save 2003
+                SaveMap {
+                    map = regionalizeCategoricalMap69822,
+                    filename = createString70152,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir6,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir7 = workdir;
+
+                @alias = Save 2006
+                SaveMap {
+                    map = regionalizeCategoricalMap69824,
+                    filename = createString70154,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir7,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir5 = workdir;
+
+                @alias = Save 2009
+                SaveMap {
+                    map = regionalizeCategoricalMap69828,
+                    filename = createString70158,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir5,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir4 = workdir;
+
+                @alias = Save 2011
+                SaveMap {
+                    map = regionalizeCategoricalMap698212,
+                    filename = createString701512,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir4,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir12 = workdir;
+
+                @alias = Save 2013
+                SaveMap {
+                    map = regionalizeCategoricalMap698211,
+                    filename = createString701511,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir12,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir10 = workdir;
+
+                @alias = Save 2002
+                SaveMap {
+                    map = regionalizeCategoricalMap69821,
+                    filename = createString70151,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir10,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir11 = workdir;
+
+                @alias = Save 2008
+                SaveMap {
+                    map = regionalizeCategoricalMap69826,
+                    filename = createString70156,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir11,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder6201 {{
+                workdir9 = workdir;
+
+                @alias = Save 2001
+                SaveMap {
+                    map = regionalizeCategoricalMap69820,
+                    filename = createString70150,
+                    suffixDigits = 0,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir9,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+
+            _ := RegionalizeCategoricalMap {
+                globalMap = loadCategoricalMap4567,
+                regionId = step,
+                keepNonRegionCells = .no,
+                regionManager = regionManager
+            };
+
+            @viewer.step = yes
+            _ := Step step;
+        }};
+    }};
+}};

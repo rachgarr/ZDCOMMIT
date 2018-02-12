@@ -1,0 +1,571 @@
+@date = 2018-Jan-18 14:16:12
+@version = 4.0.5.20171130
+Script {{
+    @collapsed = yes
+    Workdir "../../../../Land_Use_Class/finalMaps" {{
+        workdir = workdir;
+
+        load2005Landscape := LoadCategoricalMap {
+            filename = "final_2005.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load200Landscape := LoadCategoricalMap {
+            filename = "final_2006.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2002Landscape := LoadCategoricalMap {
+            filename = "final_2002.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2003Landscape := LoadCategoricalMap {
+            filename = "final_2013.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2001Landscape := LoadCategoricalMap {
+            filename = "final_2001.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2004Landscape := LoadCategoricalMap {
+            filename = "final_2004.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2009Landscape := LoadCategoricalMap {
+            filename = "final_2009.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2014Landscape := LoadCategoricalMap {
+            filename = "final_2014.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2008Landscape := LoadCategoricalMap {
+            filename = "final_2008.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2007Landscape := LoadCategoricalMap {
+            filename = "final_2007.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2010Landscape := LoadCategoricalMap {
+            filename = "final_2010.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2012Landscape := LoadCategoricalMap {
+            filename = "final_2012.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2013Landscape := LoadCategoricalMap {
+            filename = "final_2013.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        load2011Landscape := LoadCategoricalMap {
+            filename = "final_2011.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+    }};
+
+    categories13575 := Categories [
+        1, "builtUp", (91, 91, 91),
+        2, "cropland", (255, 0, 0),
+        3, "shrubs", (177, 133, 66),
+        4, "trees", (12, 96, 12),
+        5, "pasturland", (149, 238, 149),
+        6, "bare", (255, 255, 255),
+        7, "plantation", (203, 149, 238),
+        8, "water", (0, 255, 255),
+        9, "plantationTree", (97, 35, 139)
+    ];
+
+    @viewer.result = yes
+    calculateCategoricalMap13600 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load200Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap136000 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2002Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap136001 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2014Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap136002 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2003Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap136003 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2007Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap136004 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2012Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap136005 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2013Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap136006 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2004Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap136007 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2008Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap136008 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2011Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap136009 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2001Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap1360010 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2009Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap1360011 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2005Landscape 1;
+    }};
+
+    @viewer.result = yes
+    calculateCategoricalMap1360012 := CalculateCategoricalMap {
+        expression = [
+            i1
+        ],
+        cellType = .uint8,
+        nullValue = 0,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap load2010Landscape 1;
+    }};
+
+    @viewer.outputmap = yes
+    assignMapCategories13174 := AssignMapCategories {
+        inputMap = calculateCategoricalMap136000,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories131740 := AssignMapCategories {
+        inputMap = calculateCategoricalMap136006,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories131741 := AssignMapCategories {
+        inputMap = calculateCategoricalMap13600,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories131742 := AssignMapCategories {
+        inputMap = calculateCategoricalMap136007,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories131743 := AssignMapCategories {
+        inputMap = calculateCategoricalMap136001,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories131744 := AssignMapCategories {
+        inputMap = calculateCategoricalMap1360011,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories131745 := AssignMapCategories {
+        inputMap = calculateCategoricalMap136003,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories131746 := AssignMapCategories {
+        inputMap = calculateCategoricalMap136009,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories131747 := AssignMapCategories {
+        inputMap = calculateCategoricalMap1360010,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories131748 := AssignMapCategories {
+        inputMap = calculateCategoricalMap136004,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories131749 := AssignMapCategories {
+        inputMap = calculateCategoricalMap1360012,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories1317410 := AssignMapCategories {
+        inputMap = calculateCategoricalMap136005,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories1317411 := AssignMapCategories {
+        inputMap = calculateCategoricalMap136002,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @viewer.outputmap = yes
+    assignMapCategories1317412 := AssignMapCategories {
+        inputMap = calculateCategoricalMap136008,
+        inputCategories = categories13575,
+        combineCategories = .no
+    };
+
+    @collapsed = no
+    Workdir "../../../newMapAnalysis/New" {{
+        workdir0 = workdir;
+
+        SaveMap {
+            map = assignMapCategories131749,
+            filename = "southAmerica2010.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories131746,
+            filename = "southAmerica2001.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories131744,
+            filename = "southAmerica2005.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories13174,
+            filename = "southAmerica2002.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories131741,
+            filename = "southAmerica2006.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories1317411,
+            filename = "southAmerica2003.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories131742,
+            filename = "southAmerica2008.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories131748,
+            filename = "southAmerica2012.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories1317410,
+            filename = "southAmerica2013.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories131747,
+            filename = "southAmerica2009.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories131740,
+            filename = "southAmerica2004.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories131743,
+            filename = "southAmerica2014.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories131745,
+            filename = "southAmerica2007.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = assignMapCategories1317412,
+            filename = "southAmerica2011.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir0,
+            ignoreCostlySparseCategories = .yes
+        };
+    }};
+}};
