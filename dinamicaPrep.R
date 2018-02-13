@@ -18,9 +18,9 @@ setwd("~/Dropbox/SESYNC GIS Database/")
 # The layers needed are: admin level 2, TNC ecoregions, Brazil Biomes, temperature, precipitation, elevation, population, protected areas, distance to towns, distance to ports, distance to roads, distance to rivers
 
 # We will need to load all of these 
-initial2012Image <- raster("Land_Use_Class/Jordan/final_2012.tif") # Loading a tif file 
-initial2013Image <- raster("Land_Use_Class/Jordan/final_2013.tif")
-initial2014Image <- raster("Land_Use_Class/Jordan/final_2014.tif") 
+initial2012Image <- raster("Land_Use_Class/finalMaps/final_2012.tif") # Loading a tif file 
+initial2013Image <- raster("Land_Use_Class/finalMaps/final_2013.tif")
+initial2014Image <- raster("Land_Use_Class/finalMaps/final_2014.tif") 
 initialAdmin2 <- raster("Admin/final_level2.tif")
 initialAdmin1 <- raster("Admin/final_level1.tif")
 initialAdmin0 <- raster("Admin/final_level0.tif")
