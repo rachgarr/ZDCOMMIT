@@ -1,0 +1,241 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2018-Mar-22 17:46:33" />
+    <property key="dff.version" value="4.0.8.20180319" />
+    <property key="submodel.import" value='AllocateTransitions { { &quot;lanscape&quot; : CategoricalMap, &quot;probabilities&quot; : Map, &quot;transitionMatrix&quot; : TransitionMatrix, &quot;percentOfTransitionsByExpansion&quot; : PercentMatrix, &quot;patchExpansionParameters&quot; : TransitionFunctionParameterMatrix, &quot;patchGenerationParameters&quot; : TransitionFunctionParameterMatrix } { &quot;printTransitionInfo&quot; : BooleanValue } { &quot;resultingLanscape&quot; : CategoricalMap } }' />
+    <functor name="Folder">
+        <property key="dff.functor.alias" value="folder2754" />
+        <inputport name="constant">&quot;../../../Model&apos;s Data/rentModel/inputMaps&quot;</inputport>
+        <outputport name="object" id="v1" />
+    </functor>
+    <containerfunctor name="Workdir">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="workdir2752" />
+        <inputport name="folder" peerid="v1" />
+        <internaloutputport name="workdir" id="v2" />
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="Regions" />
+            <property key="dff.functor.comment" value="Municipalities" />
+            <inputport name="filename">&quot;Admin1.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir" peerid="v2" />
+            <outputport name="map" id="v3" />
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="RegionManager">
+        <property key="dff.functor.alias" value="regionManager3777" />
+        <inputport name="regions" peerid="v3" />
+        <inputport name="borderCells">0</inputport>
+        <internaloutputport name="regionManager" id="v4" />
+        <containerfunctor name="Repeat">
+            <property key="dff.container.collapsed" value="no" />
+            <property key="dff.functor.alias" value="repeat3986" />
+            <inputport name="iterations">1</inputport>
+            <internaloutputport name="step" id="v5" />
+            <functor name="Step">
+                <property key="dff.functor.alias" value="step3987" />
+                <inputport name="step" peerid="v5" />
+            </functor>
+            <containerfunctor name="Group">
+                <property key="dff.functor.alias" value="group4073" />
+                <functor name="BooleanValue">
+                    <property key="dff.functor.alias" value="booleanValue5130" />
+                    <property key="dff.functor.comment" value="This operator is used here to force a dependence between two groups." />
+                    <inputport name="constant">.no</inputport>
+                    <outputport name="object" id="v6" />
+                </functor>
+                <containerfunctor name="ForEachCategory">
+                    <property key="dff.container.collapsed" value="no" />
+                    <property key="dff.functor.alias" value="forEachCategory3782" />
+                    <inputport name="categorization" peerid="v3" />
+                    <internaloutputport name="step" id="v7" />
+                    <functor name="Step">
+                        <property key="dff.functor.alias" value="step3783" />
+                        <inputport name="step" peerid="v7" />
+                    </functor>
+                    <functor name="LoadWeights">
+                        <property key="dff.functor.alias" value="loadWeights3784" />
+                        <inputport name="filename">&quot;../../../../../../../../Program Files/Dinamica EGO 4/weights.dcf&quot;</inputport>
+                        <inputport name="suffixDigits">2</inputport>
+                        <inputport name="step" peerid="v7" />
+                        <inputport name="workdir">.none</inputport>
+                        <outputport name="weights" id="v8" />
+                    </functor>
+                    <containerfunctor name="CalcWOfEProbabilityMap">
+                        <property key="dff.container.collapsed" value="no" />
+                        <property key="dff.functor.alias" value="calcWOfEProbabilityMap3785" />
+                        <inputport name="weights" peerid="v8" />
+                        <inputport name="cellType">.uint8</inputport>
+                        <inputport name="nullValue">.default</inputport>
+                        <outputport name="probabilities" id="v9" />
+                        <functor name="NameMap">
+                            <property key="dff.functor.alias" value="nameMap3786" />
+                            <inputport name="map" peerid="v10" />
+                            <inputport name="mapName">&quot;map1&quot;</inputport>
+                        </functor>
+                    </containerfunctor>
+                    <functor name="RegionalizeMap">
+                        <property key="dff.functor.alias" value="regionalizeMap3788" />
+                        <inputport name="globalMap" peerid="v19" />
+                        <inputport name="regionId" peerid="v7" />
+                        <inputport name="keepNonRegionCells">.no</inputport>
+                        <inputport name="regionManager" peerid="v4" />
+                        <outputport name="regionalMap" id="v10" />
+                    </functor>
+                    <containerfunctor name="RegionManager">
+                        <property key="dff.functor.alias" value="regionManager3789" />
+                        <inputport name="regions" peerid="v21" />
+                        <inputport name="borderCells">0</inputport>
+                        <internaloutputport name="regionManager" id="v11" />
+                        <containerfunctor name="Group">
+                            <property key="dff.container.collapsed" value="no" />
+                            <property key="dff.functor.alias" value="group300" />
+                            <functor name="MergeRegionalCategoricalMaps">
+                                <property key="dff.functor.alias" value="Updated Landscape" />
+                                <property key="dff.functor.comment" value="Merge all maps assigned to the regions using the given identifier." />
+                                <inputport name="globalMapName">&quot;landscape&quot;</inputport>
+                                <inputport name="mergeNonRegionCells">.no</inputport>
+                                <inputport name="regionManager" peerid="v11" />
+                                <outputport name="globalMap" id="v12" />
+                            </functor>
+                            <functor name="BooleanValue">
+                                <property key="dff.functor.alias" value="booleanValue5131" />
+                                <property key="dff.functor.comment" value="This operator is used here to force a dependence between two groups." />
+                                <inputport name="constant" peerid="v16" />
+                            </functor>
+                        </containerfunctor>
+                        <containerfunctor name="Group">
+                            <property key="dff.container.collapsed" value="no" />
+                            <property key="dff.functor.alias" value="group3988" />
+                            <containerfunctor name="ForEachCategory">
+                                <property key="dff.container.collapsed" value="no" />
+                                <property key="dff.functor.alias" value="forEachCategory3790" />
+                                <internaloutputport name="step" id="v13" />
+                                <functor name="Step">
+                                    <property key="dff.functor.alias" value="step3791" />
+                                    <inputport name="step" peerid="v13" />
+                                </functor>
+                                <functor name="AllocateTransitions">
+                                    <property key="dff.functor.alias" value="Updated Landscape (Region)" />
+                                    <inputport name="probabilities" peerid="v15" />
+                                    <inputport name="percentOfTransitionsByExpansion">[&#x0A;    1-&gt;3 0.78,&#x0A;    1-&gt;5 0.944444444444444,&#x0A;    2-&gt;3 0.911952114307781,&#x0A;    2-&gt;5 0.922858302882663,&#x0A;    3-&gt;2 0.734713875097988,&#x0A;    3-&gt;5 0.814008332678249,&#x0A;    4-&gt;3 0.945454545454545,&#x0A;    5-&gt;1 0.916949152542373,&#x0A;    5-&gt;2 0.716309719934102,&#x0A;    5-&gt;3 0.91866413492684&#x0A;]</inputport>
+                                    <inputport name="patchExpansionParameters">[&#x0A;    1-&gt;3 9.44961696968994 4.63613477775434 1,&#x0A;    1-&gt;5 12.0825871680822 11.1007819652603 1,&#x0A;    2-&gt;3 12.3231534928851 10.0919312053696 1,&#x0A;    2-&gt;5 11.1491578910611 9.34332135999846 1,&#x0A;    3-&gt;2 15.0031860403882 17.3488068568622 1,&#x0A;    3-&gt;5 14.4495171520111 20.9131642691039 1,&#x0A;    4-&gt;3 12.7443110089305 8.82978977862519 1,&#x0A;    5-&gt;1 11.7587329698371 7.99671547885489 1,&#x0A;    5-&gt;2 14.6067402867926 17.4124163368643 1,&#x0A;    5-&gt;3 12.5681497678072 13.3653081112631 1&#x0A;]</inputport>
+                                    <inputport name="patchGenerationParameters">[&#x0A;    1-&gt;3 10.1975799628315 4.60425816366531 1,&#x0A;    1-&gt;5 12.7185128085076 10.7118465048941 1,&#x0A;    2-&gt;3 11.4118884603262 8.88506593737742 1,&#x0A;    2-&gt;5 10.2045853990322 8.31687771418484 1,&#x0A;    3-&gt;2 16.7516938614529 53.7188330949316 1,&#x0A;    3-&gt;5 31.7285252382713 148.016936897598 1,&#x0A;    4-&gt;3 7.10740421651893 8.42936970217881e-08 1,&#x0A;    5-&gt;1 8.49421479535189 2.8166256005986 1,&#x0A;    5-&gt;2 20.5581467987328 40.8633296050073 1,&#x0A;    5-&gt;3 13.5204068716538 22.4983138133373 1&#x0A;]</inputport>
+                                    <inputport name="printTransitionInfo">.no</inputport>
+                                    <outputport name="resultingLanscape" id="v14" />
+                                </functor>
+                                <functor name="RegionalCategoricalMap">
+                                    <property key="dff.functor.alias" value="regionalCategoricalMap289" />
+                                    <property key="dff.functor.comment" value="Assign a map to the region using the given identifier." />
+                                    <inputport name="globalMapName">&quot;landscape&quot;</inputport>
+                                    <inputport name="regionalMap" peerid="v14" />
+                                    <inputport name="regionId" peerid="v13" />
+                                    <inputport name="regionManager" peerid="v11" />
+                                </functor>
+                                <functor name="RegionalizeMap">
+                                    <property key="dff.functor.alias" value="regionalizeMap3788" />
+                                    <inputport name="globalMap" peerid="v9" />
+                                    <inputport name="regionId" peerid="v13" />
+                                    <inputport name="keepNonRegionCells">.no</inputport>
+                                    <inputport name="regionManager" peerid="v11" />
+                                    <outputport name="regionalMap" id="v15" />
+                                </functor>
+                            </containerfunctor>
+                            <functor name="BooleanValue">
+                                <property key="dff.functor.alias" value="booleanValue5130" />
+                                <property key="dff.functor.comment" value="This operator is used here to force a dependence between two groups." />
+                                <inputport name="constant">.no</inputport>
+                                <outputport name="object" id="v16" />
+                            </functor>
+                        </containerfunctor>
+                    </containerfunctor>
+                    <functor name="RegionalCategoricalMap">
+                        <property key="dff.functor.alias" value="regionalCategoricalMap289" />
+                        <property key="dff.functor.comment" value="Assign a map to the region using the given identifier." />
+                        <inputport name="globalMapName">&quot;landscape&quot;</inputport>
+                        <inputport name="regionalMap" peerid="v12" />
+                        <inputport name="regionId" peerid="v7" />
+                        <inputport name="regionManager" peerid="v4" />
+                    </functor>
+                    <functor name="RegionalizeCategoricalMap">
+                        <property key="dff.functor.alias" value="regionalizeCategoricalMap4096" />
+                        <inputport name="globalMap" peerid="v18" />
+                        <inputport name="regionId" peerid="v7" />
+                        <inputport name="keepNonRegionCells">.no</inputport>
+                        <inputport name="regionManager" peerid="v4" />
+                    </functor>
+                </containerfunctor>
+            </containerfunctor>
+            <containerfunctor name="Group">
+                <property key="dff.container.collapsed" value="no" />
+                <property key="dff.functor.alias" value="group300" />
+                <functor name="MergeRegionalCategoricalMaps">
+                    <property key="dff.functor.alias" value="Updated Landscape" />
+                    <property key="dff.functor.comment" value="Merge all maps assigned to the regions using the given identifier." />
+                    <inputport name="globalMapName">&quot;landscape&quot;</inputport>
+                    <inputport name="mergeNonRegionCells">.no</inputport>
+                    <inputport name="regionManager" peerid="v4" />
+                    <outputport name="globalMap" id="v17" />
+                </functor>
+                <functor name="BooleanValue">
+                    <property key="dff.functor.alias" value="booleanValue5131" />
+                    <property key="dff.functor.comment" value="This operator is used here to force a dependence between two groups." />
+                    <inputport name="constant" peerid="v6" />
+                </functor>
+            </containerfunctor>
+            <functor name="SaveMap">
+                <property key="dff.functor.alias" value="saveMap4074" />
+                <inputport name="map" peerid="v17" />
+                <inputport name="suffixDigits">2</inputport>
+                <inputport name="step" peerid="v5" />
+                <inputport name="useCompression">.yes</inputport>
+                <inputport name="workdir">.none</inputport>
+                <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <functor name="MuxCategoricalMap">
+                <property key="dff.functor.alias" value="muxCategoricalMap4097" />
+                <inputport name="initial" peerid="v22" />
+                <inputport name="feedback" peerid="v17" />
+                <outputport name="map" id="v18" />
+            </functor>
+        </containerfunctor>
+    </containerfunctor>
+    <functor name="LoadMap">
+        <property key="dff.functor.alias" value="loadMap3787" />
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v19" />
+    </functor>
+    <containerfunctor name="Workdir">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="workdir2752" />
+        <inputport name="folder" peerid="v1" />
+        <internaloutputport name="workdir" id="v20" />
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="Regions" />
+            <property key="dff.functor.comment" value="Municipalities" />
+            <inputport name="filename">&quot;Admin2.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir" peerid="v20" />
+            <outputport name="map" id="v21" />
+        </functor>
+    </containerfunctor>
+    <functor name="LoadCategoricalMap">
+        <property key="dff.functor.alias" value="loadCategoricalMap4076" />
+        <inputport name="nullValue">.none</inputport>
+        <inputport name="loadAsSparse">.no</inputport>
+        <inputport name="suffixDigits">0</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="workdir">.none</inputport>
+        <outputport name="map" id="v22" />
+    </functor>
+</script>

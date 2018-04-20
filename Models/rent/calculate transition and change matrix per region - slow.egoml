@@ -1,0 +1,204 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2018-Mar-26 18:43:44" />
+    <property key="dff.version" value="4.0.8.20180319" />
+    <property key="metadata.author" value="Hermann Rodrigues" />
+    <property key="metadata.organization" value="CSR / UFMG" />
+    <property key="submodel.import" value='CalcConfusionMatrix { { &quot;initialMap&quot; : CategoricalMap, &quot;finalMap&quot; : CategoricalMap } { } { &quot;confusionMatrix&quot; : Table } }' />
+    <containerfunctor name="ForEachCategory">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="forEachCategory66168" />
+        <inputport name="categorization" peerid="v17" />
+        <internaloutputport name="step" id="v1" />
+        <functor name="CalcConfusionMatrix">
+            <property key="dff.functor.alias" value="calcConfusionMatrix15898" />
+            <property key="viewer.confusionmatrix" value="yes" />
+            <inputport name="initialMap" peerid="v6" />
+            <inputport name="finalMap" peerid="v7" />
+            <outputport name="confusionMatrix" id="v2" />
+        </functor>
+        <functor name="Step">
+            <property key="dff.functor.alias" value="step19695" />
+            <inputport name="step" peerid="v1" />
+            <outputport name="step" id="v3" />
+        </functor>
+        <functor name="SetTableByKey">
+            <property key="dff.functor.alias" value="setTableByKey69038" />
+            <inputport name="table" peerid="v5" />
+            <inputport name="keys" peerid="v3" />
+            <inputport name="subTable" peerid="v2" />
+            <inputport name="ignoreColumnNames">.yes</inputport>
+            <outputport name="result" id="v4" />
+        </functor>
+        <functor name="MuxTable">
+            <property key="dff.functor.alias" value="muxTable16831" />
+            <inputport name="initial">[&#x0A;    &quot;Municipaility*&quot;, &quot;From*&quot;, &quot;To*&quot;, &quot;Cells&quot;, &#x0A;]</inputport>
+            <inputport name="feedback" peerid="v4" />
+            <outputport name="table" id="v5" />
+        </functor>
+        <containerfunctor name="CalculateCategoricalMap">
+            <property key="dff.container.collapsed" value="yes" />
+            <property key="dff.functor.alias" value="calculateCategoricalMap66170" />
+            <inputport name="expression">[&#x0A;    if i2 = v1 then&#x0A;        i1&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+            <inputport name="cellType">.int32</inputport>
+            <inputport name="nullValue">.default</inputport>
+            <inputport name="resultIsSparse">.no</inputport>
+            <inputport name="resultFormat">.none</inputport>
+            <outputport name="result" id="v6" />
+            <functor name="NumberMap">
+                <property key="dff.functor.alias" value="numberMap66171" />
+                <inputport name="map" peerid="v15" />
+                <inputport name="mapNumber">1</inputport>
+            </functor>
+            <functor name="NumberValue">
+                <property key="dff.functor.alias" value="numberValue66172" />
+                <inputport name="value" peerid="v3" />
+                <inputport name="valueNumber">1</inputport>
+            </functor>
+            <functor name="NumberMap">
+                <property key="dff.functor.alias" value="numberMap66173" />
+                <inputport name="map" peerid="v17" />
+                <inputport name="mapNumber">2</inputport>
+            </functor>
+        </containerfunctor>
+        <containerfunctor name="CalculateCategoricalMap">
+            <property key="dff.container.collapsed" value="yes" />
+            <property key="dff.functor.alias" value="calculateCategoricalMap66170" />
+            <inputport name="expression">[&#x0A;    if i2 = v1 then&#x0A;        i1&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+            <inputport name="cellType">.int32</inputport>
+            <inputport name="nullValue">.default</inputport>
+            <inputport name="resultIsSparse">.no</inputport>
+            <inputport name="resultFormat">.none</inputport>
+            <outputport name="result" id="v7" />
+            <functor name="NumberMap">
+                <property key="dff.functor.alias" value="numberMap66171" />
+                <inputport name="map" peerid="v14" />
+                <inputport name="mapNumber">1</inputport>
+            </functor>
+            <functor name="NumberValue">
+                <property key="dff.functor.alias" value="numberValue66172" />
+                <inputport name="value" peerid="v3" />
+                <inputport name="valueNumber">1</inputport>
+            </functor>
+            <functor name="NumberMap">
+                <property key="dff.functor.alias" value="numberMap66173" />
+                <inputport name="map" peerid="v17" />
+                <inputport name="mapNumber">2</inputport>
+            </functor>
+        </containerfunctor>
+        <functor name="DetermineTransitionMatrix">
+            <property key="dff.container.collapsed" value="no" />
+            <property key="dff.functor.alias" value="Transition Rates" />
+            <property key="dff.functor.comment" value="Calculate the transition rates." />
+            <inputport name="initialLandscape" peerid="v6" />
+            <inputport name="finalLandscape" peerid="v7" />
+            <inputport name="timeSteps">1</inputport>
+            <outputport name="singleStepMatrix" id="v8" />
+        </functor>
+        <functor name="LookupTable">
+            <property key="dff.functor.alias" value="lookupTable3503" />
+            <inputport name="constant" peerid="v8" />
+            <outputport name="object" id="v9" />
+        </functor>
+        <functor name="MuxTable">
+            <property key="dff.functor.alias" value="muxTable15533" />
+            <inputport name="initial">[&#x0A;    &quot;Municipality*&quot;, &quot;Transitions*&quot;, &quot;Rate&quot;, &#x0A;]</inputport>
+            <inputport name="feedback" peerid="v11" />
+            <outputport name="table" id="v10" />
+        </functor>
+        <functor name="SetTableByKey">
+            <property key="dff.functor.alias" value="setTableByKey15534" />
+            <property key="viewer.result" value="yes" />
+            <inputport name="table" peerid="v10" />
+            <inputport name="keys" peerid="v3" />
+            <inputport name="subTable" peerid="v12" />
+            <inputport name="ignoreColumnNames">.yes</inputport>
+            <outputport name="result" id="v11" />
+        </functor>
+        <containerfunctor name="CalculateLookupTable">
+            <property key="dff.container.collapsed" value="no" />
+            <property key="dff.functor.alias" value="calculateLookupTable3501" />
+            <property key="viewer.result" value="yes" />
+            <inputport name="expression">[&#x0A;    if line = 5.002 or line = 5.003 or line = 3.005 or line = 3.002 or line = 2.003 then&#x0A;        t1[line]&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+            <inputport name="keyName">.none</inputport>
+            <inputport name="valueName">.none</inputport>
+            <outputport name="result" id="v12" />
+            <functor name="NumberTable">
+                <property key="dff.functor.alias" value="numberTable5725" />
+                <inputport name="table" peerid="v9" />
+                <inputport name="tableNumber">1</inputport>
+            </functor>
+        </containerfunctor>
+    </containerfunctor>
+    <containerfunctor name="Workdir">
+        <property key="dff.functor.alias" value="workdir11413" />
+        <inputport name="folder" peerid="v19" />
+        <internaloutputport name="workdir" id="v13" />
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap15525" />
+            <inputport name="filename">&quot;recategorized2013.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir" peerid="v13" />
+            <outputport name="map" id="v14" />
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap15524" />
+            <inputport name="filename">&quot;recategorized2012.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir" peerid="v13" />
+            <outputport name="map" id="v15" />
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="Workdir">
+        <property key="dff.functor.alias" value="workdir11414" />
+        <inputport name="folder" peerid="v18" />
+        <internaloutputport name="workdir" id="v16" />
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap15528" />
+            <inputport name="filename">&quot;Admin2.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir" peerid="v16" />
+            <outputport name="map" id="v17" />
+        </functor>
+    </containerfunctor>
+    <functor name="Folder">
+        <property key="dff.functor.alias" value="folder2754" />
+        <inputport name="constant">&quot;../../../Model&apos;s Data/rentModel/inputMaps&quot;</inputport>
+        <outputport name="object" id="v18" />
+    </functor>
+    <functor name="Folder">
+        <property key="dff.functor.alias" value="folder7824" />
+        <inputport name="constant">&quot;../../../Model&apos;s Data/rentModel/generatedByModel&quot;</inputport>
+        <outputport name="object" id="v19" />
+    </functor>
+    <containerfunctor name="Workdir">
+        <property key="dff.functor.alias" value="workdir11413" />
+        <inputport name="folder" peerid="v19" />
+        <internaloutputport name="workdir" id="v20" />
+        <functor name="SaveTable">
+            <property key="dff.functor.alias" value="saveTable69744" />
+            <inputport name="table" peerid="v4" />
+            <inputport name="filename">&quot;change matrix per region.csv&quot;</inputport>
+            <inputport name="suffixDigits">2</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir" peerid="v20" />
+        </functor>
+        <functor name="SaveTable">
+            <property key="dff.functor.alias" value="saveTable69744" />
+            <inputport name="table" peerid="v11" />
+            <inputport name="filename">&quot;transition matrix per region.csv&quot;</inputport>
+            <inputport name="suffixDigits">2</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir" peerid="v20" />
+        </functor>
+    </containerfunctor>
+</script>

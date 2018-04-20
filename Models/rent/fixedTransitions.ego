@@ -1,0 +1,161 @@
+@author = Hermann Rodrigues
+@organization = CSR / UFMG
+@date = 2018-Mar-26 18:44:17
+@version = 4.0.8.20180319
+@submodel.import = CalcConfusionMatrix { { \"initialMap\" : CategoricalMap, \"finalMap\" : CategoricalMap } { } { \"confusionMatrix\" : Table } }
+Script {{
+    folder7824 := Folder "../../../Model's Data/rentModel/generatedByModel";
+
+    folder2754 := Folder "../../../Model's Data/rentModel/inputMaps";
+
+    Workdir folder7824 {{
+        workdir = workdir;
+
+        loadCategoricalMap15524 := LoadCategoricalMap {
+            filename = "recategorized2012.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        loadCategoricalMap15525 := LoadCategoricalMap {
+            filename = "recategorized2013.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+    }};
+
+    Workdir folder2754 {{
+        workdir0 = workdir;
+
+        loadCategoricalMap15528 := LoadCategoricalMap {
+            filename = "Admin2.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir0
+        };
+    }};
+
+    @collapsed = no
+    ForEachCategory loadCategoricalMap15528 {{
+        step = step;
+
+        step19695 := Step step;
+
+        calculateCategoricalMap66170 := CalculateCategoricalMap {
+            expression = [
+                if i2 = v1 then
+                    i1
+                else 
+                    null        
+            ],
+            cellType = .int32,
+            nullValue = .default,
+            resultIsSparse = .no,
+            resultFormat = .none
+        } {{
+            NumberMap loadCategoricalMap15524 1;
+
+            NumberMap loadCategoricalMap15528 2;
+
+            NumberValue step19695 1;
+        }};
+
+        calculateCategoricalMap661700 := CalculateCategoricalMap {
+            expression = [
+                if i2 = v1 then
+                    i1
+                else 
+                    null        
+            ],
+            cellType = .int32,
+            nullValue = .default,
+            resultIsSparse = .no,
+            resultFormat = .none
+        } {{
+            NumberMap loadCategoricalMap15525 1;
+
+            NumberMap loadCategoricalMap15528 2;
+
+            NumberValue step19695 1;
+        }};
+
+        // Calculate the transition rates. 
+        @collapsed = no
+        transitionRates _ := DetermineTransitionMatrix {
+            initialLandscape = calculateCategoricalMap66170,
+            finalLandscape = calculateCategoricalMap661700,
+            timeSteps = 1
+        };
+
+        lookupTable3503 := LookupTable transitionRates;
+
+        muxTable16831 := MuxTable [
+            "Municipaility*", "From*", "To*", "Cells", 
+        ] setTableByKey69038;
+
+        muxTable15533 := MuxTable [
+            "Municipality*", "Transitions*", "Rate", 
+        ] setTableByKey15534;
+
+        @collapsed = no
+        @viewer.result = yes
+        calculateLookupTable3501 := CalculateLookupTable {
+            expression = [
+                if line = 5.002 or line = 5.003 or line = 3.005 or line = 3.002 or line = 2.003 then
+                    t1[line]
+                else 
+                    null        
+            ],
+            keyName = .none,
+            valueName = .none
+        } {{
+            NumberTable lookupTable3503 1;
+        }};
+
+        @viewer.confusionmatrix = yes
+        calcConfusionMatrix15898 := CalcConfusionMatrix calculateCategoricalMap66170 calculateCategoricalMap661700;
+
+        @viewer.result = yes
+        setTableByKey15534 := SetTableByKey {
+            table = muxTable15533,
+            keys = step19695,
+            subTable = calculateLookupTable3501,
+            ignoreColumnNames = .yes
+        };
+
+        setTableByKey69038 := SetTableByKey {
+            table = muxTable16831,
+            keys = step19695,
+            subTable = calcConfusionMatrix15898,
+            ignoreColumnNames = .yes
+        };
+    }};
+
+    Workdir folder7824 {{
+        workdir1 = workdir;
+
+        SaveTable {
+            table = setTableByKey69038,
+            filename = "change matrix per region.csv",
+            suffixDigits = 2,
+            step = .none,
+            workdir = workdir1
+        };
+
+        SaveTable {
+            table = setTableByKey15534,
+            filename = "transition matrix per region.csv",
+            suffixDigits = 2,
+            step = .none,
+            workdir = workdir1
+        };
+    }};
+}};

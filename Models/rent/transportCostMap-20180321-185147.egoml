@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2018-Mar-20 09:08:43" />
+    <property key="dff.date" value="2018-Mar-20 17:23:12" />
     <property key="dff.version" value="4.0.5.20171130" />
     <functor name="LookupTable">
         <property key="dff.functor.alias" value="lookupTable1308" />
@@ -21,7 +21,7 @@
     <functor name="SaveMap">
         <property key="dff.functor.alias" value="saveMap1317" />
         <inputport name="map" peerid="v2" />
-        <inputport name="filename">&quot;../../Model&apos;s Data/rentModel/rents/2012CostMap.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../../Model&apos;s Data/rentModel/rents/2012CostMap.tif&quot;</inputport>
         <inputport name="suffixDigits">0</inputport>
         <inputport name="step">.none</inputport>
         <inputport name="useCompression">.yes</inputport>
@@ -30,7 +30,7 @@
     </functor>
     <functor name="LoadMap">
         <property key="dff.functor.alias" value="loadMap2776" />
-        <inputport name="filename">&quot;../../../BiophysicalData/SRTMv4.1/final_Slope.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../../../BiophysicalData/SRTMv4.1/final_Slope.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -40,7 +40,7 @@
     </functor>
     <functor name="LoadCategoricalMap">
         <property key="dff.functor.alias" value="loadCategoricalMap2777" />
-        <inputport name="filename">&quot;../../../transport data/Ports/finalPorts.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../../../transport data/Ports/finalPorts.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -50,7 +50,7 @@
     </functor>
     <functor name="LoadMap">
         <property key="dff.functor.alias" value="loadMap2775" />
-        <inputport name="filename">&quot;../../../Land_Use_Class/finalMaps/final_2012.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../../../Land_Use_Class/finalMaps/final_2012.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -65,7 +65,7 @@
     </functor>
     <functor name="LoadCategoricalMap">
         <property key="dff.functor.alias" value="loadCategoricalMap2777" />
-        <inputport name="filename">&quot;../../../transport data/GlobalSurfaceWater/rivers.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../../../transport data/GlobalSurfaceWater/rivers.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -75,7 +75,7 @@
     </functor>
     <functor name="LoadCategoricalMap">
         <property key="dff.functor.alias" value="loadCategoricalMap2777" />
-        <inputport name="filename">&quot;../../../transport data/Roads_OpenStMap/OpenStreetMap_paved_unpaved/final_Merged_Roads_pave.tif&quot;</inputport>
+        <inputport name="filename">&quot;../../../../transport data/Roads_OpenStMap/OpenStreetMap_paved_unpaved/final_Merged_Roads_pave.tif&quot;</inputport>
         <inputport name="nullValue">.none</inputport>
         <inputport name="loadAsSparse">.no</inputport>
         <inputport name="suffixDigits">0</inputport>
@@ -186,7 +186,7 @@
     <containerfunctor name="CalculateMap">
         <property key="dff.container.collapsed" value="no" />
         <property key="dff.functor.alias" value="calculateMap3285" />
-        <inputport name="expression">[&#x0A;    if not isNull(i1) then&#x0A;        8&#x0A;    else &#x0A;        null&#x0A;]</inputport>
+        <inputport name="expression">[&#x0A;    if i1 = 0 then&#x0A;        null&#x0A;    else if i1 &gt; 0 then&#x0A;        8&#x0A;    else &#x0A;        null&#x0A;]</inputport>
         <inputport name="cellType">.int32</inputport>
         <inputport name="nullValue">.default</inputport>
         <inputport name="resultIsSparse">.no</inputport>
@@ -198,4 +198,24 @@
             <inputport name="mapNumber">1</inputport>
         </functor>
     </containerfunctor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap4220" />
+        <inputport name="map" peerid="v9" />
+        <inputport name="filename">&quot;../../../Model&apos;s Data/rentModel/rents/landcoverWithRiversAndRoads.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+        <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+    </functor>
+    <functor name="SaveMap">
+        <property key="dff.functor.alias" value="saveMap4223" />
+        <inputport name="map" peerid="v11" />
+        <inputport name="filename">&quot;../../../Model&apos;s Data/rentModel/rents/landCoverWithSlope.tif&quot;</inputport>
+        <inputport name="suffixDigits">2</inputport>
+        <inputport name="step">.none</inputport>
+        <inputport name="useCompression">.yes</inputport>
+        <inputport name="workdir">.none</inputport>
+        <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+    </functor>
 </script>

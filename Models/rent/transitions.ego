@@ -1,0 +1,116 @@
+@date = 2018-Mar-23 18:08:59
+@version = 4.0.8.20180319
+Script {{
+    folder2754 := Folder "../../../Model's Data/rentModel/inputMaps";
+
+    @collapsed = no
+    @alias = Input Maps
+    Workdir folder2754 {{
+        workdir = workdir;
+
+        loadCategoricalMap5037 := LoadCategoricalMap {
+            filename = "Admin2.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+    }};
+
+    // Initial landscape map. 
+    initialLandscape := LoadCategoricalMap {
+        filename = "../../../Model's Data/rentModel/generatedByModel/recategorized2012.tif",
+        nullValue = .none,
+        loadAsSparse = .no,
+        suffixDigits = 0,
+        step = .none,
+        workdir = .none
+    };
+
+    // Final landscape map. 
+    finalLandscape := LoadCategoricalMap {
+        filename = "../../../Model's Data/rentModel/generatedByModel/recategorized2013.tif",
+        nullValue = .none,
+        loadAsSparse = .no,
+        suffixDigits = 0,
+        step = .none,
+        workdir = .none
+    };
+
+    folder7824 := Folder "../../../Model's Data/rentModel/generatedByModel";
+
+    ForEachRegion loadCategoricalMap5037 0 {{
+        regionManager = regionManager;
+
+        step = step;
+
+        @alias = Final Landscape (Region)
+        finalLandscapeRegion := RegionalizeCategoricalMap {
+            globalMap = finalLandscape,
+            regionId = step,
+            keepNonRegionCells = .no,
+            regionManager = regionManager
+        };
+
+        @alias = Initial Landscape (Region)
+        initialLandscapeRegion := RegionalizeCategoricalMap {
+            globalMap = initialLandscape,
+            regionId = step,
+            keepNonRegionCells = .no,
+            regionManager = regionManager
+        };
+
+        // Calculate the transition rates. 
+        @collapsed = no
+        transitionRates _ := DetermineTransitionMatrix {
+            initialLandscape = initialLandscapeRegion,
+            finalLandscape = finalLandscapeRegion,
+            timeSteps = 1
+        };
+
+        lookupTable3503 := LookupTable transitionRates;
+
+        muxTable15533 := MuxTable [
+            "Municipality*", "Transitions*", "Rate", 
+        ] setTableByKey15534;
+
+        step15535 := Step step;
+
+        @collapsed = no
+        @viewer.result = yes
+        calculateLookupTable3501 := CalculateLookupTable {
+            expression = [
+                if line = 5.002 or line = 5.003 then
+                    t1[line]
+                else 
+                    null        
+            ],
+            keyName = .none,
+            valueName = .none
+        } {{
+            NumberTable lookupTable3503 1;
+        }};
+
+        @viewer.result = yes
+        setTableByKey15534 := SetTableByKey {
+            table = muxTable15533,
+            keys = step15535,
+            subTable = calculateLookupTable3501,
+            ignoreColumnNames = .yes
+        };
+    }};
+
+    Workdir folder7824 {{
+        workdir0 = workdir;
+
+        // Single-step transition matrix. 
+        SaveTable {
+            table = setTableByKey15534,
+            filename = "transitions.csv",
+            suffixDigits = 6,
+            step = .none,
+            workdir = workdir0
+        };
+    }};
+}};

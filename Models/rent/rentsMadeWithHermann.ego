@@ -1,0 +1,117 @@
+@date = 2018-Mar-22 16:26:34
+@version = 4.0.8.20180319
+Script {{
+    folder2754 := Folder "../../../Model's Data/rentModel/rents";
+
+    @collapsed = no
+    Workdir folder2754 {{
+        workdir = workdir;
+
+        loadTable2556 := LoadTable {
+            filename = "2012soy.csv",
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+    }};
+
+    folder27540 := Folder "../../../Model's Data/rentModel/inputMaps";
+
+    @viewer.result = yes
+    getTableColumn2906 := GetTableColumn loadTable2556 2;
+
+    @collapsed = no
+    Workdir folder27540 {{
+        workdir0 = workdir;
+
+        loadMap2727 := LoadMap {
+            filename = "Admin2.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir0
+        };
+
+        loadMap27270 := LoadMap {
+            filename = "transportCost.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir0
+        };
+    }};
+
+    lookupTable2907 := LookupTable getTableColumn2906;
+
+    @collapsed = no
+    @viewer.result = yes
+    calculateLookupTable2908 := CalculateLookupTable {
+        expression = [
+            t2[[line][2]] * t2[[line][3]] * t2[[line][4]]
+        ],
+        keyName = .none,
+        valueName = "soy_profit"
+    } {{
+        NumberTable lookupTable2907 1;
+
+        NumberTable loadTable2556 2;
+    }};
+
+    @collapsed = no
+    @viewer.result = yes
+    calculateMap2926 := CalculateMap {
+        expression = [
+            t1[i1]
+        ],
+        cellType = .float32,
+        nullValue = .default,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap loadMap2727 1;
+
+        NumberTable calculateLookupTable2908 1;
+    }};
+
+    @collapsed = no
+    calculateRents := CalculateMap {
+        expression = [
+            i1 - i2 / 100 * 33.33
+        ],
+        cellType = .float32,
+        nullValue = .default,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap calculateMap2926 1;
+
+        NumberMap loadMap27270 2;
+    }};
+
+    @collapsed = no
+    Workdir folder27540 {{
+        workdir1 = workdir;
+
+        SaveMap {
+            map = calculateMap2926,
+            filename = "soyProfits.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir1,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = calculateRents,
+            filename = "soyRents.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir1,
+            ignoreCostlySparseCategories = .yes
+        };
+    }};
+}};

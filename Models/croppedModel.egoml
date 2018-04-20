@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="yes" ?>
 <script>
-    <property key="dff.date" value="2017-Nov-29 21:36:43" />
-    <property key="dff.version" value="4.0.4.20171107" />
+    <property key="dff.date" value="2018-Mar-22 17:46:40" />
+    <property key="dff.version" value="4.0.8.20180319" />
     <property key="submodel.import" value='CalcSimilarityOfDifferences { { &quot;initialMap&quot; : CategoricalMap, &quot;observedMap&quot; : CategoricalMap, &quot;simulatedMap&quot; : CategoricalMap } { &quot;useExponentialDecay&quot; : BooleanValue, &quot;windowSize&quot; : PositiveIntegerValue, &quot;printSimilarities&quot; : BooleanValue, &quot;exponentialDecayDivisor&quot; : RealValue } { &quot;similarityMap&quot; : Map, &quot;similarity&quot; : RealValue } }; AllocateTransitions { { &quot;lanscape&quot; : CategoricalMap, &quot;probabilities&quot; : Map, &quot;transitionMatrix&quot; : TransitionMatrix, &quot;percentOfTransitionsByExpansion&quot; : PercentMatrix, &quot;patchExpansionParameters&quot; : TransitionFunctionParameterMatrix, &quot;patchGenerationParameters&quot; : TransitionFunctionParameterMatrix } { &quot;printTransitionInfo&quot; : BooleanValue } { &quot;resultingLanscape&quot; : CategoricalMap } }' />
     <functor name="LookupTable">
         <property key="dff.functor.alias" value="lookupTable3289" />
@@ -793,7 +793,7 @@
             <outputport name="result" id="v35" />
             <functor name="NumberMap">
                 <property key="dff.functor.alias" value="numberMap3245" />
-                <inputport name="map" peerid="v61" />
+                <inputport name="map" peerid="v60" />
                 <inputport name="mapNumber">2</inputport>
             </functor>
             <functor name="NumberMap">
@@ -832,7 +832,7 @@
             <outputport name="result" id="v36" />
             <functor name="NumberMap">
                 <property key="dff.functor.alias" value="numberMap1138" />
-                <inputport name="map" peerid="v61" />
+                <inputport name="map" peerid="v60" />
                 <inputport name="mapNumber">2</inputport>
             </functor>
             <functor name="NumberMap">
@@ -1083,7 +1083,7 @@
             <functor name="MuxCategoricalMap">
                 <property key="dff.functor.alias" value="Landscape" />
                 <inputport name="initial" peerid="v20" />
-                <inputport name="feedback" peerid="v61" />
+                <inputport name="feedback" peerid="v60" />
                 <outputport name="map" id="v58" />
             </functor>
             <functor name="CalcDistanceMap">
@@ -1097,7 +1097,7 @@
             </functor>
             <functor name="SaveMap">
                 <property key="dff.functor.alias" value="saveMap1165" />
-                <inputport name="map" peerid="v61" />
+                <inputport name="map" peerid="v60" />
                 <inputport name="filename">&quot;../../data/croppedModel/generatedByTheModel/step9Landscape01.tif&quot;</inputport>
                 <inputport name="suffixDigits">2</inputport>
                 <inputport name="step" peerid="v57" />
@@ -1107,13 +1107,24 @@
             </functor>
             <functor name="SaveMap">
                 <property key="dff.functor.alias" value="saveMap1169" />
-                <inputport name="map" peerid="v60" />
+                <inputport name="map" peerid="v61" />
                 <inputport name="filename">&quot;../../data/croppedModel/generatedByTheModel/step9probabilities.tif&quot;</inputport>
                 <inputport name="suffixDigits">0</inputport>
                 <inputport name="step" peerid="v57" />
                 <inputport name="useCompression">.yes</inputport>
                 <inputport name="workdir">.none</inputport>
                 <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+            </functor>
+            <functor name="AllocateTransitions">
+                <property key="dff.functor.alias" value="Updated Landscape (Submodel)" />
+                <inputport name="lanscape" peerid="v58" />
+                <inputport name="probabilities" peerid="v61" />
+                <inputport name="transitionMatrix" peerid="v25" />
+                <inputport name="percentOfTransitionsByExpansion">[&#x0A;    3-&gt;2 0.753403391,&#x0A;    3-&gt;5 0.806330794,&#x0A;    5-&gt;2 0.654023921&#x0A;]</inputport>
+                <inputport name="patchExpansionParameters">[&#x0A;    3-&gt;2 11.42693709 19.18777712 1,&#x0A;    3-&gt;5 13.9672299 23.439159 1,&#x0A;    5-&gt;2 16.73623656 25.03518834 1&#x0A;]</inputport>
+                <inputport name="patchGenerationParameters">[&#x0A;    3-&gt;2 18.57729351 67.96237466 1,&#x0A;    3-&gt;5 24.93039364 83.26768536 1,&#x0A;    5-&gt;2 22.67022023 46.56547362 1&#x0A;]</inputport>
+                <inputport name="printTransitionInfo">.yes</inputport>
+                <outputport name="resultingLanscape" id="v60" />
             </functor>
             <containerfunctor name="CalcWOfEProbabilityMap">
                 <property key="dff.container.collapsed" value="yes" />
@@ -1124,7 +1135,7 @@
                 <inputport name="transitions">[ 3-&gt;2, 3-&gt;5, 5-&gt;2 ]</inputport>
                 <inputport name="cellType">.uint8</inputport>
                 <inputport name="nullValue">.default</inputport>
-                <outputport name="probabilities" id="v60" />
+                <outputport name="probabilities" id="v61" />
                 <functor name="NameMap">
                     <property key="dff.functor.alias" value="nameMap1172" />
                     <inputport name="map" peerid="v59" />
@@ -1216,17 +1227,6 @@
                     <inputport name="mapName">&quot;cornArea&quot;</inputport>
                 </functor>
             </containerfunctor>
-            <functor name="AllocateTransitions">
-                <property key="dff.functor.alias" value="Updated Landscape (Submodel)" />
-                <inputport name="lanscape" peerid="v58" />
-                <inputport name="probabilities" peerid="v60" />
-                <inputport name="transitionMatrix" peerid="v25" />
-                <inputport name="percentOfTransitionsByExpansion">[&#x0A;    3-&gt;2 0.753403391,&#x0A;    3-&gt;5 0.806330794,&#x0A;    5-&gt;2 0.654023921&#x0A;]</inputport>
-                <inputport name="patchExpansionParameters">[&#x0A;    3-&gt;2 11.42693709 19.18777712 1,&#x0A;    3-&gt;5 13.9672299 23.439159 1,&#x0A;    5-&gt;2 16.73623656 25.03518834 1&#x0A;]</inputport>
-                <inputport name="patchGenerationParameters">[&#x0A;    3-&gt;2 18.57729351 67.96237466 1,&#x0A;    3-&gt;5 24.93039364 83.26768536 1,&#x0A;    5-&gt;2 22.67022023 46.56547362 1&#x0A;]</inputport>
-                <inputport name="printTransitionInfo">.yes</inputport>
-                <outputport name="resultingLanscape" id="v61" />
-            </functor>
         </containerfunctor>
     </containerfunctor>
 </script>

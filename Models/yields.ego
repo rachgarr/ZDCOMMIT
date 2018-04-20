@@ -1,0 +1,81 @@
+@date = 2018-Mar-04 16:28:19
+@version = 4.0.5.20171130
+Script {{
+    loadTable14190 := LoadTable {
+        filename = "../../../../@inbox/statesKey.csv",
+        suffixDigits = 0,
+        step = .none,
+        workdir = .none
+    };
+
+    @alias = yieldData
+    yieldData := LoadTable {
+        filename = "../../../../@inbox/WD_paneldata.csv",
+        suffixDigits = 0,
+        step = .none,
+        workdir = .none
+    };
+
+    loadCategoricalMap14330 := LoadCategoricalMap {
+        filename = "../../../../../Desktop/Sandbox/admin2.tif",
+        nullValue = .none,
+        loadAsSparse = .no,
+        suffixDigits = 0,
+        step = .none,
+        workdir = .none
+    };
+
+    @collapsed = no
+    For {
+        firstIterationStep = 1,
+        lastIterationStep = 6312,
+        stepIncrement = 1
+    } {{
+        step = step;
+
+        step14329 := Step step;
+
+        @viewer.result = yes
+        getTableValue14191 := GetTableValue {
+            table = loadTable14190,
+            keys = step14329,
+            column = 2,
+            valueIfNotFound = .none
+        };
+
+        @viewer.table = yes
+        muxLookupTable14195 := MuxLookupTable [
+            "Key" "soyArea"
+        ] setLookupTableValue14197;
+
+        getTableValue14192 := GetTableValue {
+            table = yieldData,
+            keys = getTableValue14191,
+            column = 2,
+            valueIfNotFound = .none
+        };
+
+        @viewer.updatedtable = yes
+        setLookupTableValue14197 := SetLookupTableValue {
+            table = muxLookupTable14195,
+            key = step14329,
+            value = getTableValue14192
+        };
+    }};
+
+    @collapsed = no
+    @viewer.result = yes
+    _ := CalculateMap {
+        expression = [
+            t1[i1]
+        ],
+        cellType = .int32,
+        nullValue = .default,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap loadCategoricalMap14330 1;
+
+        NumberTable setLookupTableValue14197 1;
+    }};
+}};

@@ -1,0 +1,124 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2018-Mar-23 16:33:22" />
+    <property key="dff.version" value="4.0.8.20180319" />
+    <functor name="Folder">
+        <property key="dff.functor.alias" value="folder2754" />
+        <inputport name="constant">&quot;../../Model&apos;s Data/rentModel/inputMaps&quot;</inputport>
+        <outputport name="object" id="v1" />
+    </functor>
+    <functor name="Folder">
+        <property key="dff.functor.alias" value="folder2754" />
+        <inputport name="constant">&quot;../../Model&apos;s Data/rentModel/generatedByModel&quot;</inputport>
+        <outputport name="object" id="v2" />
+    </functor>
+    <functor name="CalcDistanceToFeatureMap">
+        <property key="dff.functor.alias" value="calcDistanceToFeatureMap2600" />
+        <property key="viewer.distance" value="yes" />
+        <inputport name="source" peerid="v10" />
+        <inputport name="mask">.none</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="truncateDistance">.no</inputport>
+        <outputport name="distance" id="v3" />
+    </functor>
+    <containerfunctor name="Group">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Initial Landscape Map" />
+        <containerfunctor name="Workdir">
+            <property key="dff.container.collapsed" value="no" />
+            <property key="dff.functor.alias" value="workdir2752" />
+            <inputport name="folder" peerid="v2" />
+            <internaloutputport name="workdir" id="v4" />
+            <functor name="LoadCategoricalMap">
+                <property key="dff.functor.alias" value="loadCategoricalMap12289" />
+                <inputport name="filename">&quot;recategorized2012.tif&quot;</inputport>
+                <inputport name="nullValue">.none</inputport>
+                <inputport name="loadAsSparse">.no</inputport>
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="workdir" peerid="v4" />
+                <outputport name="map" id="v5" />
+            </functor>
+        </containerfunctor>
+    </containerfunctor>
+    <containerfunctor name="Group">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Final Landscape Map" />
+        <containerfunctor name="Workdir">
+            <property key="dff.container.collapsed" value="no" />
+            <property key="dff.functor.alias" value="workdir2752" />
+            <inputport name="folder" peerid="v2" />
+            <internaloutputport name="workdir" id="v6" />
+            <functor name="LoadCategoricalMap">
+                <property key="dff.functor.alias" value="loadCategoricalMap12290" />
+                <inputport name="filename">&quot;recategorized2013.tif&quot;</inputport>
+                <inputport name="nullValue">.none</inputport>
+                <inputport name="loadAsSparse">.no</inputport>
+                <inputport name="suffixDigits">0</inputport>
+                <inputport name="step">.none</inputport>
+                <inputport name="workdir" peerid="v6" />
+                <outputport name="map" id="v7" />
+            </functor>
+        </containerfunctor>
+    </containerfunctor>
+    <containerfunctor name="DetermineWeightsOfEvidenceRanges">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Weight of Evidence Ranges" />
+        <property key="dff.functor.comment" value="Calculate Weights of Evidence ranges." />
+        <inputport name="initialLandscape" peerid="v5" />
+        <inputport name="finalLandscape" peerid="v7" />
+        <inputport name="skeleton">[&#x0A;    5-&gt;2 [&#x0A;        &quot;distanceToSlaughterhouse/layer_0&quot; 1 500000 1 5&#x0A;    ]&#x0A;]</inputport>
+        <inputport name="fixAbnormalWeights">.yes</inputport>
+        <outputport name="ranges" id="v8" />
+        <functor name="NameMap">
+            <property key="dff.functor.alias" value="nameMap4469" />
+            <inputport name="map" peerid="v3" />
+            <inputport name="mapName">&quot;distanceToSlaughterhouse&quot;</inputport>
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="Workdir">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Spatial Variables" />
+        <inputport name="folder" peerid="v1" />
+        <internaloutputport name="workdir" id="v9" />
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="loadCategoricalMap2602" />
+            <inputport name="filename">&quot;Slaughterhouses.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir" peerid="v9" />
+            <outputport name="map" id="v10" />
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="Workdir">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="Saving Outputs" />
+        <inputport name="folder" peerid="v2" />
+        <internaloutputport name="workdir" id="v11" />
+        <functor name="SaveTable">
+            <property key="dff.functor.alias" value="saveTable12163" />
+            <inputport name="table" peerid="v12" />
+            <inputport name="filename">&quot;summary.csv&quot;</inputport>
+            <inputport name="suffixDigits">2</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir" peerid="v11" />
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="DetermineWeightsOfEvidenceCoefficients">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="determineWeightsOfEvidenceCoefficients4804" />
+        <inputport name="initialLandscape" peerid="v5" />
+        <inputport name="finalLandscape" peerid="v7" />
+        <inputport name="ranges" peerid="v8" />
+        <inputport name="fixAbnormalWeights">.yes</inputport>
+        <outputport name="report" id="v12" />
+        <functor name="NameMap">
+            <property key="dff.functor.alias" value="nameMap4469" />
+            <inputport name="map" peerid="v10" />
+            <inputport name="mapName">&quot;distanceToSlaughterhouse&quot;</inputport>
+        </functor>
+    </containerfunctor>
+</script>

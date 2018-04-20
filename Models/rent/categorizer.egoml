@@ -1,0 +1,115 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2018-Mar-19 19:53:59" />
+    <property key="dff.version" value="4.0.5.20171130" />
+    <functor name="LookupTable">
+        <property key="dff.functor.alias" value="lookupTable3289" />
+        <inputport name="constant">[&#x0A;    &quot;Key&quot; &quot;Value&quot;,&#x0A;    1 1 .. 3 3,&#x0A;    4 3,&#x0A;    5 5,&#x0A;    6 1,&#x0A;    7 4,&#x0A;    8 1,&#x0A;    9 4&#x0A;]</inputport>
+        <outputport name="object" id="v1" />
+    </functor>
+    <containerfunctor name="Workdir">
+        <property key="dff.functor.alias" value="workdir4770" />
+        <inputport name="folder" peerid="v7" />
+        <internaloutputport name="workdir" id="v2" />
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="Initial Landscape" />
+            <property key="dff.functor.comment" value="Initial landscape map." />
+            <inputport name="filename">&quot;cropped2012.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir" peerid="v2" />
+            <outputport name="map" id="v3" />
+        </functor>
+        <functor name="LoadCategoricalMap">
+            <property key="dff.functor.alias" value="Final Landscape" />
+            <property key="dff.functor.comment" value="Final landscape map." />
+            <inputport name="filename">&quot;cropped2013.tif&quot;</inputport>
+            <inputport name="nullValue">.none</inputport>
+            <inputport name="loadAsSparse">.no</inputport>
+            <inputport name="suffixDigits">0</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="workdir" peerid="v2" />
+            <outputport name="map" id="v4" />
+        </functor>
+    </containerfunctor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap3456" />
+        <inputport name="expression">[&#x0A;    t1[i1]&#x0A;]</inputport>
+        <inputport name="cellType">.int8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v5" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap3457" />
+            <inputport name="map" peerid="v3" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+        <functor name="NumberTable">
+            <property key="dff.functor.alias" value="numberTable3458" />
+            <inputport name="table" peerid="v1" />
+            <inputport name="tableNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="CalcDistanceMap">
+        <property key="dff.functor.alias" value="calcDistanceMap3227" />
+        <inputport name="categoricalMap" peerid="v5" />
+        <inputport name="categories">[ 2, 5 ]</inputport>
+        <inputport name="cellType">.int32</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="truncateDistance">.no</inputport>
+    </functor>
+    <containerfunctor name="CalculateCategoricalMap">
+        <property key="dff.container.collapsed" value="no" />
+        <property key="dff.functor.alias" value="calculateCategoricalMap3456" />
+        <inputport name="expression">[&#x0A;    t1[i1]&#x0A;]</inputport>
+        <inputport name="cellType">.int8</inputport>
+        <inputport name="nullValue">.default</inputport>
+        <inputport name="resultIsSparse">.no</inputport>
+        <inputport name="resultFormat">.none</inputport>
+        <outputport name="result" id="v6" />
+        <functor name="NumberMap">
+            <property key="dff.functor.alias" value="numberMap3457" />
+            <inputport name="map" peerid="v4" />
+            <inputport name="mapNumber">1</inputport>
+        </functor>
+        <functor name="NumberTable">
+            <property key="dff.functor.alias" value="numberTable3458" />
+            <inputport name="table" peerid="v1" />
+            <inputport name="tableNumber">1</inputport>
+        </functor>
+    </containerfunctor>
+    <functor name="Folder">
+        <property key="dff.functor.alias" value="folder4774" />
+        <inputport name="constant">&quot;../../../Model&apos;s Data/rentModel/inputMaps&quot;</inputport>
+        <outputport name="object" id="v7" />
+    </functor>
+    <containerfunctor name="Workdir">
+        <property key="dff.functor.alias" value="workdir4775" />
+        <inputport name="folder" peerid="v7" />
+        <internaloutputport name="workdir" id="v8" />
+        <functor name="SaveMap">
+            <property key="dff.functor.alias" value="saveMap3239" />
+            <inputport name="map" peerid="v5" />
+            <inputport name="filename">&quot;recategorized2012.tif&quot;</inputport>
+            <inputport name="suffixDigits">2</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="useCompression">.yes</inputport>
+            <inputport name="workdir" peerid="v8" />
+            <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+        </functor>
+        <functor name="SaveMap">
+            <property key="dff.functor.alias" value="saveMap3238" />
+            <inputport name="map" peerid="v6" />
+            <inputport name="filename">&quot;recategorized2013.tif&quot;</inputport>
+            <inputport name="suffixDigits">2</inputport>
+            <inputport name="step">.none</inputport>
+            <inputport name="useCompression">.yes</inputport>
+            <inputport name="workdir" peerid="v8" />
+            <inputport name="ignoreCostlySparseCategories">.yes</inputport>
+        </functor>
+    </containerfunctor>
+</script>

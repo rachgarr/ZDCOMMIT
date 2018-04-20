@@ -1,0 +1,371 @@
+@date = 2018-Mar-22 13:53:22
+@version = 4.0.8.20180319
+Script {{
+    folder2754 := Folder "../../../Model's Data/rentModel/rents";
+
+    @collapsed = no
+    Workdir folder2754 {{
+        workdir = workdir;
+
+        loadTable2557 := LoadTable {
+            filename = "statesKey.csv",
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        loadTable2556 := LoadTable {
+            filename = "2012soy.csv",
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+    }};
+
+    getTableKeys2575 := GetTableKeys loadTable2557;
+
+    string2783 := String "soy_area";
+
+    string27830 := String "soy_yield";
+
+    string27831 := String "soy_price";
+
+    folder27540 := Folder "../../../Model's Data/rentModel/inputMaps";
+
+    @viewer.result = yes
+    addSoyPriceEmptyColumn := AddTableColumn {
+        table = getTableKeys2575,
+        columnName = string27831,
+        columnType = .real,
+        columnIndex = 0,
+        columnShouldBeKey = .no,
+        columnValues = .none,
+        defaultValue = .none
+    };
+
+    @viewer.result = yes
+    addSoyYieldEmptyColumn := AddTableColumn {
+        table = getTableKeys2575,
+        columnName = string27830,
+        columnType = .real,
+        columnIndex = 0,
+        columnShouldBeKey = .no,
+        columnValues = .none,
+        defaultValue = .none
+    };
+
+    @viewer.result = yes
+    addSoyAreaEmptyColumn := AddTableColumn {
+        table = getTableKeys2575,
+        columnName = string2783,
+        columnType = .real,
+        columnIndex = 0,
+        columnShouldBeKey = .no,
+        columnValues = .none,
+        defaultValue = .none
+    };
+
+    @viewer.result = yes
+    removeTableColumn2642 := RemoveTableColumn addSoyYieldEmptyColumn 2;
+
+    @viewer.result = yes
+    removeTableColumn26420 := RemoveTableColumn addSoyAreaEmptyColumn 2;
+
+    @viewer.result = yes
+    removeTableColumn26421 := RemoveTableColumn addSoyPriceEmptyColumn 2;
+
+    @collapsed = no
+    Workdir folder27540 {{
+        workdir0 = workdir;
+
+        loadMap27270 := LoadMap {
+            filename = "transportCost.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir0
+        };
+
+        loadMap2727 := LoadMap {
+            filename = "Admin2.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir0
+        };
+    }};
+
+    @collapsed = no
+    @alias = Create three lookup tables for area, yield, and price
+    ForEach getTableKeys2575 {{
+        step = step;
+
+        step2586 := Step step;
+
+        keyInStringForm := GetTableValue {
+            table = loadTable2557,
+            keys = step2586,
+            column = 2,
+            valueIfNotFound = .none
+        };
+
+        yield := MuxLookupTable removeTableColumn2642 setLookupTableValue27411;
+
+        area := MuxLookupTable removeTableColumn26420 setLookupTableValue2741;
+
+        price := MuxLookupTable removeTableColumn26421 setLookupTableValue27410;
+
+        getArea := GetTableValue {
+            table = loadTable2556,
+            keys = keyInStringForm,
+            column = string2783,
+            valueIfNotFound = 0
+        };
+
+        getYield := GetTableValue {
+            table = loadTable2556,
+            keys = keyInStringForm,
+            column = string27830,
+            valueIfNotFound = 0
+        };
+
+        getPrice := GetTableValue {
+            table = loadTable2556,
+            keys = keyInStringForm,
+            column = string27831,
+            valueIfNotFound = 0
+        };
+
+        @viewer.updatedtable = yes
+        setLookupTableValue2741 := SetLookupTableValue {
+            table = area,
+            key = step2586,
+            value = getArea
+        };
+
+        @viewer.updatedtable = yes
+        setLookupTableValue27410 := SetLookupTableValue {
+            table = price,
+            key = step2586,
+            value = getPrice
+        };
+
+        @viewer.updatedtable = yes
+        setLookupTableValue27411 := SetLookupTableValue {
+            table = yield,
+            key = step2586,
+            value = getYield
+        };
+    }};
+
+    @collapsed = no
+    @viewer.result = yes
+    calculateAreaMap := CalculateMap {
+        expression = [
+            t1[i1]
+        ],
+        cellType = .int32,
+        nullValue = .default,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap loadMap2727 1;
+
+        NumberTable setLookupTableValue2741 1;
+    }};
+
+    @collapsed = no
+    @viewer.result = yes
+    calculatePriceMap := CalculateMap {
+        expression = [
+            t1[i1]
+        ],
+        cellType = .int32,
+        nullValue = .default,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap loadMap2727 1;
+
+        NumberTable setLookupTableValue27410 1;
+    }};
+
+    @collapsed = no
+    @viewer.result = yes
+    calculateYieldMap := CalculateMap {
+        expression = [
+            t1[i1]
+        ],
+        cellType = .int32,
+        nullValue = .default,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap loadMap2727 1;
+
+        NumberTable setLookupTableValue27411 1;
+    }};
+
+    @collapsed = no
+    @viewer.result = yes
+    calculateProfitsMap := CalculateMap {
+        expression = [
+            i1 * i2 * i3 / 1000 / 1000
+        ],
+        cellType = .int32,
+        nullValue = .default,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap calculateAreaMap 1;
+
+        NumberMap calculateYieldMap 2;
+
+        NumberMap calculatePriceMap 3;
+    }};
+
+    @collapsed = no
+    createString2787 := CreateString "<s1><s2>" {{
+        NumberString string27830 1;
+
+        NumberString ".csv" 2;
+    }};
+
+    @collapsed = no
+    createString27870 := CreateString "<s1><s2>" {{
+        NumberString string2783 1;
+
+        NumberString ".tif" 2;
+    }};
+
+    @collapsed = no
+    createString27871 := CreateString "<s1><s2>" {{
+        NumberString string2783 1;
+
+        NumberString ".csv" 2;
+    }};
+
+    @collapsed = no
+    createString27872 := CreateString "<s1><s2>" {{
+        NumberString string27830 1;
+
+        NumberString ".tif" 2;
+    }};
+
+    @collapsed = no
+    createString27873 := CreateString "<s1><s2>" {{
+        NumberString string27831 1;
+
+        NumberString ".tif" 2;
+    }};
+
+    @collapsed = no
+    createString27874 := CreateString "<s1><s2>" {{
+        NumberString string27831 1;
+
+        NumberString ".csv" 2;
+    }};
+
+    folder27541 := Folder "../../../Model's Data/rentModel/extras";
+
+    @collapsed = no
+    calculateRents := CalculateMap {
+        expression = [
+            i1 - i2 / 100 / 1000 / 1000 * 33.33
+        ],
+        cellType = .int32,
+        nullValue = .default,
+        resultIsSparse = .no,
+        resultFormat = .none
+    } {{
+        NumberMap calculateProfitsMap 1;
+
+        NumberMap loadMap27270 2;
+    }};
+
+    @collapsed = no
+    Workdir folder27541 {{
+        workdir1 = workdir;
+
+        SaveLookupTable {
+            table = setLookupTableValue27411,
+            filename = createString2787,
+            suffixDigits = 2,
+            step = .none,
+            workdir = workdir1
+        };
+
+        SaveMap {
+            map = calculatePriceMap,
+            filename = createString27873,
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir1,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveLookupTable {
+            table = setLookupTableValue2741,
+            filename = createString27871,
+            suffixDigits = 2,
+            step = .none,
+            workdir = workdir1
+        };
+
+        SaveMap {
+            map = calculateAreaMap,
+            filename = createString27870,
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir1,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = calculateYieldMap,
+            filename = createString27872,
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir1,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveLookupTable {
+            table = setLookupTableValue27410,
+            filename = createString27874,
+            suffixDigits = 2,
+            step = .none,
+            workdir = workdir1
+        };
+    }};
+
+    @collapsed = no
+    Workdir folder27540 {{
+        workdir2 = workdir;
+
+        SaveMap {
+            map = calculateRents,
+            filename = "soyRents.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir2,
+            ignoreCostlySparseCategories = .yes
+        };
+
+        SaveMap {
+            map = calculateProfitsMap,
+            filename = "soyProfits.tif",
+            suffixDigits = 2,
+            step = .none,
+            useCompression = .yes,
+            workdir = workdir2,
+            ignoreCostlySparseCategories = .yes
+        };
+    }};
+}};

@@ -1,0 +1,834 @@
+@date = 2018-Mar-22 17:47:28
+@version = 4.0.8.20180319
+@submodel.import = AllocateTransitions { { \"lanscape\" : CategoricalMap, \"probabilities\" : Map, \"transitionMatrix\" : TransitionMatrix, \"percentOfTransitionsByExpansion\" : PercentMatrix, \"patchExpansionParameters\" : TransitionFunctionParameterMatrix, \"patchGenerationParameters\" : TransitionFunctionParameterMatrix } { \"printTransitionInfo\" : BooleanValue } { \"resultingLanscape\" : CategoricalMap } }; CalcSimilarityOfDifferences { { \"initialMap\" : CategoricalMap, \"observedMap\" : CategoricalMap, \"simulatedMap\" : CategoricalMap } { \"useExponentialDecay\" : BooleanValue, \"windowSize\" : PositiveIntegerValue, \"printSimilarities\" : BooleanValue, \"exponentialDecayDivisor\" : RealValue } { \"similarityMap\" : Map, \"similarity\" : RealValue } }
+Script {{
+    folder2754 := Folder "../../../Model's Data/rentModel/generatedByModel";
+
+    lookupTable3289 := LookupTable [
+        "Key" "Value",
+        1 1 .. 3 3,
+        4 3,
+        5 5,
+        6 1,
+        7 4,
+        8 1,
+        9 4
+    ];
+
+    folder27540 := Folder "../../../Model's Data/rentModel/inputMaps";
+
+    Workdir folder27540 {{
+        workdir = workdir;
+
+        // Population 
+        _ := LoadMap {
+            filename = "Population.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        // Temperature 
+        _ := LoadMap {
+            filename = "Temperature.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        // Protected Areas 
+        _ := LoadCategoricalMap {
+            filename = "ProtectedAreas.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        loadCategoricalMap2602 := LoadCategoricalMap {
+            filename = "Slaughterhouses.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        loadCategoricalMap2601 := LoadCategoricalMap {
+            filename = "Towns.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        loadCategoricalMap26020 := LoadCategoricalMap {
+            filename = "ProcessingFacilities.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        // Ports Cost Map 
+        _ := LoadMap {
+            filename = "soyRents.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        // Precipitation 
+        _ := LoadMap {
+            filename = "Precipitation.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        // Elevation 
+        _ := LoadMap {
+            filename = "Elevation.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        // Ecoregions 
+        _ := LoadCategoricalMap {
+            filename = "Ecoregions.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+
+        // BrazilBiomes 
+        _ := LoadCategoricalMap {
+            filename = "BrazilBiomes.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir
+        };
+    }};
+
+    @collapsed = no
+    @alias = Final Landscape Map
+    Group {{
+        // Final landscape map. 
+        finalLandscape := LoadCategoricalMap {
+            filename = "../../../Model's Data/rentModel/inputMaps/cropped2013.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = .none
+        };
+
+        calculateCategoricalMap3456 := CalculateCategoricalMap {
+            expression = [
+                t1[i1]
+            ],
+            cellType = .int8,
+            nullValue = .default,
+            resultIsSparse = .no,
+            resultFormat = .none
+        } {{
+            NumberMap finalLandscape 1;
+
+            NumberTable lookupTable3289 1;
+        }};
+
+        @collapsed = no
+        Workdir folder2754 {{
+            workdir0 = workdir;
+
+            SaveMap {
+                map = calculateCategoricalMap3456,
+                filename = "recategorized2013.tif",
+                suffixDigits = 2,
+                step = .none,
+                useCompression = .yes,
+                workdir = workdir0,
+                ignoreCostlySparseCategories = .yes
+            };
+        }};
+    }};
+
+    @collapsed = no
+    @alias = Initial Landscape Map
+    Group {{
+        // Initial landscape map. 
+        initialLandscape := LoadCategoricalMap {
+            filename = "../../../Model's Data/rentModel/inputMaps/cropped2012.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = .none
+        };
+
+        calculateCategoricalMap34560 := CalculateCategoricalMap {
+            expression = [
+                t1[i1]
+            ],
+            cellType = .int8,
+            nullValue = .default,
+            resultIsSparse = .no,
+            resultFormat = .none
+        } {{
+            NumberMap initialLandscape 1;
+
+            NumberTable lookupTable3289 1;
+        }};
+
+        @collapsed = no
+        Workdir folder2754 {{
+            workdir1 = workdir;
+
+            SaveMap {
+                map = calculateCategoricalMap34560,
+                filename = "recategorized2012.tif",
+                suffixDigits = 2,
+                step = .none,
+                useCompression = .yes,
+                workdir = workdir1,
+                ignoreCostlySparseCategories = .yes
+            };
+        }};
+    }};
+
+    // Static variable map. 
+    staticVariables := LoadMap {
+        filename = "../../../data/submodels/calibration/inputMaps/allStaticMaps.tif",
+        nullValue = .none,
+        loadAsSparse = .no,
+        suffixDigits = 0,
+        step = .none,
+        workdir = .none
+    };
+
+    @collapsed = no
+    Workdir folder27540 {{
+        workdir2 = workdir;
+
+        // Municipalities 
+        regions := LoadCategoricalMap {
+            filename = "Admin1.tif",
+            nullValue = .none,
+            loadAsSparse = .no,
+            suffixDigits = 0,
+            step = .none,
+            workdir = workdir2
+        };
+    }};
+
+    @collapsed = no
+    RegionManager regions 0 {{
+        regionManager = regionManager;
+
+        // Simulation model. 
+        @collapsed = no
+        Repeat 1 {{
+            step = step;
+
+            landscape := MuxCategoricalMap calculateCategoricalMap34560 updatedLandscape;
+
+            distances := CalcDistanceMap {
+                categoricalMap = landscape,
+                categories = [ 2 ],
+                cellType = .int32,
+                nullValue = .default,
+                truncateDistance = .no
+            };
+
+            @alias = Distances
+            distances0 := CalcDistanceMap {
+                categoricalMap = landscape,
+                categories = [ 5 ],
+                cellType = .int32,
+                nullValue = .default,
+                truncateDistance = .no
+            };
+
+            @alias = Distances
+            distances1 := CalcDistanceMap {
+                categoricalMap = landscape,
+                categories = [ 3 ],
+                cellType = .int32,
+                nullValue = .default,
+                truncateDistance = .no
+            };
+
+            @alias = Distances
+            distances2 := CalcDistanceMap {
+                categoricalMap = landscape,
+                categories = [ 1 ],
+                cellType = .int32,
+                nullValue = .default,
+                truncateDistance = .no
+            };
+
+            @collapsed = no
+            ForEachCategory regions {{
+                step0 = step;
+
+                @alias = Static Variables (Region)
+                staticVariablesRegion := RegionalizeMap {
+                    globalMap = staticVariables,
+                    regionId = step0,
+                    keepNonRegionCells = .no,
+                    regionManager = regionManager
+                };
+
+                @alias = Initial Landscape (Region)
+                initialLandscapeRegion := RegionalizeCategoricalMap {
+                    globalMap = calculateCategoricalMap34560,
+                    regionId = step0,
+                    keepNonRegionCells = .no,
+                    regionManager = regionManager
+                };
+
+                @alias = Final Landscape (Region)
+                finalLandscapeRegion := RegionalizeCategoricalMap {
+                    globalMap = calculateCategoricalMap3456,
+                    regionId = step0,
+                    keepNonRegionCells = .no,
+                    regionManager = regionManager
+                };
+
+                @alias = Landscape (Region)
+                landscapeRegion := RegionalizeCategoricalMap {
+                    globalMap = landscape,
+                    regionId = step0,
+                    keepNonRegionCells = .no,
+                    regionManager = regionManager
+                };
+
+                // Calculate Weights of Evidence ranges. 
+                weightOfEvidenceRanges := DetermineWeightsOfEvidenceRanges {
+                    initialLandscape = initialLandscapeRegion,
+                    finalLandscape = finalLandscapeRegion,
+                    skeleton = [
+                        1->3 [
+                            "static_var/brazilBiomes",
+                            "static_var/distanceToProcessingFacilities" 5000 500000 100 5,
+                            "static_var/distanceToSlaughterhouse" 5000 500000 20 5,
+                            "static_var/distanceToTown" 5000 500000 100 5,
+                            "static_var/ecoregions",
+                            "static_var/elevation" 0.5 500000 25 5,
+                            "static_var/population" 2 500000 10 5,
+                            "static_var/portCost" 500 500000 100 5,
+                            "static_var/precipitation" 0.25 500000 10 5,
+                            "static_var/protectedAreas",
+                            "static_var/temperature" 0.01 500000 10 5
+                        ],
+                        1->5 [
+                            "static_var/brazilBiomes",
+                            "static_var/distanceToProcessingFacilities" 1500 500000 25 5,
+                            "static_var/distanceToSlaughterhouse" 5000 500000 20 5,
+                            "static_var/distanceToTown" 1000 500000 1000 5,
+                            "static_var/ecoregions",
+                            "static_var/elevation" 0.5 500000 25 5,
+                            "static_var/population" 0.5 500000 10000 5,
+                            "static_var/portCost" 500 500000 100 5,
+                            "static_var/precipitation" 0.25 500000 10 5,
+                            "static_var/protectedAreas",
+                            "static_var/temperature" 0.01 500000 10 5
+                        ],
+                        2->3 [
+                            "static_var/brazilBiomes",
+                            "static_var/distanceToProcessingFacilities" 5000 500000 100 5,
+                            "static_var/distanceToSlaughterhouse" 5000 500000 20 5,
+                            "static_var/distanceToTown" 5000 500000 100 5,
+                            "static_var/ecoregions",
+                            "static_var/elevation" 0.5 500000 25 5,
+                            "static_var/population" 2 500000 10 5,
+                            "static_var/portCost" 500 500000 100 5,
+                            "static_var/precipitation" 0.25 500000 10 5,
+                            "static_var/protectedAreas",
+                            "static_var/temperature" 0.01 500000 10 5
+                        ],
+                        2->5 [
+                            "static_var/brazilBiomes",
+                            "static_var/distanceToProcessingFacilities" 1500 500000 25 5,
+                            "static_var/distanceToSlaughterhouse" 5000 500000 20 5,
+                            "static_var/distanceToTown" 1000 500000 1000 5,
+                            "static_var/ecoregions",
+                            "static_var/elevation" 0.5 500000 25 5,
+                            "static_var/population" 0.5 500000 10000 5,
+                            "static_var/portCost" 500 500000 100 5,
+                            "static_var/precipitation" 0.25 500000 10 5,
+                            "static_var/protectedAreas",
+                            "static_var/temperature" 0.01 500000 10 5
+                        ],
+                        3->2 [
+                            "static_var/brazilBiomes",
+                            "static_var/distanceToProcessingFacilities" 1500 500000 25 5,
+                            "static_var/distanceToSlaughterhouse" 5000 500000 20 5,
+                            "static_var/distanceToTown" 2000 500000 5 5,
+                            "static_var/ecoregions",
+                            "static_var/elevation" 0.5 500000 25 5,
+                            "static_var/population" 10 500000 5 5,
+                            "static_var/portCost" 500 500000 100 5,
+                            "static_var/precipitation" 0.25 500000 10 5,
+                            "static_var/protectedAreas",
+                            "static_var/temperature" 0.01 500000 10 5
+                        ],
+                        3->5 [
+                            "static_var/brazilBiomes",
+                            "static_var/distanceToProcessingFacilities" 5000 500000 100 5,
+                            "static_var/distanceToSlaughterhouse" 5000 500000 20 5,
+                            "static_var/distanceToTown" 5000 500000 100 5,
+                            "static_var/ecoregions",
+                            "static_var/elevation" 0.5 500000 25 5,
+                            "static_var/population" 2 500000 10 5,
+                            "static_var/portCost" 500 500000 100 5,
+                            "static_var/precipitation" 0.25 500000 10 5,
+                            "static_var/protectedAreas",
+                            "static_var/temperature" 0.01 500000 10 5
+                        ],
+                        4->3 [
+                            "static_var/brazilBiomes",
+                            "static_var/distanceToProcessingFacilities" 5000 500000 100 5,
+                            "static_var/distanceToSlaughterhouse" 5000 500000 20 5,
+                            "static_var/distanceToTown" 5000 500000 100 5,
+                            "static_var/ecoregions",
+                            "static_var/elevation" 0.5 500000 25 5,
+                            "static_var/population" 2 500000 10 5,
+                            "static_var/portCost" 500 500000 100 5,
+                            "static_var/precipitation" 0.25 500000 10 5,
+                            "static_var/protectedAreas",
+                            "static_var/temperature" 0.01 500000 10 5
+                        ],
+                        5->1 [
+                            "static_var/brazilBiomes",
+                            "static_var/distanceToProcessingFacilities" 1500 500000 25 5,
+                            "static_var/distanceToSlaughterhouse" 5000 500000 20 5,
+                            "static_var/distanceToTown" 1000 500000 1000 5,
+                            "static_var/ecoregions",
+                            "static_var/elevation" 0.5 500000 25 5,
+                            "static_var/population" 0.5 500000 10000 5,
+                            "static_var/portCost" 500 500000 100 5,
+                            "static_var/precipitation" 0.25 500000 10 5,
+                            "static_var/protectedAreas",
+                            "static_var/temperature" 0.01 500000 10 5
+                        ],
+                        5->2 [
+                            "static_var/brazilBiomes",
+                            "static_var/distanceToProcessingFacilities" 1500 500000 25 5,
+                            "static_var/distanceToSlaughterhouse" 5000 500000 20 5,
+                            "static_var/distanceToTown" 1000 500000 1000 5,
+                            "static_var/ecoregions",
+                            "static_var/elevation" 0.5 500000 25 5,
+                            "static_var/population" 0.5 500000 10000 5,
+                            "static_var/portCost" 500 500000 100 5,
+                            "static_var/precipitation" 0.25 500000 10 5,
+                            "static_var/protectedAreas",
+                            "static_var/temperature" 0.01 500000 10 5
+                        ],
+                        5->3 [
+                            "static_var/brazilBiomes",
+                            "static_var/distanceToProcessingFacilities" 5000 500000 100 5,
+                            "static_var/distanceToSlaughterhouse" 5000 500000 20 5,
+                            "static_var/distanceToTown" 5000 500000 100 5,
+                            "static_var/ecoregions",
+                            "static_var/elevation" 0.5 500000 25 5,
+                            "static_var/population" 2 500000 10 5,
+                            "static_var/portCost" 500 500000 100 5,
+                            "static_var/precipitation" 0.25 500000 10 5,
+                            "static_var/protectedAreas",
+                            "static_var/temperature" 0.01 500000 10 5
+                        ]
+                    ],
+                    fixAbnormalWeights = .no
+                } {{
+                    NameMap staticVariablesRegion "static_var";
+                }};
+
+                // Calculate Weights of Evidence coefficients. 
+                weightOfEvidenceCoefficients _ := DetermineWeightsOfEvidenceCoefficients {
+                    initialLandscape = initialLandscapeRegion,
+                    finalLandscape = finalLandscapeRegion,
+                    ranges = weightOfEvidenceRanges,
+                    fixAbnormalWeights = .yes
+                } {{
+                    NameMap staticVariablesRegion "static_var";
+                }};
+
+                @alias = Distances (Region)
+                distancesRegion1 := RegionalizeMap {
+                    globalMap = distances0,
+                    regionId = step0,
+                    keepNonRegionCells = .no,
+                    regionManager = regionManager
+                };
+
+                @alias = Distances (Region)
+                distancesRegion0 := RegionalizeMap {
+                    globalMap = distances1,
+                    regionId = step0,
+                    keepNonRegionCells = .no,
+                    regionManager = regionManager
+                };
+
+                @alias = Distances (Region)
+                distancesRegion2 := RegionalizeMap {
+                    globalMap = distances2,
+                    regionId = step0,
+                    keepNonRegionCells = .no,
+                    regionManager = regionManager
+                };
+
+                @alias = Distances (Region)
+                distancesRegion := RegionalizeMap {
+                    globalMap = distances,
+                    regionId = step0,
+                    keepNonRegionCells = .no,
+                    regionManager = regionManager
+                };
+
+                //
+                // ===
+                // Calculate probability map. 
+                @alias = Probabilities (Region)
+                probabilitiesRegion := CalcWOfEProbabilityMap {
+                    landscape = landscapeRegion,
+                    weights = weightOfEvidenceCoefficients,
+                    transitions = [ 1->3, 1->5, 2->3, 2->5, 3->2, 3->5, 4->3, 5->1, 5->2, 5->3 ],
+                    cellType = .uint8,
+                    nullValue = .default
+                } {{
+                    NameMap distancesRegion2 "distance_to_1";
+
+                    NameMap distancesRegion "distance_to_2";
+
+                    NameMap distancesRegion0 "distance_to_3";
+
+                    NameMap distancesRegion1 "distance_to_5";
+
+                    NameMap staticVariablesRegion "static_var";
+                }};
+
+                @collapsed = no
+                @alias = Transition Matrix
+                Group {{
+                    // Calculate the transition rates. 
+                    @viewer.singlestepmatrix = yes
+                    @collapsed = no
+                    transitionRates _ := DetermineTransitionMatrix {
+                        initialLandscape = initialLandscapeRegion,
+                        finalLandscape = finalLandscapeRegion,
+                        timeSteps = 1
+                    };
+
+                    lookupTable3503 := LookupTable transitionRates;
+
+                    @viewer.result = yes
+                    calculateLookupTable3501 := CalculateLookupTable {
+                        expression = [
+                            if line = 3.005 or line = 3.002 or line = 5.002 or line = 2.005 or line = 5.003 then
+                                t1[line]
+                            else 
+                                null                    
+                        ],
+                        keyName = .none,
+                        valueName = .none
+                    } {{
+                        NumberTable lookupTable3503 1;
+                    }};
+                }};
+
+                @alias = Updated Landscape (Region)
+                updatedLandscapeRegion := AllocateTransitions {
+                    lanscape = landscapeRegion,
+                    probabilities = probabilitiesRegion,
+                    transitionMatrix = calculateLookupTable3501,
+                    percentOfTransitionsByExpansion = [
+                        1->3 0.78,
+                        1->5 0.944444444444444,
+                        2->3 0.911952114307781,
+                        2->5 0.922858302882663,
+                        3->2 0.734713875097988,
+                        3->5 0.814008332678249,
+                        4->3 0.945454545454545,
+                        5->1 0.916949152542373,
+                        5->2 0.716309719934102,
+                        5->3 0.91866413492684
+                    ],
+                    patchExpansionParameters = [
+                        1->3 9.44961696968994 4.63613477775434 1,
+                        1->5 12.0825871680822 11.1007819652603 1,
+                        2->3 12.3231534928851 10.0919312053696 1,
+                        2->5 11.1491578910611 9.34332135999846 1,
+                        3->2 15.0031860403882 17.3488068568622 1,
+                        3->5 14.4495171520111 20.9131642691039 1,
+                        4->3 12.7443110089305 8.82978977862519 1,
+                        5->1 11.7587329698371 7.99671547885489 1,
+                        5->2 14.6067402867926 17.4124163368643 1,
+                        5->3 12.5681497678072 13.3653081112631 1
+                    ],
+                    patchGenerationParameters = [
+                        1->3 10.1975799628315 4.60425816366531 1,
+                        1->5 12.7185128085076 10.7118465048941 1,
+                        2->3 11.4118884603262 8.88506593737742 1,
+                        2->5 10.2045853990322 8.31687771418484 1,
+                        3->2 16.7516938614529 53.7188330949316 1,
+                        3->5 31.7285252382713 148.016936897598 1,
+                        4->3 7.10740421651893 8.42936970217881e-08 1,
+                        5->1 8.49421479535189 2.8166256005986 1,
+                        5->2 20.5581467987328 40.8633296050073 1,
+                        5->3 13.5204068716538 22.4983138133373 1
+                    ],
+                    printTransitionInfo = .no
+                };
+
+                // This operator is used here to force a dependence between two groups. 
+                booleanValue5130 := BooleanValue .no;
+
+                RegionalMap {
+                    globalMapName = "probabilities",
+                    regionalMap = probabilitiesRegion,
+                    regionId = step0,
+                    regionManager = regionManager
+                };
+
+                // Assign a map to the region using the given identifier. 
+                RegionalCategoricalMap {
+                    globalMapName = "landscape",
+                    regionalMap = updatedLandscapeRegion,
+                    regionId = step0,
+                    regionManager = regionManager
+                };
+
+                @collapsed = yes
+                Workdir folder2754 {{
+                    workdir3 = workdir;
+
+                    SaveWeights {
+                        weights = weightOfEvidenceCoefficients,
+                        filename = "weights.dcf",
+                        suffixDigits = 4,
+                        step = step0,
+                        workdir = workdir3
+                    };
+                }};
+            }};
+
+            @collapsed = no
+            Group {{
+                // This operator is used here to force a dependence between two groups. 
+                _ := BooleanValue booleanValue5130;
+
+                // Merge all maps assigned to the regions using the given identifier. 
+                updatedLandscape := MergeRegionalCategoricalMaps {
+                    globalMapName = "landscape",
+                    mergeNonRegionCells = .no,
+                    regionManager = regionManager
+                };
+
+                mergeRegionalMaps3513 := MergeRegionalMaps {
+                    globalMapName = "probabilities",
+                    mergeNonRegionCells = .no,
+                    regionManager = regionManager
+                };
+            }};
+
+            @collapsed = no
+            Workdir folder2754 {{
+                workdir4 = workdir;
+
+                SaveMap {
+                    map = updatedLandscape,
+                    filename = "simulatedLandscape1.tif",
+                    suffixDigits = 1,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir4,
+                    ignoreCostlySparseCategories = .yes
+                };
+
+                SaveMap {
+                    map = mergeRegionalMaps3513,
+                    filename = "probabilities01.tif",
+                    suffixDigits = 2,
+                    step = step,
+                    useCompression = .yes,
+                    workdir = workdir4,
+                    ignoreCostlySparseCategories = .yes
+                };
+            }};
+        }};
+    }};
+
+    @collapsed = no
+    @alias = Step 6: Validating simulation using an exponential decay function
+    Group {{
+        lookupTable4070 := LookupTable [
+            "Key" "Value",
+            1 35,
+            2 32,
+            3 52,
+            4 53,
+            5 25,
+            6 23,
+            7 15,
+            8 51,
+            9 43,
+            10 13
+        ];
+
+        @collapsed = no
+        @viewer.result = yes
+        calculateCategoricalMap3250 := CalculateCategoricalMap {
+            expression = [
+                if i1 = floor(t1[1] / 10) and i2 = floor(t1[1] / 10) or i1 = floor(t1[1] / 10) and i2 = t1[1] % 10 then
+                    i2
+                else if i1 = floor(t1[2] / 10) and i2 = floor(t1[2] / 10) or i1 = floor(t1[2] / 10) and i2 = t1[2] % 10 then
+                    i2
+                else if i1 = floor(t1[3] / 10) and i2 = floor(t1[3] / 10) or i1 = floor(t1[3] / 10) and i2 = t1[3] % 10 then
+                    i2
+                else if i1 = floor(t1[4] / 10) and i2 = floor(t1[4] / 10) or i1 = floor(t1[4] / 10) and i2 = t1[4] % 10 then
+                    i2
+                else if i1 = floor(t1[5] / 10) and i2 = floor(t1[5] / 10) or i1 = floor(t1[5] / 10) and i2 = t1[5] % 10 then
+                    i2
+                else 
+                    null                                        
+            ],
+            cellType = .int32,
+            nullValue = .default,
+            resultIsSparse = .no,
+            resultFormat = .none
+        } {{
+            NumberMap calculateCategoricalMap34560 1;
+
+            NumberMap calculateCategoricalMap3456 2;
+
+            NumberTable lookupTable4070 1;
+        }};
+
+        @collapsed = no
+        @viewer.result = yes
+        calculateCategoricalMap3252 := CalculateCategoricalMap {
+            expression = [
+                if i1 = floor(t1[1] / 10) and i2 = floor(t1[1] / 10) or i1 = floor(t1[1] / 10) and i2 = t1[1] % 10 then
+                    i2
+                else if i1 = floor(t1[2] / 10) and i2 = floor(t1[2] / 10) or i1 = floor(t1[2] / 10) and i2 = t1[2] % 10 then
+                    i2
+                else if i1 = floor(t1[3] / 10) and i2 = floor(t1[3] / 10) or i1 = floor(t1[3] / 10) and i2 = t1[3] % 10 then
+                    i2
+                else if i1 = floor(t1[4] / 10) and i2 = floor(t1[4] / 10) or i1 = floor(t1[4] / 10) and i2 = t1[4] % 10 then
+                    i2
+                else if i1 = floor(t1[5] / 10) and i2 = floor(t1[5] / 10) or i1 = floor(t1[5] / 10) and i2 = t1[5] % 10 then
+                    i2
+                else 
+                    null                                        
+            ],
+            cellType = .int32,
+            nullValue = .default,
+            resultIsSparse = .no,
+            resultFormat = .none
+        } {{
+            NumberMap calculateCategoricalMap34560 1;
+
+            NumberMap updatedLandscape 2;
+
+            NumberTable lookupTable4070 1;
+        }};
+
+        @alias = Similarities (Submodel)
+        similarityMap similarity := CalcSimilarityOfDifferences {
+            initialMap = calculateCategoricalMap34560,
+            observedMap = calculateCategoricalMap3250,
+            simulatedMap = calculateCategoricalMap3252,
+            useExponentialDecay = .yes,
+            windowSize = 11,
+            printSimilarities = .yes,
+            exponentialDecayDivisor = 2
+        };
+
+        @collapsed = no
+        Workdir folder2754 {{
+            workdir5 = workdir;
+
+            SaveMap {
+                map = calculateCategoricalMap3252,
+                filename = "simulatedChange.tif",
+                suffixDigits = 2,
+                step = .none,
+                useCompression = .yes,
+                workdir = workdir5,
+                ignoreCostlySparseCategories = .yes
+            };
+
+            SaveTextFile {
+                text = similarity,
+                filename = "similarity.txt",
+                suffixDigits = 2,
+                step = .none,
+                workdir = workdir5
+            };
+
+            SaveMap {
+                map = similarityMap,
+                filename = "similarity.tif",
+                suffixDigits = 0,
+                step = .none,
+                useCompression = .yes,
+                workdir = workdir5,
+                ignoreCostlySparseCategories = .yes
+            };
+
+            SaveMap {
+                map = calculateCategoricalMap3250,
+                filename = "observedChange.tif",
+                suffixDigits = 2,
+                step = .none,
+                useCompression = .yes,
+                workdir = workdir5,
+                ignoreCostlySparseCategories = .yes
+            };
+        }};
+    }};
+
+    @viewer.distance = yes
+    _ := CalcDistanceToFeatureMap {
+        source = loadCategoricalMap2601,
+        mask = .none,
+        cellType = .int32,
+        nullValue = .default,
+        truncateDistance = .no
+    };
+
+    _ := CalcDistanceToFeatureMap {
+        source = loadCategoricalMap26020,
+        mask = .none,
+        cellType = .int32,
+        nullValue = .default,
+        truncateDistance = .no
+    };
+
+    _ := CalcDistanceToFeatureMap {
+        source = loadCategoricalMap2602,
+        mask = .none,
+        cellType = .int32,
+        nullValue = .default,
+        truncateDistance = .no
+    };
+}};

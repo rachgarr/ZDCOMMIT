@@ -1,0 +1,16 @@
+@date = 2018-Mar-22 17:47:10
+@version = 4.0.8.20180319
+@submodel.import = SelectSubTable { { \"inputTable\" : Table, \"step\" : RealValue } { } { \"resultingTable\" : Table } }
+Script {{
+    table4098 := Table [
+        "year*", "muni*", "From*", "To*", "Rate", 
+    ];
+
+    getTableFromKey4099 := GetTableFromKey table4098 [ 2012 ];
+
+    getTableFromKey4100 := GetTableFromKey getTableFromKey4099 [ 50 ];
+
+    _ := TransitionMatrix getTableFromKey4100;
+
+    _ := SelectSubTable table4098 .UNBOUND;
+}};

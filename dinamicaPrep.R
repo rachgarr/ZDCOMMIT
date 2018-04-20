@@ -8,7 +8,9 @@ library(rasterVis)
 library(rgdal) 
 
 # Extent wanted for all from the bigger files
-extentWanted <- extent(-60, -55, -25, -20)
+extentWanted <- extent(-57, -54, -16, -12 )
+plot(initialAdmin2)
+newExtent <- select(initialAdmin2)
 
 # Changing the working directory to dropbox. This command works differently for mac and windows so use the correct one
 # Windows 
@@ -16,6 +18,7 @@ setwd("C:/Users/rodri/Dropbox/SESYNC GIS Database/")
 # Mac
 setwd("~/Dropbox/SESYNC GIS Database/") 
 # The layers needed are: admin level 2, TNC ecoregions, Brazil Biomes, temperature, precipitation, elevation, population, protected areas, distance to towns, distance to ports, distance to roads, distance to rivers
+
 
 # We will need to load all of these 
 initial2012Image <- raster("Land_Use_Class/finalMaps/final_2012.tif") # Loading a tif file 

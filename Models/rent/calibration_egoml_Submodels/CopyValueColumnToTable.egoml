@@ -1,0 +1,61 @@
+<?xml version="1.0" standalone="yes" ?>
+<script>
+    <property key="dff.date" value="2018-Mar-27 19:54:54" />
+    <property key="dff.version" value="4.0.8.20180319" />
+    <property key="metadata.author" value="Dinamica Team" />
+    <property key="metadata.organization" value="CSR/UFMG" />
+    <property key="submodel.description" value='This submodel copies the value column from the given lookup table to the given table. The new column is created in the given input table using the given column name. If a column with the same name already exists in the given input table, an error will be reported.&#x0A;This updated version is just a wrapper around the &quot;Add Table Column&quot; functor.' />
+    <property key="submodel.group" value="Table" />
+    <property key="submodel.largeicon" value="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" />
+    <property key="submodel.name" value="CopyValueColumnToTable" />
+    <property key="submodel.smallicon" value="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACMUlEQVR42qWT3WuScRTHz7/QTTejq4jdBgW762Vz06lddFkE6zaoEQRlXXQVJUE+uscVszctfXRLp4MtWXghOqe2RS+ajKi2EUZsEaZRRMG3c36PMXvZ1R74wJfDOd9zznOehwDQViDHSCFl887BquUUojlWOOQvUieb5KXI5s1jrAbcqJqIlphT3ygWvVkeWbU8Aq+Ag1cyijHWEvvTYJ6ka2deQOXlQH1aEaE6cOKZSZC1RZuHXS9tjM9m/Z487kneUxPRFs8c6JiWwtmpOva6FxWiL2rXMKA/Iae/BCcbHL2eo8O+LFzxCnouZRTn4lUM6bMt+qTtAJaOA2/OmCwN4bu2DQf0Cjn8ZTj8RVh8JUpPhPCRX/uPNmtMMnof9N6zC1i+gLq7S4FlF754tmOf/hK/DXq9ZUxFQ2hy0eo3k8+so5Ew6J3WjQ+123idPalYqwXQ0Lr4wLRHDAb1ktKT3A0dE8hjGBHQKe9dDCdW0HN1QXE68RZHPJMNq77IK5jFs8koxWMG0jPTuHPrpkJ0JBJukYWv4CoBo1WT86wHtAIcfAUp3u9doOnEOMWMMNa5a6ON6KhMYOObuytArzujEG3j+6rTjZTpUSpGyfgEGbxvi4tWvpqIlhgN8tc0ugoMvzARLTExsPgeUzo5Tgk2iBqG2vtnG6gJDJDdm28ysHNXBev+yzNZMehjg4fK4AHFYrGmFETCYYXoYDD4XPbcLbv+xU769/lfXjdt9Xf+BWdimgbAipDXAAAAAElFTkSuQmCC" />
+    <functor name="Table">
+        <property key="dff.functor.alias" value="Input Table" />
+        <property key="dff.functor.comment" value="Table where the new value column will be copied to." />
+        <property key="submodel.in.constant.advanced" value="no" />
+        <property key="submodel.in.constant.description" value="Table where the new value column will be copied to." />
+        <property key="submodel.in.constant.name" value="inputTable" />
+        <property key="submodel.in.constant.optional" value="no" />
+        <property key="submodel.in.constant.order" value="1" />
+        <outputport name="object" id="v1" />
+    </functor>
+    <functor name="LookupTable">
+        <property key="dff.functor.alias" value="Column Table" />
+        <property key="dff.functor.comment" value="Lookup table (or table) containing a value column that will be copied to the given input table. The key and value column names used by lookup table columns are not meaningful." />
+        <property key="submodel.in.constant.advanced" value="no" />
+        <property key="submodel.in.constant.description" value="Lookup table (or table) containing a value column that will be copied to the given input table. The key and value column names used by lookup table columns are not meaningful." />
+        <property key="submodel.in.constant.name" value="columnTable" />
+        <property key="submodel.in.constant.optional" value="no" />
+        <property key="submodel.in.constant.order" value="2" />
+        <outputport name="object" id="v2" />
+    </functor>
+    <functor name="Name">
+        <property key="dff.functor.alias" value="New Column Name" />
+        <property key="dff.functor.comment" value="Name of the new column that will be created in the given input table. This names does not have to be same name used by the lookup table value column." />
+        <property key="submodel.in.constant.advanced" value="no" />
+        <property key="submodel.in.constant.description" value="Name of the new column that will be created in the given input table. This names does not have to be same name used by the lookup table value column." />
+        <property key="submodel.in.constant.name" value="newColumnName" />
+        <property key="submodel.in.constant.optional" value="no" />
+        <property key="submodel.in.constant.order" value="3" />
+        <outputport name="object" id="v3" />
+    </functor>
+    <functor name="Table">
+        <property key="dff.functor.alias" value="Output Table" />
+        <property key="dff.functor.comment" value="Table containing the additional data column and data." />
+        <property key="submodel.out.object.description" value="Table containing the additional data column and data." />
+        <property key="submodel.out.object.name" value="outputTable" />
+        <property key="submodel.out.object.order" value="1" />
+        <inputport name="constant" peerid="v4" />
+    </functor>
+    <functor name="AddTableColumn">
+        <property key="dff.functor.alias" value="addTableColumn12114" />
+        <inputport name="table" peerid="v1" />
+        <inputport name="columnName" peerid="v3" />
+        <inputport name="columnType">.real</inputport>
+        <inputport name="columnIndex">0</inputport>
+        <inputport name="columnShouldBeKey">.no</inputport>
+        <inputport name="columnValues" peerid="v2" />
+        <inputport name="defaultValue">.none</inputport>
+        <outputport name="result" id="v4" />
+    </functor>
+</script>
